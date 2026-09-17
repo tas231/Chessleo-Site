@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" translate="no" class="notranslate">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chessling Academy – Die magische Schachschule für Kinder (iPad &amp; Mac)</title>
   <meta name="robots" content="index, follow">
+  <meta name="google" content="notranslate">
   <meta name="description" content="Chessling Academy: Die kindgerechte, werbefreie Schachschule für iPad &amp; Mac. 4 Klassen, charmante Gegner, Titan Engine. 100% offline &amp; sicher.">
 
   <!-- Apple Smart App Banner (Safari auf iOS/iPadOS) -->
@@ -1260,7 +1261,7 @@
         <!-- SPLIT SHOWCASE: Meister-Diplom -->
         <div class="showcase-split" style="direction: rtl;">
           <div class="showcase-img-wrap" style="direction: ltr;">
-            <img src="assets/screen-diplom.png" alt="Offizielles Chessling Meister Diplom zum Ausdrucken" loading="lazy">
+            <img id="diplomaMockupImg" src="assets/screen-diplom-de.png" alt="Offizielles Chessling Meister Diplom zum Ausdrucken" loading="lazy">
           </div>
           <div class="showcase-content" style="direction: ltr;">
             <span class="section-tag" style="background: rgba(245, 158, 11, 0.15); color: var(--gold);" data-i18n="showcase_diplom_tag">Stolz &amp; Motivation</span>
@@ -1539,8 +1540,10 @@
           lang = 'de';
         }
         
-        // Update document lang
+        // Update document lang & prevent browser machine-translation overrides
         document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : lang;
+        document.documentElement.setAttribute('translate', 'no');
+        document.documentElement.classList.add('notranslate');
 
         // Update all data-i18n elements
         document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -1565,6 +1568,12 @@
         const heroMockup = document.getElementById('heroMockupImg');
         if (heroMockup) {
           heroMockup.src = 'assets/screen-home-' + lang + '.png';
+        }
+
+        // Update diploma mockup screenshot
+        const diplomaMockup = document.getElementById('diplomaMockupImg');
+        if (diplomaMockup) {
+          diplomaMockup.src = 'assets/screen-diplom-' + lang + '.png';
         }
 
         // Store preference
@@ -1634,8 +1643,10 @@
       // Preload screenshots for other languages in background
       ['de', 'en', 'es', 'fr', 'tr', 'zh'].forEach(l => {
         if (l !== initialLang) {
-          const preloadImg = new Image();
-          preloadImg.src = 'assets/screen-home-' + l + '.png';
+          const preloadHome = new Image();
+          preloadHome.src = 'assets/screen-home-' + l + '.png';
+          const preloadDiplom = new Image();
+          preloadDiplom.src = 'assets/screen-diplom-' + l + '.png';
         }
       });
     })();
