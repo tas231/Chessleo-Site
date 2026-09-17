@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impressum / Legal Notice – Chessling Academy</title>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="description" content="Impressum und rechtliche Angaben gemäß § 5 DDG und § 18 Abs. 2 MStV für Chessling Academy.">
+
+  <!-- Favicon / Apple Touch Icon -->
+  <link rel="icon" type="image/jpeg" href="assets/logo-modern.jpg?v=1.5.0">
+  <link rel="apple-touch-icon" href="assets/logo-modern.jpg?v=1.5.0">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@600;700;800&family=Outfit:wght@600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b1120;
+      --bg-surface: #131d31;
+      --card-bg: rgba(26, 38, 64, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-border-hover: rgba(245, 158, 11, 0.4);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-subtle: #64748b;
+      --gold: #f59e0b;
+      --gold-light: #fbbf24;
+      --gold-glow: rgba(245, 158, 11, 0.25);
+      --emerald: #10b981;
+      --accent: #38bdf8;
+      --nav-bg: rgba(11, 17, 32, 0.85);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      width: 100%;
+    }
+
+    /* --- STICKY NAV --- */
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--nav-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 800;
+      font-size: 1.2rem;
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+
+    .brand-logo-img {
+      width: 36px;
+      height: 36px;
+      border-radius: 9px;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-shrink: 0;
+    }
+
+    .nav-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 0.45rem 0.9rem;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
+      transition: all 0.2s ease;
+    }
+
+    .nav-back-link:hover {
+      color: var(--gold);
+      border-color: var(--card-border-hover);
+      background: rgba(245, 158, 11, 0.1);
+      transform: translateX(-2px);
+    }
+
+    /* --- LANGUAGE DROPDOWN --- */
+    .lang-dropdown {
+      position: relative;
+    }
+
+    .lang-dropdown-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--card-border);
+      color: var(--text);
+      padding: 0.42rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+
+    .lang-dropdown-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--card-border-hover);
+      color: var(--gold-light);
+    }
+
+    .lang-current-flag {
+      font-size: 1.05rem;
+      line-height: 1;
+    }
+
+    .lang-current-code {
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      color: var(--text);
+    }
+
+    .dropdown-chevron {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      transition: transform 0.2s ease;
+    }
+
+    .lang-dropdown.open .dropdown-chevron {
+      transform: rotate(180deg);
+    }
+
+    .lang-dropdown-menu {
+      position: absolute;
+      top: calc(100% + 0.45rem);
+      right: 0;
+      background: rgba(15, 23, 42, 0.96);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--card-border);
+      border-radius: 0.9rem;
+      padding: 0.35rem;
+      min-width: 145px;
+      box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.05);
+      display: none;
+      flex-direction: column;
+      gap: 0.15rem;
+      z-index: 200;
+    }
+
+    .lang-dropdown.open .lang-dropdown-menu {
+      display: flex;
+      animation: dropdownFadeIn 0.16s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes dropdownFadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .lang-dropdown-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: transparent;
+      border: none;
+      color: var(--text);
+      padding: 0.45rem 0.7rem;
+      border-radius: 0.6rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: left;
+      width: 100%;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .lang-dropdown-item:hover {
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--gold-light);
+    }
+
+    .lang-dropdown-item.active {
+      background: rgba(245, 158, 11, 0.22);
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .lang-dropdown-item .lang-flag {
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+
+    .lang-dropdown-item .lang-name {
+      font-size: 0.84rem;
+    }
+
+    /* --- MAIN CONTENT --- */
+    main {
+      flex: 1;
+      padding: 3rem 0 4rem;
+    }
+
+    .back-breadcrumb {
+      margin-bottom: 2rem;
+    }
+
+    .back-breadcrumb a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    .back-breadcrumb a:hover {
+      color: var(--gold-light);
+    }
+
+    .legal-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--card-border);
+      border-radius: 1.5rem;
+      padding: 2.75rem 2.5rem;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+    }
+
+    .legal-card h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 0.85rem;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .imprint-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 1.75rem;
+      line-height: 1.6;
+    }
+
+    .contact-box {
+      background: rgba(0, 0, 0, 0.28);
+      border: 1px solid var(--card-border);
+      border-radius: 1rem;
+      padding: 1.6rem 1.75rem;
+      margin: 1.5rem 0;
+      font-size: 0.98rem;
+      line-height: 1.8;
+      overflow-wrap: break-word;
+      word-break: normal;
+    }
+
+    .email-link {
+      display: inline-block;
+      max-width: 100%;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    /* --- ANTI-SCRAPE & ANTI-COPY ADDRESS PROTECTION --- */
+    .protected-address {
+      display: inline-block;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-touch-callout: none;
+      cursor: default;
+      color: var(--text);
+    }
+
+    .odr-box {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-top: 1.5rem;
+      line-height: 1.65;
+      border-top: 1px solid var(--card-border);
+      padding-top: 1.25rem;
+    }
+
+    /* --- FOOTER --- */
+    footer {
+      border-top: 1px solid var(--card-border);
+      padding: 3rem 0 2.5rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-top: auto;
+    }
+
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+      margin: 0 0.5rem;
+      transition: color 0.2s ease;
+    }
+
+    footer a:hover {
+      color: var(--gold);
+    }
+
+    @media (max-width: 768px) {
+      .legal-card {
+        padding: 1.75rem 1.25rem;
+      }
+      .legal-card h1 {
+        font-size: 1.65rem;
+      }
+      .contact-box {
+        padding: 1.25rem 1rem;
+      }
+      .nav-container {
+        padding: 0.75rem 1rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav-back-link {
+        display: none;
+      }
+      .brand span {
+        font-size: 1.05rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- STICKY HEADER -->
+  <header class="sticky-nav">
+    <div class="nav-container">
+      <a href="index.html" class="brand">
+        <img src="assets/logo-modern.jpg?v=1.5.0" alt="Chessling Academy Logo" class="brand-logo-img">
+        <span>Chessling Academy</span>
+      </a>
+
+      <div class="nav-actions">
+        <a href="index.html" class="nav-back-link" data-i18n="nav_back">← Startseite</a>
+
+        <!-- LANGUAGE DROPDOWN -->
+        <div class="lang-dropdown" id="langDropdown">
+          <button class="lang-dropdown-btn" id="langDropdownBtn" type="button" aria-expanded="false" aria-label="Sprache wählen">
+            <span class="lang-current-flag" id="langCurrentFlag">🇩🇪</span>
+            <span class="lang-current-code" id="langCurrentCode">DE</span>
+            <span class="dropdown-chevron">▾</span>
+          </button>
+          <div class="lang-dropdown-menu" id="langDropdownMenu" role="menu">
+            <button class="lang-dropdown-item active" data-lang="de" type="button" role="menuitem">
+              <span class="lang-flag">🇩🇪</span>
+              <span class="lang-name">Deutsch</span>
+            </button>
+            <button class="lang-dropdown-item" data-lang="en" type="button" role="menuitem">
+              <span class="lang-flag">🇬🇧</span>
+              <span class="lang-name">English</span>
+            </button>
+            <button class="lang-dropdown-item" data-lang="es" type="button" role="menuitem">
+              <span class="lang-flag">🇪🇸</span>
+              <span class="lang-name">Español</span>
+            </button>
+            <button class="lang-dropdown-item" data-lang="fr" type="button" role="menuitem">
+              <span class="lang-flag">🇫🇷</span>
+              <span class="lang-name">Français</span>
+            </button>
+            <button class="lang-dropdown-item" data-lang="tr" type="button" role="menuitem">
+              <span class="lang-flag">🇹🇷</span>
+              <span class="lang-name">Türkçe</span>
+            </button>
+            <button class="lang-dropdown-item" data-lang="zh" type="button" role="menuitem">
+              <span class="lang-flag">🇨🇳</span>
+              <span class="lang-name">简体中文</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="container">
+      
+      <div class="back-breadcrumb">
+        <a href="index.html" data-i18n="nav_back_long">← Zurück zur Startseite</a>
+      </div>
+
+      <article class="legal-card">
+        <h1 data-i18n="imprint_heading">⚖️ Impressum / Legal Notice</h1>
+        <p class="imprint-subtitle" data-i18n="imprint_law">
+          Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG) und § 18 Abs. 2 Medienstaatsvertrag (MStV):
+        </p>
+
+        <div class="contact-box">
+          <p style="margin-bottom: 1rem;">
+            <strong><span data-i18n="imprint_provider">Dienstanbieter &amp; Entwickler:</span></strong><br>
+            <span id="provider-address" class="protected-address" oncopy="return false;" onselectstart="return false;" oncontextmenu="return false;"></span>
+          </p>
+
+          <p style="margin-bottom: 1rem;">
+            <strong><span data-i18n="imprint_contact">Kontakt:</span></strong><br>
+            E-Mail: <a href="mailto:chesslingacademy@gmail.com?subject=Chessling%20Academy" class="email-link" style="color: var(--accent); text-decoration: underline;">chesslingacademy<wbr>@<wbr>gmail.com</a><br>
+            <span data-i18n="imprint_phone">Telefon:</span> 08121 9758385
+          </p>
+
+          <p style="font-size: 0.92rem; color: var(--text-muted); border-top: 1px solid var(--card-border); padding-top: 0.85rem;">
+            <strong><span data-i18n="imprint_resp">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:</span></strong><br>
+            <span id="resp-address" class="protected-address" oncopy="return false;" onselectstart="return false;" oncontextmenu="return false;"></span>
+          </p>
+        </div>
+
+        <div class="odr-box" data-i18n="imprint_odr">
+          Plattform der EU-Kommission zur Online-Streitbeilegung: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer" style="color: var(--accent);">https://ec.europa.eu/consumers/odr</a>. Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>© 2026 Tobias Schudy. Alle Rechte vorbehalten.</p>
+      <p style="margin: 0.6rem 0;">
+        <a href="index.html#features" data-i18n="nav_features">Features</a> •
+        <a href="index.html#boutique" data-i18n="nav_pieces">Schachfiguren</a> •
+        <a href="index.html#characters" data-i18n="nav_characters">Gegner</a> •
+        <a href="index.html#curriculum" data-i18n="nav_curriculum">Lehrplan</a> •
+        <a href="index.html#privacy" data-i18n="nav_privacy">Datenschutz</a> •
+        <a href="index.html#support" data-i18n="nav_support">Support</a> •
+        <a href="impressum.html" data-i18n="nav_imprint">Impressum</a>
+      </p>
+      <p style="font-size: 0.8rem; color: var(--text-subtle); margin-top: 0.5rem;" data-i18n="footer_tagline">
+        Chessling Academy • Entwickelt mit Liebe für junge Schachlegenden
+      </p>
+    </div>
+  </footer>
+
+  <!-- SCRIPT: ANTI-SCRAPE DECODER & TRANSLATION -->
+  <script>
+    (function() {
+      // 1. DYNAMIC ADDRESS DECODING (Prevents static web crawlers & scrapers from reading the address)
+      const _p = [
+        "VG9iaWFzIFNjaHVkeQ==",
+        "U2NodWxnYXNzZSAxMg==",
+        "ODU1NzAgTWFya3QgU2Nod2FiZW4=",
+        "RGV1dHNjaGxhbmQ="
+      ];
+      const _r = "VG9iaWFzIFNjaHVkeSwgU2NodWxnYXNzZSAxMiwgODU1NzAgTWFya3QgU2Nod2FiZW4sIERldXRzY2hsYW5k";
+
+      try {
+        const pEl = document.getElementById('provider-address');
+        if (pEl) {
+          pEl.innerHTML = _p.map(s => atob(s)).join('<br>');
+        }
+        const rEl = document.getElementById('resp-address');
+        if (rEl) {
+          rEl.textContent = atob(_r);
+        }
+      } catch(e) {}
+
+      // 2. COPY & CUT PROTECTION ON PROTECTED ELEMENTS
+      ['copy', 'cut', 'dragstart'].forEach(function(evt) {
+        document.querySelectorAll('.protected-address').forEach(function(el) {
+          el.addEventListener(evt, function(e) {
+            e.preventDefault();
+          });
+        });
+      });
+
+      // 3. I18N DICTIONARY
+      const i18n = {
+        "nav_back": {
+          "de": "← Startseite",
+          "en": "← Home",
+          "es": "← Inicio",
+          "fr": "← Accueil",
+          "tr": "← Ana Sayfa",
+          "zh": "← 首页"
+        },
+        "nav_back_long": {
+          "de": "← Zurück zur Startseite",
+          "en": "← Back to Homepage",
+          "es": "← Volver a la Página Principal",
+          "fr": "← Retour à la page d’accueil",
+          "tr": "← Ana Sayfaya Dön",
+          "zh": "← 返回首页"
+        },
+        "nav_features": {
+          "de": "Features",
+          "en": "Features",
+          "es": "Características",
+          "fr": "Fonctionnalités",
+          "tr": "Özellikler",
+          "zh": "特色功能"
+        },
+        "nav_pieces": {
+          "de": "Schachfiguren",
+          "en": "Chess Sets",
+          "es": "Juegos de Piezas",
+          "fr": "Jeux de Pièces",
+          "tr": "Taş Setleri",
+          "zh": "精美棋子"
+        },
+        "nav_characters": {
+          "de": "Gegner",
+          "en": "Opponents",
+          "es": "Oponentes",
+          "fr": "Adversaires",
+          "tr": "Rakipler",
+          "zh": "陪练对手"
+        },
+        "nav_curriculum": {
+          "de": "Lehrplan",
+          "en": "Curriculum",
+          "es": "Plan de Estudio",
+          "fr": "Programme",
+          "tr": "Müfredat",
+          "zh": "教学大纲"
+        },
+        "nav_privacy": {
+          "de": "Datenschutz",
+          "en": "Privacy Policy",
+          "es": "Privacidad",
+          "fr": "Confidentialité",
+          "tr": "Gizlilik",
+          "zh": "隐私政策"
+        },
+        "nav_support": {
+          "de": "Support",
+          "en": "Support",
+          "es": "Soporte",
+          "fr": "Assistance",
+          "tr": "Destek",
+          "zh": "技术支持"
+        },
+        "nav_imprint": {
+          "de": "Impressum",
+          "en": "Legal Notice",
+          "es": "Aviso Legal",
+          "fr": "Mentions Légales",
+          "tr": "Künye",
+          "zh": "法律信息"
+        },
+        "imprint_heading": {
+          "de": "⚖️ Impressum / Legal Notice",
+          "en": "⚖️ Legal Notice / Imprint",
+          "es": "⚖️ Aviso Legal / Impressum",
+          "fr": "⚖️ Mentions Légales",
+          "tr": "⚖️ Künye / Yasal Bilgiler",
+          "zh": "⚖️ 法律声明与主办方信息 (Legal Notice)"
+        },
+        "imprint_law": {
+          "de": "Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG) und § 18 Abs. 2 Medienstaatsvertrag (MStV):",
+          "en": "Information pursuant to § 5 German Digital Services Act (DDG) and § 18 (2) State Media Treaty (MStV):",
+          "es": "Información conforme al § 5 de la Ley alemana de Servicios Digitales (DDG) y § 18 ap. 2 del Tratado de Medios (MStV):",
+          "fr": "Informations conformément au § 5 de la loi allemande sur les services numériques (DDG) et au § 18 al. 2 du traité d’État sur les médias (MStV) :",
+          "tr": "Alman Dijital Hizmetler Yasası (§ 5 DDG) ve Eyalet Medya Sözleşmesi (§ 18 Par. 2 MStV) uyarınca bilgiler:",
+          "zh": "依据德国数字服务法案 (§ 5 DDG) 及国家媒体公约 (§ 18 Abs. 2 MStV) 声明之主办方信息："
+        },
+        "imprint_provider": {
+          "de": "Dienstanbieter &amp; Entwickler:",
+          "en": "Service Provider &amp; Developer:",
+          "es": "Proveedor de Servicios y Desarrollador:",
+          "fr": "Prestataire de Services &amp; Développeur :",
+          "tr": "Hizmet Sağlayıcı ve Geliştirici:",
+          "zh": "服务提供者兼独立开发者："
+        },
+        "imprint_contact": {
+          "de": "Kontakt:",
+          "en": "Contact:",
+          "es": "Contacto:",
+          "fr": "Contact :",
+          "tr": "İletişim:",
+          "zh": "联系方式："
+        },
+        "imprint_phone": {
+          "de": "Telefon:",
+          "en": "Phone:",
+          "es": "Teléfono:",
+          "fr": "Téléphone :",
+          "tr": "Telefon:",
+          "zh": "电话号码："
+        },
+        "imprint_resp": {
+          "de": "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:",
+          "en": "Responsible for content according to § 18 (2) MStV:",
+          "es": "Responsable del contenido según § 18 ap. 2 MStV:",
+          "fr": "Responsable du contenu selon le § 18 al. 2 MStV :",
+          "tr": "§ 18 Par. 2 MStV uyarınca içerikten sorumlu kişi:",
+          "zh": "内容版权与合规负责人 (§ 18 Abs. 2 MStV)："
+        },
+        "imprint_odr": {
+          "de": "Plattform der EU-Kommission zur Online-Streitbeilegung: <a href=\"https://ec.europa.eu/consumers/odr\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent);\">https://ec.europa.eu/consumers/odr</a>. Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.",
+          "en": "European Commission Online Dispute Resolution platform: <a href=\"https://ec.europa.eu/consumers/odr\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent);\">https://ec.europa.eu/consumers/odr</a>. We are neither willing nor obligated to participate in dispute resolution proceedings before a consumer arbitration board.",
+          "es": "Plataforma de la Comisión Europea para la resolución de litigios en línea: <a href=\"https://ec.europa.eu/consumers/odr\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent);\">https://ec.europa.eu/consumers/odr</a>. No estamos obligados ni dispuestos a participar en procedimientos de resolución de conflictos ante una junta arbitral de consumo.",
+          "fr": "Plateforme de règlement en ligne des litiges de la Commission européenne : <a href=\"https://ec.europa.eu/consumers/odr\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent);\">https://ec.europa.eu/consumers/odr</a>. Nous ne sommes ni disposés ni obligés de participer à une procédure de règlement des litiges devant un organisme de médiation des consommateurs.",
+          "tr": "AB Komisyonu çevrimiçi uyuşmazlık çözüm platformu: <a href=\"https://ec.europa.eu/consumers/odr\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent);\">https://ec.europa.eu/consumers/odr</a>. Tüketici hakem heyeti nezdindeki uyuşmazlık çözüm prosedürlerine katılmaya istekli veya yükümlü değiliz.",
+          "zh": "欧盟委员会在线争议解决平台：<a href=\"https://ec.europa.eu/consumers/odr\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent);\">https://ec.europa.eu/consumers/odr</a>。我们既无意愿也无义务参与消费者仲裁机构的争议解决程序。"
+        },
+        "footer_tagline": {
+          "de": "Chessling Academy • Entwickelt mit Liebe für junge Schachlegenden",
+          "en": "Chessling Academy • Crafted with love for young chess legends",
+          "es": "Chessling Academy • Creado con amor para jóvenes leyendas del ajedrez",
+          "fr": "Chessling Academy • Conçu avec passion pour les jeunes légendes des échecs",
+          "tr": "Chessling Academy • Genç satranç efsaneleri için sevgiyle geliştirildi",
+          "zh": "Chessling Academy • 用爱打造，献给每一位正在启航的小小国际象棋传奇"
+        }
+      };
+
+      const langMeta = {
+        de: { flag: '🇩🇪', code: 'DE' },
+        en: { flag: '🇬🇧', code: 'EN' },
+        es: { flag: '🇪🇸', code: 'ES' },
+        fr: { flag: '🇫🇷', code: 'FR' },
+        tr: { flag: '🇹🇷', code: 'TR' },
+        zh: { flag: '🇨🇳', code: 'ZH' }
+      };
+
+      function setLanguage(lang) {
+        if (!['de', 'en', 'es', 'fr', 'tr', 'zh'].includes(lang)) {
+          lang = 'de';
+        }
+
+        document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : lang;
+
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (i18n[key] && i18n[key][lang]) {
+            el.innerHTML = i18n[key][lang];
+          }
+        });
+
+        // Update active dropdown item & current indicator
+        const meta = langMeta[lang] || langMeta.de;
+        const flagEl = document.getElementById('langCurrentFlag');
+        const codeEl = document.getElementById('langCurrentCode');
+        if (flagEl) flagEl.textContent = meta.flag;
+        if (codeEl) codeEl.textContent = meta.code;
+
+        document.querySelectorAll('.lang-dropdown-item').forEach(item => {
+          item.classList.toggle('active', item.getAttribute('data-lang') === lang);
+        });
+
+        try {
+          localStorage.setItem('chessling_lang', lang);
+        } catch(e) {}
+      }
+
+      // Language Dropdown Interaction
+      const dropdown = document.getElementById('langDropdown');
+      const dropdownBtn = document.getElementById('langDropdownBtn');
+
+      if (dropdown && dropdownBtn) {
+        dropdownBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const isOpen = dropdown.classList.toggle('open');
+          dropdownBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+
+        document.querySelectorAll('.lang-dropdown-item').forEach(btn => {
+          btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetLang = this.getAttribute('data-lang');
+            setLanguage(targetLang);
+            dropdown.classList.remove('open');
+            dropdownBtn.setAttribute('aria-expanded', 'false');
+          });
+        });
+
+        document.addEventListener('click', function(e) {
+          if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove('open');
+            dropdownBtn.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && dropdown.classList.contains('open')) {
+            dropdown.classList.remove('open');
+            dropdownBtn.setAttribute('aria-expanded', 'false');
+            dropdownBtn.focus();
+          }
+        });
+      }
+
+      let initialLang = 'de';
+      try {
+        const stored = localStorage.getItem('chessling_lang');
+        if (stored && ['de', 'en', 'es', 'fr', 'tr', 'zh'].includes(stored)) {
+          initialLang = stored;
+        } else {
+          const navLang = (navigator.language || navigator.userLanguage || 'de').toLowerCase();
+          if (navLang.startsWith('en')) initialLang = 'en';
+          else if (navLang.startsWith('es')) initialLang = 'es';
+          else if (navLang.startsWith('fr')) initialLang = 'fr';
+          else if (navLang.startsWith('tr')) initialLang = 'tr';
+          else if (navLang.startsWith('zh')) initialLang = 'zh';
+          else initialLang = 'de';
+        }
+      } catch(e) {
+        initialLang = 'de';
+      }
+
+      setLanguage(initialLang);
+    })();
+  </script>
+</body>
+</html>
