@@ -313,8 +313,9 @@
       word-break: break-word;
     }
 
-    /* --- ANTI-SCRAPE & ANTI-COPY ADDRESS PROTECTION --- */
-    .protected-address {
+    /* --- ANTI-SCRAPE & ANTI-COPY ADDRESS & PHONE PROTECTION --- */
+    .protected-address,
+    .protected-phone {
       display: inline-block;
       -webkit-user-select: none;
       -moz-user-select: none;
@@ -454,7 +455,7 @@
           <p style="margin-bottom: 1rem;">
             <strong><span data-i18n="imprint_contact">Kontakt:</span></strong><br>
             E-Mail: <a href="mailto:chesslingacademy@gmail.com?subject=Chessling%20Academy" class="email-link" style="color: var(--accent); text-decoration: underline;">chesslingacademy<wbr>@<wbr>gmail.com</a><br>
-            <span data-i18n="imprint_phone">Telefon:</span> 08121 9758385
+            <span data-i18n="imprint_phone">Telefon:</span> <span id="contact-phone" class="protected-phone" oncopy="return false;" onselectstart="return false;" oncontextmenu="return false;"></span>
           </p>
 
           <p style="font-size: 0.92rem; color: var(--text-muted); border-top: 1px solid var(--card-border); padding-top: 0.85rem;">
@@ -550,7 +551,7 @@
   <!-- SCRIPT: ANTI-SCRAPE DECODER & TRANSLATION -->
   <script>
     (function() {
-      // 1. DYNAMIC ADDRESS DECODING (Prevents static web crawlers & scrapers from reading the address)
+      // 1. DYNAMIC ADDRESS & PHONE DECODING (Prevents static web crawlers & scrapers from reading contact data)
       const _p = [
         "VG9iaWFzIFNjaHVkeQ==",
         "U2NodWxnYXNzZSAxMg==",
@@ -558,6 +559,7 @@
         "RGV1dHNjaGxhbmQ="
       ];
       const _r = "VG9iaWFzIFNjaHVkeSwgU2NodWxnYXNzZSAxMiwgODU1NzAgTWFya3QgU2Nod2FiZW4sIERldXRzY2hsYW5k";
+      const _ph = "MDgxMjEgOTc1ODM4NQ==";
 
       try {
         const pEl = document.getElementById('provider-address');
@@ -568,11 +570,15 @@
         if (rEl) {
           rEl.textContent = atob(_r);
         }
+        const phEl = document.getElementById('contact-phone');
+        if (phEl) {
+          phEl.textContent = atob(_ph);
+        }
       } catch(e) {}
 
       // 2. COPY & CUT PROTECTION ON PROTECTED ELEMENTS
       ['copy', 'cut', 'dragstart'].forEach(function(evt) {
-        document.querySelectorAll('.protected-address').forEach(function(el) {
+        document.querySelectorAll('.protected-address, .protected-phone').forEach(function(el) {
           el.addEventListener(evt, function(e) {
             e.preventDefault();
           });
