@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Impressum / Legal Notice – ChessLeo Academy</title>
-  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <title>Impressum &amp; Rechtliche Hinweise – ChessLeo Academy</title>
+  <meta name="robots" content="index, follow">
   <meta name="google" content="notranslate">
-  <meta name="description" content="Impressum und rechtliche Angaben gemäß § 5 DDG und § 18 Abs. 2 MStV für ChessLeo Academy.">
+  <meta name="description" content="Impressum, rechtliche Hinweise, Urheberrecht und EU AI Act KI-Transparenzhinweis der ChessLeo Academy.">
 
   <!-- Favicon / Apple Touch Icon -->
   <link rel="icon" type="image/jpeg" href="assets/logo-modern.jpg?v=1.5.0">
   <link rel="apple-touch-icon" href="assets/logo-modern.jpg?v=1.5.0">
 
-  <!-- Google Fonts -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@600;700;800&family=Outfit:wght@600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -29,10 +29,11 @@
       --text-subtle: #64748b;
       --gold: #f59e0b;
       --gold-light: #fbbf24;
-      --gold-glow: rgba(245, 158, 11, 0.25);
       --emerald: #10b981;
       --accent: #38bdf8;
-      --nav-bg: rgba(11, 17, 32, 0.85);
+      --purple: #a855f7;
+      --purple-light: #c084fc;
+      --nav-bg: rgba(11, 17, 32, 0.9);
     }
 
     * {
@@ -42,26 +43,14 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background-color: var(--bg);
       color: var(--text);
-      line-height: 1.65;
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
     }
 
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-      width: 100%;
-    }
-
-    /* --- STICKY NAV --- */
-    .sticky-nav {
+    header {
       position: sticky;
       top: 0;
       z-index: 100;
@@ -69,765 +58,317 @@
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--card-border);
+      padding: 1rem 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
     }
 
     .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0.75rem 1.5rem;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 1rem;
+      align-items: center;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.75rem;
       text-decoration: none;
-      color: var(--text);
-      font-weight: 800;
-      font-size: 1.2rem;
-      letter-spacing: -0.02em;
-      flex-shrink: 0;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.25rem;
     }
 
-    .brand-logo-img {
+    .brand img {
       width: 36px;
       height: 36px;
-      border-radius: 9px;
-      object-fit: cover;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+      border-radius: 8px;
     }
 
     .nav-actions {
       display: flex;
       align-items: center;
       gap: 1rem;
-      flex-shrink: 0;
     }
 
-    .nav-back-link {
+    .back-btn {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 600;
-      padding: 0.45rem 0.9rem;
-      border-radius: 9999px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--card-border);
-      transition: all 0.2s ease;
+      padding: 0.4rem 0.8rem;
+      border-radius: 8px;
+      background: rgba(56, 189, 248, 0.1);
+      transition: background 0.2s;
     }
 
-    .nav-back-link:hover {
-      color: var(--gold);
-      border-color: var(--card-border-hover);
-      background: rgba(245, 158, 11, 0.1);
-      transform: translateX(-2px);
+    .back-btn:hover {
+      background: rgba(56, 189, 248, 0.2);
     }
 
-    /* --- LANGUAGE DROPDOWN --- */
+    /* LANGUAGE DROPDOWN */
     .lang-dropdown {
       position: relative;
     }
 
     .lang-dropdown-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
       background: rgba(255, 255, 255, 0.06);
       border: 1px solid var(--card-border);
       color: var(--text);
-      padding: 0.42rem 0.75rem;
-      border-radius: 9999px;
-      font-size: 0.88rem;
-      font-weight: 700;
+      padding: 0.4rem 0.75rem;
+      border-radius: 8px;
       cursor: pointer;
-      transition: all 0.2s ease;
-      user-select: none;
-    }
-
-    .lang-dropdown-btn:hover {
-      background: rgba(255, 255, 255, 0.1);
-      border-color: var(--card-border-hover);
-      color: var(--gold-light);
-    }
-
-    .lang-current-flag {
-      font-size: 1.05rem;
-      line-height: 1;
-    }
-
-    .lang-current-code {
-      font-size: 0.82rem;
-      letter-spacing: 0.04em;
-      color: var(--text);
-    }
-
-    .dropdown-chevron {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      transition: transform 0.2s ease;
-    }
-
-    .lang-dropdown.open .dropdown-chevron {
-      transform: rotate(180deg);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
     }
 
     .lang-dropdown-menu {
-      position: absolute;
-      top: calc(100% + 0.45rem);
-      right: 0;
-      background: rgba(15, 23, 42, 0.96);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid var(--card-border);
-      border-radius: 0.9rem;
-      padding: 0.35rem;
-      min-width: 145px;
-      box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.05);
       display: none;
-      flex-direction: column;
-      gap: 0.15rem;
+      position: absolute;
+      right: 0;
+      top: calc(100% + 0.5rem);
+      background: var(--bg-surface);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      padding: 0.5rem;
+      min-width: 150px;
       z-index: 200;
     }
 
     .lang-dropdown.open .lang-dropdown-menu {
-      display: flex;
-      animation: dropdownFadeIn 0.16s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    @keyframes dropdownFadeIn {
-      from { opacity: 0; transform: translateY(-4px); }
-      to { opacity: 1; transform: translateY(0); }
+      display: block;
     }
 
     .lang-dropdown-item {
       display: flex;
       align-items: center;
       gap: 0.6rem;
-      background: transparent;
+      width: 100%;
+      padding: 0.5rem 0.75rem;
+      background: none;
       border: none;
       color: var(--text);
-      padding: 0.45rem 0.7rem;
-      border-radius: 0.6rem;
-      font-size: 0.88rem;
-      font-weight: 600;
-      cursor: pointer;
       text-align: left;
-      width: 100%;
-      transition: background 0.15s ease, color 0.15s ease;
+      font-size: 0.9rem;
+      cursor: pointer;
+      border-radius: 6px;
     }
 
-    .lang-dropdown-item:hover {
+    .lang-dropdown-item:hover, .lang-dropdown-item.active {
       background: rgba(245, 158, 11, 0.15);
       color: var(--gold-light);
     }
 
-    .lang-dropdown-item.active {
-      background: rgba(245, 158, 11, 0.22);
-      color: var(--gold);
-      font-weight: 700;
-    }
-
-    .lang-dropdown-item .lang-flag {
-      font-size: 1.1rem;
-      line-height: 1;
-    }
-
-    .lang-dropdown-item .lang-name {
-      font-size: 0.84rem;
-    }
-
-    /* --- MAIN CONTENT --- */
     main {
-      flex: 1;
-      padding: 3rem 0 4rem;
+      padding: 3rem 0 5rem;
     }
 
-    .back-breadcrumb {
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #fff, var(--gold-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subline {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 2rem;
       margin-bottom: 2rem;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.25);
     }
 
-    .back-breadcrumb a {
+    .card h2 {
+      font-size: 1.4rem;
+      color: #fff;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      color: var(--gold-light);
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    .card p, .card li {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      line-height: 1.7;
+    }
+
+    .card ul {
+      margin: 0.75rem 0 0.75rem 1.5rem;
+    }
+
+    .badge {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.92rem;
+      font-size: 0.85rem;
       font-weight: 600;
-      transition: color 0.2s ease;
+      padding: 0.35rem 0.8rem;
+      border-radius: 20px;
+      margin-bottom: 1rem;
     }
 
-    .back-breadcrumb a:hover {
-      color: var(--gold-light);
+    .badge-ai {
+      background: rgba(168, 85, 247, 0.15);
+      border: 1px solid rgba(168, 85, 247, 0.35);
+      color: var(--purple-light);
     }
 
-    .legal-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--card-border);
-      border-radius: 1.5rem;
-      padding: 2.75rem 2.5rem;
-      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
-    }
-
-    .legal-card h1 {
-      font-size: 2rem;
-      font-weight: 800;
-      margin-bottom: 0.85rem;
-      letter-spacing: -0.02em;
-      color: #ffffff;
-      display: flex;
-      align-items: center;
-      gap: 0.65rem;
-    }
-
-    .imprint-subtitle {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      margin-bottom: 1.75rem;
-      line-height: 1.6;
-    }
-
-    .contact-box {
-      background: rgba(0, 0, 0, 0.28);
-      border: 1px solid var(--card-border);
-      border-radius: 1rem;
-      padding: 1.6rem 1.75rem;
-      margin: 1.5rem 0;
-      font-size: 0.98rem;
-      line-height: 1.8;
-      overflow-wrap: break-word;
-      word-break: normal;
-    }
-
-    .email-link {
-      display: inline-block;
-      max-width: 100%;
-      overflow-wrap: anywhere;
-      word-break: break-word;
-    }
-
-    /* --- ANTI-SCRAPE & ANTI-COPY ADDRESS & PHONE PROTECTION --- */
-    .protected-address,
-    .protected-phone {
-      display: inline-block;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-      -webkit-touch-callout: none;
-      cursor: default;
-      color: var(--text);
-    }
-
-    .odr-box {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      margin-top: 1.5rem;
-      line-height: 1.65;
-      border-top: 1px solid var(--card-border);
-      padding-top: 1.25rem;
-    }
-
-    /* --- FOOTER --- */
     footer {
       border-top: 1px solid var(--card-border);
-      padding: 3rem 0 2.5rem;
+      padding: 2.5rem 0;
       text-align: center;
-      color: var(--text-muted);
+      color: var(--text-subtle);
       font-size: 0.9rem;
-      margin-top: auto;
     }
 
     footer a {
       color: var(--text-muted);
       text-decoration: none;
-      margin: 0 0.5rem;
-      transition: color 0.2s ease;
     }
 
     footer a:hover {
       color: var(--gold);
     }
-
-    @media (max-width: 768px) {
-      .legal-card {
-        padding: 1.75rem 1.25rem;
-      }
-      .legal-card h1 {
-        font-size: 1.65rem;
-      }
-      .contact-box {
-        padding: 1.25rem 1rem;
-      }
-      .nav-container {
-        padding: 0.75rem 1rem;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .nav-back-link {
-        display: none;
-      }
-      .brand span {
-        font-size: 1.05rem;
-      }
-    }
   </style>
 </head>
 <body>
 
-  <!-- STICKY HEADER -->
-  <header class="sticky-nav">
-    <div class="nav-container">
+  <header>
+    <div class="container nav-container">
       <a href="index.html" class="brand">
-        <img src="assets/logo-modern.jpg?v=1.5.0" alt="ChessLeo Academy Logo" class="brand-logo-img">
+        <img src="assets/logo-modern.jpg?v=1.5.0" alt="ChessLeo Academy">
         <span>ChessLeo Academy</span>
       </a>
 
       <div class="nav-actions">
-        <a href="index.html" class="nav-back-link" data-i18n="nav_back">← Startseite</a>
+        <a href="index.html" class="back-btn" data-i18n="btn_back">← Zur Startseite</a>
 
-        <!-- LANGUAGE DROPDOWN -->
         <div class="lang-dropdown" id="langDropdown">
           <button class="lang-dropdown-btn" id="langDropdownBtn" type="button" aria-expanded="false" aria-label="Sprache wählen">
-            <span class="lang-current-flag" id="langCurrentFlag">🇩🇪</span>
-            <span class="lang-current-code" id="langCurrentCode">DE</span>
-            <span class="dropdown-chevron">▾</span>
+            <span id="langCurrentFlag">🇩🇪</span>
+            <span id="langCurrentCode">DE</span>
+            <span>▾</span>
           </button>
           <div class="lang-dropdown-menu" id="langDropdownMenu" role="menu">
-            <button class="lang-dropdown-item active" data-lang="de" type="button" role="menuitem">
-              <span class="lang-flag">🇩🇪</span>
-              <span class="lang-name">Deutsch</span>
-            </button>
-            <button class="lang-dropdown-item" data-lang="en" type="button" role="menuitem">
-              <span class="lang-flag">🇬🇧</span>
-              <span class="lang-name">English</span>
-            </button>
-            <button class="lang-dropdown-item" data-lang="es" type="button" role="menuitem">
-              <span class="lang-flag">🇪🇸</span>
-              <span class="lang-name">Español</span>
-            </button>
-            <button class="lang-dropdown-item" data-lang="fr" type="button" role="menuitem">
-              <span class="lang-flag">🇫🇷</span>
-              <span class="lang-name">Français</span>
-            </button>
-            <button class="lang-dropdown-item" data-lang="tr" type="button" role="menuitem">
-              <span class="lang-flag">🇹🇷</span>
-              <span class="lang-name">Türkçe</span>
-            </button>
-            <button class="lang-dropdown-item" data-lang="zh" type="button" role="menuitem">
-              <span class="lang-flag">🇨🇳</span>
-              <span class="lang-name">简体中文</span>
-            </button>
+            <button class="lang-dropdown-item active" data-lang="de" type="button"><span>🇩🇪</span> Deutsch</button>
+            <button class="lang-dropdown-item" data-lang="en" type="button"><span>🇬🇧</span> English</button>
+            <button class="lang-dropdown-item" data-lang="es" type="button"><span>🇪🇸</span> Español</button>
+            <button class="lang-dropdown-item" data-lang="fr" type="button"><span>🇫🇷</span> Français</button>
+            <button class="lang-dropdown-item" data-lang="tr" type="button"><span>🇹🇷</span> Türkçe</button>
+            <button class="lang-dropdown-item" data-lang="zh" type="button"><span>🇨🇳</span> 简体中文</button>
           </div>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- MAIN CONTENT -->
   <main>
     <div class="container">
-      
-      <div class="back-breadcrumb">
-        <a href="index.html" data-i18n="nav_back_long">← Zurück zur Startseite</a>
-      </div>
+      <h1 data-i18n="page_title">Impressum &amp; Rechtliche Hinweise</h1>
+      <p class="subline" data-i18n="page_subline">Transparenz, Anbieterkennzeichnung und rechtliche Rahmenbedingungen der ChessLeo Academy.</p>
 
-      <article class="legal-card">
-        <h1 data-i18n="imprint_heading">⚖️ Impressum / Legal Notice</h1>
-        <p class="imprint-subtitle" data-i18n="imprint_law">
-          Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG) und § 18 Abs. 2 Medienstaatsvertrag (MStV):
+      <!-- 1. IMPRESSUM (§ 5 DDG) -->
+      <section class="card" id="imprint">
+        <h2 data-i18n="imprint_heading">⚖️ Impressum</h2>
+        <p><strong data-i18n="imprint_law">Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG) und § 18 Abs. 2 Medienstaatsvertrag (MStV):</strong></p>
+        <p style="margin-top: 0.8rem;">
+          <strong>Tobias Schudy</strong><br>
+          Schulgasse 12<br>
+          85570 Markt Schwaben<br>
+          Deutschland
         </p>
 
-        <div class="contact-box">
-          <p style="margin-bottom: 1rem;">
-            <strong><span data-i18n="imprint_provider">Dienstanbieter &amp; Entwickler:</span></strong><br>
-            <span id="provider-address" class="protected-address" oncopy="return false;" onselectstart="return false;" oncontextmenu="return false;"></span>
-          </p>
-
-          <p style="margin-bottom: 1rem;">
-            <strong><span data-i18n="imprint_contact">Kontakt:</span></strong><br>
-            E-Mail: <a href="mailto:chessleoacademy@gmail.com?subject=ChessLeo%20Academy" class="email-link" style="color: var(--accent); text-decoration: underline;">chessleoacademy<wbr>@<wbr>gmail.com</a><br>
-            <span data-i18n="imprint_phone">Telefon:</span> <span id="contact-phone" class="protected-phone" oncopy="return false;" onselectstart="return false;" oncontextmenu="return false;"></span>
-          </p>
-
-          <p style="font-size: 0.92rem; color: var(--text-muted); border-top: 1px solid var(--card-border); padding-top: 0.85rem;">
-            <strong><span data-i18n="imprint_resp">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:</span></strong><br>
-            <span id="resp-address" class="protected-address" oncopy="return false;" onselectstart="return false;" oncontextmenu="return false;"></span>
-          </p>
-        </div>
-
-        <div class="odr-box" data-i18n="imprint_odr">
-          Plattform der EU-Kommission zur Online-Streitbeilegung: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer" style="color: var(--accent);">https://ec.europa.eu/consumers/odr</a>. Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
-        </div>
-      </article>
-
-      <article class="legal-card" style="margin-top: 2rem;" id="terms">
-        <h2 style="font-size: 1.6rem; font-weight: 800; margin-bottom: 0.85rem; color: #ffffff; display: flex; align-items: center; gap: 0.65rem;" data-i18n="legal_terms_heading">
-          📜 Rechtliche Hinweise &amp; Haftungsausschluss
-        </h2>
-        <p class="imprint-subtitle" data-i18n="legal_terms_sub">
-          Rechtliche Rahmenbedingungen zur Nutzung der Anwendung ChessLeo Academy und didaktischen Inhalten:
+        <h3 data-i18n="contact_heading">Kontakt:</h3>
+        <p>
+          <strong>E-Mail:</strong> <a href="mailto:chessleoacademy@gmail.com" style="color: var(--accent);">chessleoacademy@gmail.com</a><br>
+          <strong>Telefon:</strong> 08121 9758385
         </p>
 
-        <div style="display: flex; flex-direction: column; gap: 1.25rem;">
-          <div class="contact-box" style="margin: 0;">
-            <h3 style="font-size: 1.1rem; color: var(--gold-light); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-              <span>⚖️</span> <span data-i18n="legal_sec1_title">1. Geltendes Recht</span>
-            </h3>
-            <p data-i18n="legal_sec1_text" style="color: var(--text); font-size: 0.95rem; line-height: 1.7;">
-              Für sämtliche Rechtsbeziehungen aus der Nutzung dieser App gilt ausschließlich das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts (CISG), soweit dem keine zwingenden verbraucherschutzrechtlichen Bestimmungen entgegenstehen.
-            </p>
-          </div>
+        <h3 data-i18n="resp_heading">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:</h3>
+        <p>
+          Tobias Schudy<br>
+          Schulgasse 12, 85570 Markt Schwaben
+        </p>
 
-          <div class="contact-box" style="margin: 0;">
-            <h3 style="font-size: 1.1rem; color: var(--gold-light); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-              <span>🎓</span> <span data-i18n="legal_sec2_title">2. Pädagogischer Zweck &amp; Spielinhalte</span>
-            </h3>
-            <p data-i18n="legal_sec2_text" style="color: var(--text); font-size: 0.95rem; line-height: 1.7;">
-              ChessLeo Academy dient didaktischen, pädagogischen und unterhaltenden Zwecken. Sämtliche Schachanalysen, Bewertungen, Zugempfehlungen und Spielhinweise werden computergestützt generiert. Sie stellen keine verbindlichen Aussagen über intellektuelle oder sportliche Fähigkeiten dar.
-            </p>
-          </div>
+        <h3 data-i18n="odr_heading">Streitbeilegung:</h3>
+        <p data-i18n="odr_text">
+          Plattform der EU-Kommission zur Online-Streitbeilegung: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer" style="color: var(--accent);">https://ec.europa.eu/consumers/odr</a>. Wir sind weder bereit noch verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+        </p>
+      </section>
 
-          <div class="contact-box" style="margin: 0;">
-            <h3 style="font-size: 1.1rem; color: var(--gold-light); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-              <span>🛡️</span> <span data-i18n="legal_sec3_title">3. Haftungsbeschränkung</span>
-            </h3>
-            <p data-i18n="legal_sec3_text" style="color: var(--text); font-size: 0.95rem; line-height: 1.7;">
-              Die Inhalte und Softwarefunktionen dieser Anwendung wurden mit größter Sorgfalt entwickelt. Eine Haftung für Sach- und Vermögensschäden, technische Störungen, fehlerhafte Speicherstände oder Datenverluste ist bei leichter Fahrlässigkeit ausgeschlossen, sofern keine wesentlichen Vertragspflichten verletzt wurden. Die Haftung für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit sowie nach dem Produkthaftungsgesetz bleibt unberührt.
-            </p>
-          </div>
-
-          <div class="contact-box" style="margin: 0;">
-            <h3 style="font-size: 1.1rem; color: var(--gold-light); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-              <span>©️</span> <span data-i18n="legal_sec4_title">4. Urheberrecht &amp; Schutzrechte</span>
-            </h3>
-            <p data-i18n="legal_sec4_text" style="color: var(--text); font-size: 0.95rem; line-height: 1.7;">
-              Alle in der App enthaltenen Grafiken, Figuren-Designs, Sounds, Charaktere (wie Leo, Lina, Opa Theo, Titan) und Texte sind urheberrechtlich geschützt. Die Vervielfältigung oder Weiterverwendung außerhalb der App bedarf der ausdrücklichen schriftlichen Zustimmung des Anbieters.
-            </p>
-          </div>
-
-          <div class="contact-box" style="margin: 0;">
-            <h3 style="font-size: 1.1rem; color: var(--gold-light); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-              <span>🔒</span> <span data-i18n="legal_sec5_title">5. Datenschutz &amp; Schutz von Kinderdaten</span>
-            </h3>
-            <p data-i18n="legal_sec5_text" style="color: var(--text); font-size: 0.95rem; line-height: 1.7;">
-              ChessLeo Academy betreibt keine eigenen Server und speichert keine personenbezogenen Daten. Für die Eröffnungs-Schule und „menschliche“ Computergegner kann die App optional lichess.org kontaktieren; dabei werden ausschließlich anonyme Brettstellungen übertragen, niemals personenbezogene Daten. Es werden zu keinem Zeitpunkt personenbezogene Daten von Kindern oder Familien erhoben, weitergegeben, verkauft oder für Werbezwecke genutzt. Die Anwendung enthält keinerlei Werbe-IDs, kein Tracking und keine Werbe-Netzwerke von Drittanbietern. Beim lokalen Mehrspielermodus werden ausschließlich Spielzüge und ein Anzeigename direkt an Geräte in der Nähe übertragen; es werden keine Daten auf externen Servern gespeichert. Beim optionalen Online-Spiel nutzt die App Apple Game Center; zum Schutz von Kindern kann nur gegen bestehende Game Center Freunde gespielt werden und Freundschaftsanfragen erfolgen ausschließlich außerhalb der App unter elterlicher Kontrolle (Bildschirmzeit).
-            </p>
-          </div>
+      <!-- 2. KI-TRANSPARENZHINWEIS (EU AI ACT ART. 50) -->
+      <section class="card" id="ai-transparency" style="border-color: rgba(168, 85, 247, 0.35);">
+        <h2 data-i18n="ai_heading">🤖 KI-Transparenzhinweis (EU AI Act)</h2>
+        <div class="badge badge-ai">
+          <span>✨</span> <span data-i18n="ai_badge">EU AI Act • Art. 50 Transparenz</span>
         </div>
-      </article>
+        <p data-i18n="ai_text" style="font-size: 1.05rem; line-height: 1.7; color: var(--text);">
+          Grafische Charakter-Illustrationen sowie ausgewählte thematische Figuren-Sets und Brett-Designs wurden mit Unterstützung generativer KI-Werkzeuge erstellt und anschließend von menschlichen Gestaltern kuratiert und finalisiert.
+        </p>
+      </section>
 
+      <!-- 3. RECHTLICHE HINWEISE & BEDINGUNGEN -->
+      <section class="card" id="terms">
+        <h2 data-i18n="terms_heading">📜 Rechtliche Hinweise &amp; Nutzungsrahmen</h2>
+
+        <h3 data-i18n="terms_law_title">1. Geltendes Recht</h3>
+        <p data-i18n="terms_law_desc">Für sämtliche Rechtsbeziehungen aus der Nutzung dieser App und Website gilt ausschließlich das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts (CISG), soweit dem keine zwingenden verbraucherschutzrechtlichen Bestimmungen entgegenstehen.</p>
+
+        <h3 data-i18n="terms_edu_title">2. Pädagogischer Zweck &amp; Spielinhalte</h3>
+        <p data-i18n="terms_edu_desc">ChessLeo Academy dient didaktischen, pädagogischen und unterhaltenden Zwecken. Sämtliche Schachanalysen, Bewertungen, Zugempfehlungen und Spielhinweise werden computergestützt generiert. Sie stellen keine verbindlichen Aussagen über intellektuelle oder sportliche Fähigkeiten dar.</p>
+
+        <h3 data-i18n="terms_liab_title">3. Haftungsbeschränkung</h3>
+        <p data-i18n="terms_liab_desc">Die Inhalte und Softwarefunktionen dieser Anwendung wurden mit größter Sorgfalt entwickelt. Eine Haftung für Sach- und Vermögensschäden, technische Störungen, fehlerhafte Speicherstände oder Datenverluste ist bei leichter Fahrlässigkeit ausgeschlossen, sofern keine wesentlichen Vertragspflichten verletzt wurden.</p>
+
+        <h3 data-i18n="terms_copy_title">4. Urheberrecht &amp; Schutzrechte</h3>
+        <p data-i18n="terms_copy_desc">Alle in der App und auf dieser Website enthaltenen Grafiken, Figuren-Designs, Sounds, Charaktere (wie Leo, Lina, Opa Theo, Titan) und Texte sind urheberrechtlich geschützt. Die Vervielfältigung oder Weiterverwendung außerhalb der App bedarf der ausdrücklichen schriftlichen Zustimmung des Anbieters.</p>
+      </section>
     </div>
   </main>
 
-  <!-- FOOTER -->
   <footer>
     <div class="container">
-      <p>© 2026 Tobias Schudy. Alle Rechte vorbehalten.</p>
-      <p style="margin: 0.6rem 0;">
-        <a href="index.html#features" data-i18n="nav_features">Features</a> •
-        <a href="index.html#boutique" data-i18n="nav_pieces">Schachfiguren</a> •
-        <a href="index.html#characters" data-i18n="nav_characters">Gegner</a> •
-        <a href="index.html#curriculum" data-i18n="nav_curriculum">Lehrplan</a> •
-        <a href="index.html#privacy" data-i18n="nav_privacy">Datenschutz</a> •
-        <a href="index.html#support" data-i18n="nav_support">Support</a> •
-        <a href="impressum.html" data-i18n="nav_imprint">Impressum</a> •
-        <a href="#terms" data-i18n="nav_terms">Rechtliches &amp; Haftung</a>
-      </p>
-      <p style="font-size: 0.8rem; color: var(--text-subtle); margin-top: 0.5rem;" data-i18n="footer_tagline">
-        ChessLeo Academy • Entwickelt mit Liebe für junge Schachlegenden
+      <p>© 2026 Tobias Schudy • Alle Rechte vorbehalten.</p>
+      <p style="margin-top: 0.6rem;">
+        <a href="index.html">Startseite</a> •
+        <a href="index.html#features">Features</a> •
+        <a href="index.html#privacy">Datenschutz</a> •
+        <a href="index.html#support">Support</a> •
+        <a href="#imprint">Impressum</a>
       </p>
     </div>
   </footer>
 
-  <!-- SCRIPT: ANTI-SCRAPE DECODER & TRANSLATION -->
   <script>
     (function() {
-      // 1. DYNAMIC ADDRESS & PHONE DECODING (Prevents static web crawlers & scrapers from reading contact data)
-      const _p = [
-        "VG9iaWFzIFNjaHVkeQ==",
-        "U2NodWxnYXNzZSAxMg==",
-        "ODU1NzAgTWFya3QgU2Nod2FiZW4=",
-        "RGV1dHNjaGxhbmQ="
-      ];
-      const _r = "VG9iaWFzIFNjaHVkeSwgU2NodWxnYXNzZSAxMiwgODU1NzAgTWFya3QgU2Nod2FiZW4sIERldXRzY2hsYW5k";
-      const _ph = "MDgxMjEgOTc1ODM4NQ==";
-
-      try {
-        const pEl = document.getElementById('provider-address');
-        if (pEl) {
-          pEl.innerHTML = _p.map(s => atob(s)).join('<br>');
-        }
-        const rEl = document.getElementById('resp-address');
-        if (rEl) {
-          rEl.textContent = atob(_r);
-        }
-        const phEl = document.getElementById('contact-phone');
-        if (phEl) {
-          phEl.textContent = atob(_ph);
-        }
-      } catch(e) {}
-
-      // 2. COPY & CUT PROTECTION ON PROTECTED ELEMENTS
-      ['copy', 'cut', 'dragstart'].forEach(function(evt) {
-        document.querySelectorAll('.protected-address, .protected-phone').forEach(function(el) {
-          el.addEventListener(evt, function(e) {
-            e.preventDefault();
-          });
-        });
-      });
-
-      // 3. I18N DICTIONARY
-      const i18n = {
-        "nav_back": {
-          "de": "← Startseite",
-          "en": "← Home",
-          "es": "← Inicio",
-          "fr": "← Accueil",
-          "tr": "← Ana Sayfa",
-          "zh": "← 首页"
-        },
-        "nav_back_long": {
-          "de": "← Zurück zur Startseite",
-          "en": "← Back to Homepage",
-          "es": "← Volver a la Página Principal",
-          "fr": "← Retour à la page d’accueil",
-          "tr": "← Ana Sayfaya Dön",
-          "zh": "← 返回首页"
-        },
-        "nav_features": {
-          "de": "Features",
-          "en": "Features",
-          "es": "Características",
-          "fr": "Fonctionnalités",
-          "tr": "Özellikler",
-          "zh": "特色功能"
-        },
-        "nav_pieces": {
-          "de": "Schachfiguren",
-          "en": "Chess Sets",
-          "es": "Juegos de Piezas",
-          "fr": "Jeux de Pièces",
-          "tr": "Taş Setleri",
-          "zh": "精美棋子"
-        },
-        "nav_characters": {
-          "de": "Gegner",
-          "en": "Opponents",
-          "es": "Oponentes",
-          "fr": "Adversaires",
-          "tr": "Rakipler",
-          "zh": "陪练对手"
-        },
-        "nav_curriculum": {
-          "de": "Lehrplan",
-          "en": "Curriculum",
-          "es": "Plan de Estudio",
-          "fr": "Programme",
-          "tr": "Müfredat",
-          "zh": "教学大纲"
-        },
-        "nav_privacy": {
-          "de": "Datenschutz",
-          "en": "Privacy Policy",
-          "es": "Privacidad",
-          "fr": "Confidentialité",
-          "tr": "Gizlilik",
-          "zh": "隐私政策"
-        },
-        "nav_support": {
-          "de": "Support",
-          "en": "Support",
-          "es": "Soporte",
-          "fr": "Assistance",
-          "tr": "Destek",
-          "zh": "技术支持"
-        },
-        "nav_terms": {
-          "de": "Rechtliches &amp; Haftung",
-          "en": "Legal &amp; Terms",
-          "es": "Aviso Legal",
-          "fr": "Mentions Légales",
-          "tr": "Yasal Bilgiler",
-          "zh": "法律与免责声明"
-        },
-        "nav_imprint": {
-          "de": "Impressum",
-          "en": "Legal Notice",
-          "es": "Aviso Legal",
-          "fr": "Mentions Légales",
-          "tr": "Künye",
-          "zh": "法律信息"
-        },
-        "imprint_heading": {
-          "de": "⚖️ Impressum / Legal Notice",
-          "en": "⚖️ Legal Notice / Imprint",
-          "es": "⚖️ Aviso Legal / Impressum",
-          "fr": "⚖️ Mentions Légales",
-          "tr": "⚖️ Künye / Yasal Bilgiler",
-          "zh": "⚖️ 法律声明与主办方信息 (Legal Notice)"
-        },
-        "imprint_law": {
-          "de": "Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG) und § 18 Abs. 2 Medienstaatsvertrag (MStV):",
-          "en": "Information pursuant to § 5 German Digital Services Act (DDG) and § 18 (2) State Media Treaty (MStV):",
-          "es": "Información conforme al § 5 de la Ley alemana de Servicios Digitales (DDG) y § 18 ap. 2 del Tratado de Medios (MStV):",
-          "fr": "Informations conformément au § 5 de la loi allemande sur les services numériques (DDG) et au § 18 al. 2 du traité d’État sur les médias (MStV) :",
-          "tr": "Alman Dijital Hizmetler Yasası (§ 5 DDG) ve Eyalet Medya Sözleşmesi (§ 18 Par. 2 MStV) uyarınca bilgiler:",
-          "zh": "依据德国数字服务法案 (§ 5 DDG) 及国家媒体公约 (§ 18 Abs. 2 MStV) 声明之主办方信息："
-        },
-        "imprint_provider": {
-          "de": "Dienstanbieter &amp; Entwickler:",
-          "en": "Service Provider &amp; Developer:",
-          "es": "Proveedor de Servicios y Desarrollador:",
-          "fr": "Prestataire de Services &amp; Développeur :",
-          "tr": "Hizmet Sağlayıcı ve Geliştirici:",
-          "zh": "服务提供者兼独立开发者："
-        },
-        "imprint_contact": {
-          "de": "Kontakt:",
-          "en": "Contact:",
-          "es": "Contacto:",
-          "fr": "Contact :",
-          "tr": "İletişim:",
-          "zh": "联系方式："
-        },
-        "imprint_phone": {
-          "de": "Telefon:",
-          "en": "Phone:",
-          "es": "Teléfono:",
-          "fr": "Téléphone :",
-          "tr": "Telefon:",
-          "zh": "电话号码："
-        },
-        "imprint_resp": {
-          "de": "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:",
-          "en": "Responsible for content according to § 18 (2) MStV:",
-          "es": "Responsable del contenido según § 18 ap. 2 MStV:",
-          "fr": "Responsable du contenu selon le § 18 al. 2 MStV :",
-          "tr": "§ 18 Par. 2 MStV uyarınca içerikten sorumlu kişi:",
-          "zh": "内容版权与合规负责人 (§ 18 Abs. 2 MStV)："
-        },
-                "legal_terms_heading": {
-          "de": "📜 Rechtliche Hinweise &amp; Haftungsausschluss",
-          "en": "📜 Legal Notice &amp; Disclaimer",
-          "es": "📜 Aviso Legal y Exención de Responsabilidad",
-          "fr": "📜 Mentions Légales &amp; Clause de Non-Responsabilité",
-          "tr": "📜 Yasal Uyarı ve Sorumluluk Reddi",
-          "zh": "📜 法律声明与免责条款"
-        },
-        "legal_terms_sub": {
-          "de": "Rechtliche Rahmenbedingungen zur Nutzung der Anwendung ChessLeo Academy und didaktischen Inhalten:",
-          "en": "Legal terms governing the use of the ChessLeo Academy application and educational content:",
-          "es": "Términos legales que rigen el uso de la aplicación ChessLeo Academy y los contenidos didácticos:",
-          "fr": "Conditions juridiques régissant l’utilisation de l’application ChessLeo Academy et de ses contenus didactiques :",
-          "tr": "ChessLeo Academy uygulamasının ve eğitsel içeriklerinin kullanımına ilişkin yasal koşullar:",
-          "zh": "关于使用 ChessLeo Academy 应用程序及相关教学内容的法律条款与免责声明："
-        },
-        "legal_sec1_title": {
-          "de": "1. Geltendes Recht",
-          "en": "1. Applicable Law",
-          "es": "1. Legislación Aplicable",
-          "fr": "1. Droit Applicable",
-          "tr": "1. Geçerli Hukuk",
-          "zh": "1. 适用法律"
-        },
-        "legal_sec1_text": {
-          "de": "Für sämtliche Rechtsbeziehungen aus der Nutzung dieser App gilt ausschließlich das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts (CISG), soweit dem keine zwingenden verbraucherschutzrechtlichen Bestimmungen entgegenstehen.",
-          "en": "All legal relations arising from the use of this app are governed exclusively by the laws of the Federal Republic of Germany, excluding the UN Convention on Contracts for the International Sale of Goods (CISG), unless mandatory consumer protection regulations provide otherwise.",
-          "es": "Todas las relaciones jurídicas derivadas del uso de esta aplicación se rigen exclusivamente por las leyes de la República Federal de Alemania, con exclusión de la Convención de las Naciones Unidas sobre los Contratos de Compraventa Internacional de Mercaderías (CISG), salvo que disposiciones imperativas de protección al consumidor establezcan lo contrario.",
-          "fr": "Toutes les relations juridiques découlant de l’utilisation de cette application sont exclusivement régies par le droit de la République fédérale d’Allemagne, à l’exclusion de la Convention des Nations Unies sur les contrats de vente internationale de marchandises (CVIM), sauf dispositions impératives contraires relatives à la protection des consommateurs.",
-          "tr": "Bu uygulamanın kullanımından doğan tüm hukuki ilişkiler, zorunlu tüketiciyi koruma hükümleri aksini gerektirmedikçe, BM Uluslararası Mal Satımına İlişkin Sözleşmeler Hakkında Antlaşma (CISG) hariç olmak üzere, münhasıran Almanya Federal Cumhuriyeti hukukuna tabidir.",
-          "zh": "因使用本应用产生的所有法律关系均仅受德意志联邦共和国法律管辖，并排除《联合国国际货物销售合同公约》（CISG）的适用，但强行性消费者保护法律法规另有规定的除外。"
-        },
-        "legal_sec2_title": {
-          "de": "2. Pädagogischer Zweck &amp; Spielinhalte",
-          "en": "2. Educational Purpose &amp; Game Content",
-          "es": "2. Finalidad Pedagógica y Contenidos del Juego",
-          "fr": "2. Finalité Pédagogique &amp; Contenus du Jeu",
-          "tr": "2. Eğitici Amaç ve Oyun İçeriği",
-          "zh": "2. 教学目的与游戏内容"
-        },
-        "legal_sec2_text": {
-          "de": "ChessLeo Academy dient didaktischen, pädagogischen und unterhaltenden Zwecken. Sämtliche Schachanalysen, Bewertungen, Zugempfehlungen und Spielhinweise werden computergestützt generiert. Sie stellen keine verbindlichen Aussagen über intellektuelle oder sportliche Fähigkeiten dar.",
-          "en": "ChessLeo Academy serves educational, pedagogical, and entertaining purposes. All chess analyses, evaluations, move recommendations, and gameplay hints are generated by computer algorithms. They do not constitute binding assessments of intellectual or athletic abilities.",
-          "es": "ChessLeo Academy tiene fines didácticos, pedagógicos y de entretenimiento. Todos los análisis de ajedrez, evaluaciones, recomendaciones de jugadas y pistas de juego se generan por ordenador. No constituyen valoraciones vinculantes sobre capacidades intelectuales o deportivas.",
-          "fr": "ChessLeo Academy est destinée à des fins didactiques, pédagogiques et de divertissement. Toutes les analyses d’échecs, évaluations, recommandations de coups et indices de jeu sont générés par ordinateur. Ils ne constituent pas des évaluations contraignantes des capacités intellectuelles ou sportives.",
-          "tr": "ChessLeo Academy eğitici, pedagojik ve eğlence amaçlarına hizmet eder. Tüm satranç analizleri, değerlendirmeleri, hamle önerileri ve oyun ipuçları bilgisayar destekli olarak oluşturulur. Zihinsel veya sportif yetenekler hakkında bağlayıcı değerlendirmeler teşkil etmez.",
-          "zh": "ChessLeo Academy 旨在提供教学、启智与娱乐体验。所有的国际象棋局势分析、评估、走法推荐与对局提示均由计算机辅助生成，不构成对任何智力或竞技运动能力的具有约束力的定论。"
-        },
-        "legal_sec3_title": {
-          "de": "3. Haftungsbeschränkung",
-          "en": "3. Limitation of Liability",
-          "es": "3. Limitación de Responsabilidad",
-          "fr": "3. Limitation de Responsabilité",
-          "tr": "3. Sorumluluğun Sınırlandırılması",
-          "zh": "3. 责任限制"
-        },
-        "legal_sec3_text": {
-          "de": "Die Inhalte und Softwarefunktionen dieser Anwendung wurden mit größter Sorgfalt entwickelt. Eine Haftung für Sach- und Vermögensschäden, technische Störungen, fehlerhafte Speicherstände oder Datenverluste ist bei leichter Fahrlässigkeit ausgeschlossen, sofern keine wesentlichen Vertragspflichten verletzt wurden. Die Haftung für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit sowie nach dem Produkthaftungsgesetz bleibt unberührt.",
-          "en": "The content and software features of this application were developed with the utmost care. Liability for material or financial damage, technical malfunctions, corrupted save data, or data loss is excluded in cases of slight negligence, provided no essential contractual obligations have been breached. Liability for damages arising from injury to life, limb, or health as well as under the Product Liability Act remains unaffected.",
-          "es": "Los contenidos y las funciones de software de esta aplicación han sido desarrollados con el máximo esmero. Se excluye la responsabilidad por daños materiales o patrimoniales, fallos técnicos, partidas guardadas erróneas o pérdidas de datos en caso de negligencia leve, siempre que no se hayan vulnerado obligaciones contractuales esenciales. La responsabilidad por daños derivados de lesiones a la vida, al cuerpo o a la salud, así como en virtud de la Ley de Responsabilidad por Productos, permanece inalterada.",
-          "fr": "Les contenus et fonctionnalités de cette application ont été élaborés avec le plus grand soin. La responsabilité pour les dommages matériels ou pécuniaires, les pannes techniques, les sauvegardes défectueuses ou les pertes de données est exclue en cas de négligence simple, pour autant qu’aucune obligation contractuelle essentielle n’ait été enfreinte. La responsabilité pour les dommages résultant d’une atteinte à la vie, au corps ou à la santé ainsi qu’en vertu de la loi sur la responsabilité du fait des produits défectueux demeure inchangée.",
-          "tr": "Bu uygulamanın içerikleri ve yazılım işlevleri azami özenle geliştirilmiştir. Temel sözleşme yükümlülükleri ihlal edilmediği sürece, hafif ihmal durumunda maddi ve mali hasarlar, teknik aksaklıklar, hatalı kayıt verileri veya veri kayıpları için sorumluluk kabul edilmez. Yaşama, bedene veya sağlığa verilen zararlardan doğan sorumluluklar ile Ürün Sorumluluğu Yasası kapsamındaki sorumluluklar saklıdır.",
-          "zh": "本应用的内容与软件功能均经过细致严谨的开发。在未违反主要合同义务的前提下，因轻微过失导致的财产和经济损失、技术故障、存档错误或数据丢失概不承担法律责任。因生命、身体或健康损害以及根据《产品责任法》应承担的法定责任不受影响。"
-        },
-        "legal_sec4_title": {
-          "de": "4. Urheberrecht &amp; Schutzrechte",
-          "en": "4. Copyright &amp; Intellectual Property",
-          "es": "4. Propiedad Intelectual y Derechos de Autor",
-          "fr": "4. Droits d’Auteur &amp; Propriété Intellectuelle",
-          "tr": "4. Telif Hakkı ve Fikri Mülkiyet",
-          "zh": "4. 版权与知识产权"
-        },
-        "legal_sec4_text": {
-          "de": "Alle in der App enthaltenen Grafiken, Figuren-Designs, Sounds, Charaktere (wie Leo, Lina, Opa Theo, Titan) und Texte sind urheberrechtlich geschützt. Die Vervielfältigung oder Weiterverwendung außerhalb der App bedarf der ausdrücklichen schriftlichen Zustimmung des Anbieters.",
-          "en": "All graphics, chess piece designs, sounds, characters (such as Leo, Lina, Grandpa Theo, Titan), and texts contained in the app are protected by copyright. Reproduction or reuse outside the app requires the express written consent of the provider.",
-          "es": "Todos los gráficos, diseños de piezas, sonidos, personajes (como Leo, Lina, Abuelo Theo, Titan) y textos incluidos en la aplicación están protegidos por derechos de autor. Su reproducción o reutilización fuera de la app requiere el consentimiento expreso por escrito del proveedor.",
-          "fr": "Tous les graphismes, designs de pièces, sons, personnages (tels que Léo, Lina, Papi Théo, Titan) et textes contenus dans l’application sont protégés par le droit d’auteur. Toute reproduction ou réutilisation en dehors de l’application nécessite le consentement écrit exprès de l’éditeur.",
-          "tr": "Uygulamada yer alan tüm grafikler, satranç taşı tasarımları, sesler, karakterler (Leo, Lina, Dede Theo, Titan gibi) ve metinler telif hakkı koruması altındadır. Uygulama dışında çoğaltılması veya yeniden kullanılması, sağlayıcının açık yazılı onayını gerektirir.",
-          "zh": "本应用内包含的所有图形、棋子外观设计、音效、角色形象（如 Leo、Lina、Theo 爷爷、Titan）及文本内容均受版权与知识产权法保护。未经权利人明确书面许可，严禁在应用外部复制或再次使用。"
-        },
-        "legal_sec5_title": {
-          "de": "5. Datenschutz &amp; Schutz von Kinderdaten",
-          "en": "5. Privacy &amp; Protection of Children’s Data",
-          "es": "5. Privacidad y Protección de Datos de Menores",
-          "fr": "5. Confidentialité &amp; Protection des Données d’Enfants",
-          "tr": "5. Gizlilik ve Çocuk Verilerinin Korunması",
-          "zh": "5. 隐私保护与儿童数据安全"
-        },
-        "legal_sec5_text": {
-          "de": "ChessLeo Academy betreibt keine eigenen Server und speichert keine personenbezogenen Daten. Für die Eröffnungs-Schule und „menschliche“ Computergegner kann die App optional lichess.org kontaktieren; dabei werden ausschließlich anonyme Brettstellungen übertragen, niemals personenbezogene Daten. Es werden zu keinem Zeitpunkt personenbezogene Daten von Kindern oder Familien erhoben, weitergegeben, verkauft oder für Werbezwecke genutzt. Die Anwendung enthält keinerlei Werbe-IDs, kein Tracking und keine Werbe-Netzwerke von Drittanbietern. Beim lokalen Mehrspielermodus werden ausschließlich Spielzüge und ein Anzeigename direkt an Geräte in der Nähe übertragen; es werden keine Daten auf externen Servern gespeichert. Beim optionalen Online-Spiel nutzt die App Apple Game Center; zum Schutz von Kindern kann nur gegen bestehende Game Center Freunde gespielt werden und Freundschaftsanfragen erfolgen ausschließlich außerhalb der App unter elterlicher Kontrolle (Bildschirmzeit).",
-          "en": "ChessLeo Academy runs no servers of its own and stores no personal data. For the opening school and 'human-like' computer opponents, the app can optionally contact lichess.org; only anonymous board positions are transmitted, never personal data. At no time is any personal data from children or families collected, transferred, sold, or used for advertising purposes. The application contains zero advertising IDs, zero tracking, and zero third-party advertising networks. Local multiplayer only transmits chess moves and a chosen display name directly to nearby devices; no data is ever stored on external servers. For optional online play, the app uses Apple Game Center; to protect children, matches can only be played against already established Game Center friends and friend requests take place strictly outside the app under parental controls (Screen Time).",
-          "es": "ChessLeo Academy no dispone de servidores propios ni almacena datos personales. Para la escuela de aperturas y los oponentes 'humanos', la app puede contactar opcionalmente con lichess.org; solo se transmiten posiciones anónimas del tablero, nunca datos personales. En ningún momento se recopilan, transfieren, venden ni utilizan con fines publicitarios datos personales de menores o familias. La aplicación no contiene identificadores de publicidad, herramientas de rastreo ni redes publicitarias de terceros. El modo multijugador local solo transmite jugadas de ajedrez y un nombre visible directamente a dispositivos cercanos; no se almacena ningún dato en servidores externos. Para el juego online opcional, la app utiliza Apple Game Center; para proteger a los menores, solo se puede jugar contra amigos confirmados en Game Center y las solicitudes de amistad se realizan exclusivamente fuera de la app bajo control parental (Tiempo de uso).",
-          "fr": "ChessLeo Academy n’exploite aucun serveur propre et ne stocke aucune donnée personnelle. Pour l’école des ouvertures et les adversaires « humains », l’application peut contacter lichess.org de manière facultative ; seules des positions d’échiquier anonymes sont transmises, jamais de données personnelles. À aucun moment les données personnelles d’enfants ou de familles ne sont collectées, transmises, vendues ou utilisées à des fins publicitaires. L’application ne contient aucun identifiant publicitaire, aucun traçage et aucun réseau publicitaire tiers. Le mode multijoueur local transmet uniquement les coups d'échecs et un pseudonyme directement aux appareils situés à proximité ; aucune donnée n'est stockée sur des serveurs externes. Pour le jeu en ligne facultatif, l’application utilise Apple Game Center ; afin de protéger les enfants, les parties ne peuvent être disputées que contre des amis existants sur Game Center et les demandes d’ami se font exclusivement à l’extérieur sous contrôle parental (Temps d’écran).",
-          "tr": "ChessLeo Academy kendi sunucularını çalıştırmaz ve kişisel verileri saklamaz. Açılış okulu ve 'insan benzeri' bilgisayar rakipleri için uygulama isteğe bağlı olarak lichess.org ile bağlantı kurabilir; yalnızca anonim tahta konumları aktarılır, asla kişisel veriler aktarılmaz. Çocukların veya ailelerin kişisel verileri hiçbir zaman toplanmaz, aktarılmaz, satılmaz veya reklam amaçlı kullanılmaz. Uygulama hiçbir reklam kimliği, izleme aracı veya üçüncü taraf reklam ağı içermez. Yerel çok oyunculu mod, satranç hamlelerini ve seçilen bir görünen adı yalnızca yakındaki cihazlara doğrudan iletir; harici sunucularda hiçbir veri saklanmaz. İsteğe bağlı çevrimiçi oyun için uygulama Apple Game Center hizmetini kullanır; çocukları korumak amacıyla yalnızca ekli Game Center arkadaşlarıyla oynanabilir ve arkadaşlık istekleri yalnızca uygulama dışında ebeveyn denetimi (Ekran Süresi) altında yapılır.",
-          "zh": "ChessLeo Academy 不运营自有服务器，也不存储个人数据。对于开局学校和“拟人”电脑对手，应用可选择性地连接 lichess.org；其间仅传输匿名的棋盘局面，绝不传输个人数据。绝不在任何时候收集、传输、出售或将儿童及家庭的个人数据用于广告目的。应用内严禁嵌入任何广告跟踪标识符、无行为追踪、且绝无第三方广告网络。本地多人对弈功能仅将棋局走法和自定义昵称直接传输给附近的对战设备；绝不在任何外部服务器上存储任何数据。 在可选的在线对弈模式下，应用使用 Apple Game Center 服务；为保护儿童隐私安全，玩家仅能与已互为好友的 Game Center 朋友对弈，所有好友申请均须在应用外部的家长控制（屏幕使用时间）监管下完成。"
-        },
-        "imprint_odr": {
-          "de": "Plattform der EU-Kommission zur Online-Streitbeilegung: <a href=\"https://ec.europa.eu/consumers/odr\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent);\">https://ec.europa.eu/consumers/odr</a>. Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.",
-          "en": "European Commission Online Dispute Resolution platform: <a href=\"https://ec.europa.eu/consumers/odr\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent);\">https://ec.europa.eu/consumers/odr</a>. We are neither willing nor obligated to participate in dispute resolution proceedings before a consumer arbitration board.",
-          "es": "Plataforma de la Comisión Europea para la resolución de litigios en línea: <a href=\"https://ec.europa.eu/consumers/odr\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent);\">https://ec.europa.eu/consumers/odr</a>. No estamos obligados ni dispuestos a participar en procedimientos de resolución de conflictos ante una junta arbitral de consumo.",
-          "fr": "Plateforme de règlement en ligne des litiges de la Commission européenne : <a href=\"https://ec.europa.eu/consumers/odr\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent);\">https://ec.europa.eu/consumers/odr</a>. Nous ne sommes ni disposés ni obligés de participer à une procédure de règlement des litiges devant un organisme de médiation des consommateurs.",
-          "tr": "AB Komisyonu çevrimiçi uyuşmazlık çözüm platformu: <a href=\"https://ec.europa.eu/consumers/odr\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent);\">https://ec.europa.eu/consumers/odr</a>. Tüketici hakem heyeti nezdindeki uyuşmazlık çözüm prosedürlerine katılmaya istekli veya yükümlü değiliz.",
-          "zh": "欧盟委员会在线争议解决平台：<a href=\"https://ec.europa.eu/consumers/odr\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent);\">https://ec.europa.eu/consumers/odr</a>。我们既无意愿也无义务参与消费者仲裁机构的争议解决程序。"
-        },
-        "footer_tagline": {
-          "de": "ChessLeo Academy • Entwickelt mit Liebe für junge Schachlegenden",
-          "en": "ChessLeo Academy • Crafted with love for young chess legends",
-          "es": "ChessLeo Academy • Creado con amor para jóvenes leyendas del ajedrez",
-          "fr": "ChessLeo Academy • Conçu avec passion pour les jeunes légendes des échecs",
-          "tr": "ChessLeo Academy • Genç satranç efsaneleri için sevgiyle geliştirildi",
-          "zh": "ChessLeo Academy • 用爱打造，献给每一位正在启航的小小国际象棋传奇"
-        }
-      };
+      const i18n = {"page_title":{"de":"Impressum & Rechtliche Hinweise","en":"Legal Notice & Disclaimers","es":"Aviso Legal y Condiciones","fr":"Mentions Légales & Conditions","tr":"Künye ve Yasal Bilgiler","zh":"法律声明与主办方信息"},"page_subline":{"de":"Transparenz, Anbieterkennzeichnung und rechtliche Rahmenbedingungen der ChessLeo Academy.","en":"Transparency, service provider identification, and legal terms of ChessLeo Academy.","es":"Transparencia, identificación del prestador y términos legales de ChessLeo Academy.","fr":"Transparence, identification du prestataire et cadre juridique de ChessLeo Academy.","tr":"ChessLeo Academy'nin şeffaflık, sağlayıcı bilgileri ve yasal şartları.","zh":"ChessLeo Academy 运营主体、透明度及法律声明合规信息。"},"btn_back":{"de":"← Zur Startseite","en":"← Back to Home","es":"← Volver al Inicio","fr":"← Retour à l’Accueil","tr":"← Ana Sayfaya Dön","zh":"← 返回主页"},"imprint_heading":{"de":"⚖️ Impressum","en":"⚖️ Legal Notice","es":"⚖️ Aviso Legal","fr":"⚖️ Mentions Légales","tr":"⚖️ Künye","zh":"⚖️ 主办方信息"},"imprint_law":{"de":"Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG) und § 18 Abs. 2 Medienstaatsvertrag (MStV):","en":"Information pursuant to § 5 German Digital Services Act (DDG) and § 18 (2) State Media Treaty (MStV):","es":"Información conforme al § 5 de la Ley alemana de Servicios Digitales (DDG) y § 18 ap. 2 del Tratado de Medios (MStV):","fr":"Informations conformément au § 5 de la loi allemande sur les services numériques (DDG) et au § 18 al. 2 du traité d’État sur les médias (MStV) :","tr":"Alman Dijital Hizmetler Yasası (§ 5 DDG) ve Eyalet Medya Sözleşmesi (§ 18 Par. 2 MStV) uyarınca bilgiler:","zh":"依据德国数字服务法案 (§ 5 DDG) 及国家媒体公约 (§ 18 Abs. 2 MStV) 声明之主办方信息："},"contact_heading":{"de":"Kontakt:","en":"Contact:","es":"Contacto:","fr":"Contact :","tr":"İletişim:","zh":"联系方式："},"resp_heading":{"de":"Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:","en":"Responsible for content according to § 18 (2) MStV:","es":"Responsable del contenido según § 18 ap. 2 MStV:","fr":"Responsable du contenu selon le § 18 al. 2 MStV :","tr":"§ 18 Par. 2 MStV uyarınca içerikten sorumlu kişi:","zh":"内容合规负责人 (§ 18 Abs. 2 MStV)："},"odr_heading":{"de":"Streitbeilegung:","en":"Dispute Resolution:","es":"Resolución de Litigios:","fr":"Règlement des Litiges :","tr":"Uyuşmazlık Çözümü:","zh":"争议解决机制："},"odr_text":{"de":"Plattform der EU-Kommission zur Online-Streitbeilegung: <a href=\"https://ec.europa.eu/consumers/odr\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent);\">https://ec.europa.eu/consumers/odr</a>. Wir sind weder bereit noch verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.","en":"European Commission Online Dispute Resolution platform: <a href=\"https://ec.europa.eu/consumers/odr\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent);\">https://ec.europa.eu/consumers/odr</a>. We are neither willing nor obligated to participate in dispute resolution proceedings before a consumer arbitration board.","es":"Plataforma de la Comisión Europea para la resolución de litigios en línea: <a href=\"https://ec.europa.eu/consumers/odr\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent);\">https://ec.europa.eu/consumers/odr</a>. No estamos obligados ni dispuestos a participar en procedimientos de resolución de conflictos ante una junta arbitral de consumo.","fr":"Plateforme de règlement en ligne des litiges de la Commission européenne : <a href=\"https://ec.europa.eu/consumers/odr\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent);\">https://ec.europa.eu/consumers/odr</a>. Nous ne sommes ni disposés ni obligés de participer à une procédure de règlement des litiges devant un organisme de médiation des consommateurs.","tr":"AB Komisyonu çevrimiçi uyuşmazlık çözüm platformu: <a href=\"https://ec.europa.eu/consumers/odr\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent);\">https://ec.europa.eu/consumers/odr</a>. Tüketici hakem heyeti nezdindeki uyuşmazlık çözüm prosedürlerine katılmaya istekli veya yükümlü değiliz.","zh":"欧盟委员会在线争议解决平台：<a href=\"https://ec.europa.eu/consumers/odr\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent);\">https://ec.europa.eu/consumers/odr</a>。我们既无意愿也无义务参与消费者仲裁机构的争议解决程序。"},"ai_heading":{"de":"🤖 KI-Transparenzhinweis (EU AI Act)","en":"🤖 AI Transparency Notice (EU AI Act)","es":"🤖 Aviso de transparencia sobre IA (Reglamento de IA de la UE)","fr":"🤖 Avis de transparence sur l’IA (Règlement sur l’IA de l’UE)","tr":"🤖 YZ Şeffaflık Bildirimi (AB Yapay Zekâ Yasası)","zh":"🤖 人工智能透明度声明（欧盟《人工智能法案》）"},"ai_badge":{"de":"EU AI Act • Art. 50 Transparenz","en":"EU AI Act • Art. 50 Transparency","es":"Reglamento de IA de la UE • Art. 50 Transparencia","fr":"Règlement IA de l’UE • Art. 50 Transparence","tr":"AB Yapay Zekâ Yasası • Madde 50 Şeffaflık","zh":"欧盟《人工智能法案》• 第 50 条透明度规范"},"ai_text":{"de":"Grafische Charakter-Illustrationen sowie ausgewählte thematische Figuren-Sets und Brett-Designs wurden mit Unterstützung generativer KI-Werkzeuge erstellt und anschließend von menschlichen Gestaltern kuratiert und finalisiert.","en":"Visual character illustrations and select themed chess sets and board designs were created with the assistance of generative AI tools and subsequently curated and finalized by human designers.","es":"Las ilustraciones de los personajes y determinados sets de piezas y diseños de tablero se crearon con la ayuda de herramientas de IA generativa y posteriormente fueron seleccionados y finalizados por diseñadores humanos.","fr":"Les illustrations visuelles des personnages ainsi que certains jeux de pièces et designs d’échiquiers thématiques ont été créés avec l’aide d’outils d’IA générative, puis sélectionnés et finalisés par des concepteurs humains.","tr":"Görsel karakter çizimleri ile belirli tematik taş ve tahta tasarımları üretken yapay zekâ araçlarının desteğiyle oluşturulmuş, ardından insan tasarımcılar tarafından incelenerek son haline getirilmiştir.","zh":"角色插画视觉图以及精选主题棋子和棋盘设计是在生成式人工智能工具的协助下创作的，随后由人工设计师进行了筛选和最终完善。"},"terms_heading":{"de":"📜 Rechtliche Hinweise & Nutzungsrahmen","en":"📜 Legal Terms & Conditions","es":"📜 Términos y Condiciones Legales","fr":"📜 Mentions Légales & Conditions","tr":"📜 Yasal Şartlar ve Koşullar","zh":"📜 法律条款与使用规范"},"terms_law_title":{"de":"1. Geltendes Recht","en":"1. Applicable Law","es":"1. Legislación aplicable","fr":"1. Droit applicable","tr":"1. Geçerli Hukuk","zh":"1. 适用法律"},"terms_law_desc":{"de":"Für sämtliche Rechtsbeziehungen aus der Nutzung dieser App und Website gilt ausschließlich das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts (CISG), soweit dem keine zwingenden verbraucherschutzrechtlichen Bestimmungen entgegenstehen.","en":"All legal relations arising from the use of this app and website are governed exclusively by the laws of the Federal Republic of Germany, excluding the UN Convention on Contracts for the International Sale of Goods (CISG).","es":"Para todas las relaciones jurídicas derivadas del uso de esta app y sitio web se aplica exclusivamente la legislación de la República Federal de Alemania.","fr":"Toutes les relations juridiques découlant de l'utilisation de cette application et de ce site web sont exclusivement régies par le droit de la République fédérale d'Allemagne.","tr":"Bu uygulama ve web sitesinin kullanımından doğan tüm hukuki ilişkilerde münhasıran Almanya Federal Cumhuriyeti hukuku geçerlidir.","zh":"因使用本应用及网站而产生的所有法律关系，均排他性地适用德意志联邦共和国法律。"},"terms_edu_title":{"de":"2. Pädagogischer Zweck & Spielinhalte","en":"2. Educational Purpose & Content","es":"2. Finalidad pedagógica y contenido","fr":"2. Objectif pédagogique et contenus","tr":"2. Eğitici Amaç ve İçerik","zh":"2. 教学目的与内容说明"},"terms_edu_desc":{"de":"ChessLeo Academy dient didaktischen, pädagogischen und unterhaltenden Zwecken. Sämtliche Schachanalysen, Bewertungen, Zugempfehlungen und Spielhinweise werden computergestützt generiert. Sie stellen keine verbindlichen Aussagen über intellektuelle oder sportliche Fähigkeiten dar.","en":"ChessLeo Academy serves didactic, educational, and entertainment purposes. All move evaluations and hints are generated computationally and do not constitute binding assessments of intellect.","es":"ChessLeo Academy tiene fines didácticos, educativos y lúdicos. Todas las evaluaciones y consejos de jugadas se generan por ordenador.","fr":"ChessLeo Academy est conçue à des fins didactiques, éducatives et de divertissement. Les analyses d'échecs et conseils sont générés par ordinateur.","tr":"ChessLeo Academy didaktik, eğitici ve eğlendirici amaçlara hizmet eder. Tüm satranç analizleri ve hamle ipuçları bilgisayar destekli üretilir.","zh":"ChessLeo Academy 专为启蒙启智与寓教于乐而设计。所有对局分析与行棋提示均由计算机辅助生成。"},"terms_liab_title":{"de":"3. Haftungsbeschränkung","en":"3. Limitation of Liability","es":"3. Limitación de responsabilidad","fr":"3. Limitation de responsabilité","tr":"3. Sorumluluğun Sınırlandırılması","zh":"3. 责任限制"},"terms_liab_desc":{"de":"Die Inhalte und Softwarefunktionen dieser Anwendung wurden mit größter Sorgfalt entwickelt. Eine Haftung für Sach- und Vermögensschäden, technische Störungen, fehlerhafte Speicherstände oder Datenverluste ist bei leichter Fahrlässigkeit ausgeschlossen, sofern keine wesentlichen Vertragspflichten verletzt wurden.","en":"The contents and software features were developed with the utmost care. Liability for damages or data loss due to slight negligence is excluded, provided no material contractual duties were breached.","es":"Los contenidos y funciones se han desarrollado con el máximo esmero. Queda excluida la responsabilidad por negligencia leve que no afecte a obligaciones contractuales esenciales.","fr":"Les contenus et fonctions ont été développés avec le plus grand soin. La responsabilité en cas de négligence légère est exclue, sauf violation d'obligations contractuelles essentielles.","tr":"Uygulama içerik ve işlevleri azami özenle geliştirilmiştir. Temel sözleşme yükümlülükleri ihlal edilmedikçe hafif ihmalden doğan sorumluluklar hariç tutulur.","zh":"本应用及其网站内容均以严谨细致的标准开发制作。在未违反核心合同义务的前提下，因轻微过失引发的技术波动或数据变动免除直接赔偿责任。"},"terms_copy_title":{"de":"4. Urheberrecht & Schutzrechte","en":"4. Intellectual Property & Copyright","es":"4. Propiedad intelectual y derechos de autor","fr":"4. Propriété intellectuelle & Droits d'auteur","tr":"4. Telif ve Fikri Mülkiyet Hakları","zh":"4. 知识产权与版权声明"},"terms_copy_desc":{"de":"Alle in der App und auf dieser Website enthaltenen Grafiken, Figuren-Designs, Sounds, Charaktere (wie Leo, Lina, Opa Theo, Titan) und Texte sind urheberrechtlich geschützt. Die Vervielfältigung oder Weiterverwendung außerhalb der App bedarf der ausdrücklichen schriftlichen Zustimmung des Anbieters.","en":"All graphics, piece designs, soundscapes, character designs (such as Leo, Lina, Grandpa Theo, Titan), and texts are protected by copyright. Reproduction without explicit written permission is prohibited.","es":"Todos los gráficos, piezas, sonidos, personajes y textos están protegidos por derechos de autor. Su reproducción externa requiere autorización expresa por escrito.","fr":"Tous les graphismes, pièces, sons, personnages et textes sont protégés par le droit d'auteur. Toute reproduction nécessite un accord écrit exprès.","tr":"Uygulama ve sitede yer alan tüm grafikler, taş modelleri, sesler, karakterler ve metinler telif hakkıyla korunmaktadır.","zh":"应用及网站内包含的所有角色立绘、主题棋子、音频音效与文字材料均受国际版权法规保护，未经书面许可不得擅自用于商业转载或第三方衍生。"}};
 
       const langMeta = {
         de: { flag: '🇩🇪', code: 'DE' },
@@ -844,8 +385,6 @@
         }
 
         document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : lang;
-        document.documentElement.setAttribute('translate', 'no');
-        document.documentElement.classList.add('notranslate');
 
         document.querySelectorAll('[data-i18n]').forEach(el => {
           const key = el.getAttribute('data-i18n');
@@ -854,7 +393,6 @@
           }
         });
 
-        // Update active dropdown item & current indicator
         const meta = langMeta[lang] || langMeta.de;
         const flagEl = document.getElementById('langCurrentFlag');
         const codeEl = document.getElementById('langCurrentCode');
@@ -870,15 +408,14 @@
         } catch(e) {}
       }
 
-      // Language Dropdown Interaction
+      // Dropdown
       const dropdown = document.getElementById('langDropdown');
       const dropdownBtn = document.getElementById('langDropdownBtn');
 
       if (dropdown && dropdownBtn) {
         dropdownBtn.addEventListener('click', function(e) {
           e.stopPropagation();
-          const isOpen = dropdown.classList.toggle('open');
-          dropdownBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          dropdown.classList.toggle('open');
         });
 
         document.querySelectorAll('.lang-dropdown-item').forEach(btn => {
@@ -887,22 +424,12 @@
             const targetLang = this.getAttribute('data-lang');
             setLanguage(targetLang);
             dropdown.classList.remove('open');
-            dropdownBtn.setAttribute('aria-expanded', 'false');
           });
         });
 
         document.addEventListener('click', function(e) {
           if (!dropdown.contains(e.target)) {
             dropdown.classList.remove('open');
-            dropdownBtn.setAttribute('aria-expanded', 'false');
-          }
-        });
-
-        document.addEventListener('keydown', function(e) {
-          if (e.key === 'Escape' && dropdown.classList.contains('open')) {
-            dropdown.classList.remove('open');
-            dropdownBtn.setAttribute('aria-expanded', 'false');
-            dropdownBtn.focus();
           }
         });
       }
@@ -919,14 +446,12 @@
           else if (navLang.startsWith('fr')) initialLang = 'fr';
           else if (navLang.startsWith('tr')) initialLang = 'tr';
           else if (navLang.startsWith('zh')) initialLang = 'zh';
-          else initialLang = 'de';
         }
-      } catch(e) {
-        initialLang = 'de';
-      }
+      } catch(e) {}
 
       setLanguage(initialLang);
     })();
   </script>
+
 </body>
 </html>
