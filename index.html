@@ -1262,7 +1262,7 @@
         <!-- SPLIT SHOWCASE: Meister-Diplom -->
         <div class="showcase-split" style="direction: rtl;">
           <div class="showcase-img-wrap" style="direction: ltr;">
-            <img id="diplomaMockupImg" src="assets/screen-diplom-de.png" alt="Offizielles ChessLeo Meister Diplom zum Ausdrucken" loading="lazy">
+            <img id="diplomaMockupImg" src="assets/screen-diplom-de.png?v=20260925" alt="Offizielles ChessLeo Meister Diplom zum Ausdrucken" loading="lazy">
           </div>
           <div class="showcase-content" style="direction: ltr;">
             <span class="section-tag" style="background: rgba(245, 158, 11, 0.15); color: var(--gold);" data-i18n="showcase_diplom_tag">Stolz &amp; Motivation</span>
@@ -1593,7 +1593,7 @@
         // Update diploma mockup screenshot
         const diplomaMockup = document.getElementById('diplomaMockupImg');
         if (diplomaMockup) {
-          diplomaMockup.src = 'assets/screen-diplom-' + lang + '.png';
+          diplomaMockup.src = 'assets/screen-diplom-' + lang + '.png?v=20260925';
         }
 
         // Store preference
@@ -1666,7 +1666,7 @@
           const preloadHome = new Image();
           preloadHome.src = 'assets/screen-home-' + l + '.png?v=20260923';
           const preloadDiplom = new Image();
-          preloadDiplom.src = 'assets/screen-diplom-' + l + '.png';
+          preloadDiplom.src = 'assets/screen-diplom-' + l + '.png?v=20260925';
         }
       });
     })();
