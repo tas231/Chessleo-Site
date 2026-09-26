@@ -1648,23 +1648,23 @@
         });
       }
 
-      // Detect initial language: stored -> browser -> 'de'
-      let initialLang = 'de';
+      // Detect initial language: stored -> browser -> 'en' (fallback for unsupported languages)
+      let initialLang = 'en';
       try {
         const stored = localStorage.getItem('chessleo_lang') || localStorage.getItem('chessling_lang');
         if (stored && ['de', 'en', 'es', 'fr', 'tr', 'zh'].includes(stored)) {
           initialLang = stored;
         } else {
-          const navLang = (navigator.language || navigator.userLanguage || 'de').toLowerCase();
-          if (navLang.startsWith('en')) initialLang = 'en';
+          const navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+          if (navLang.startsWith('de')) initialLang = 'de';
           else if (navLang.startsWith('es')) initialLang = 'es';
           else if (navLang.startsWith('fr')) initialLang = 'fr';
           else if (navLang.startsWith('tr')) initialLang = 'tr';
           else if (navLang.startsWith('zh')) initialLang = 'zh';
-          else initialLang = 'de';
+          else initialLang = 'en';
         }
       } catch(e) {
-        initialLang = 'de';
+        initialLang = 'en';
       }
 
       setLanguage(initialLang);
