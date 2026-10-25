@@ -1128,7 +1128,6 @@
     .world-img-box {
       position: relative;
       width: 100%;
-      aspect-ratio: 4 / 3;
       overflow: hidden;
       background: #090d16;
       border-bottom: 1px solid var(--card-border);
@@ -1136,27 +1135,30 @@
 
     .world-img-box img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
       display: block;
-      transition: transform 0.45s ease;
     }
 
-    .world-card:hover .world-img-box img {
-      transform: scale(1.03);
+    .world-meta-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.75rem;
+    }
+
+    .world-meta-row .world-badge {
+      margin-bottom: 0;
     }
 
     .world-mode-toggle {
-      position: absolute;
-      bottom: 0.65rem;
-      right: 0.65rem;
       display: inline-flex;
-      gap: 0.3rem;
-      background: rgba(11, 17, 32, 0.88);
+      gap: 0.25rem;
+      background: rgba(11, 17, 32, 0.9);
       border: 1px solid rgba(245, 158, 11, 0.4);
-      padding: 0.22rem;
+      padding: 0.2rem;
       border-radius: 9999px;
-      backdrop-filter: blur(8px);
     }
 
     .world-mode-btn {
@@ -1165,7 +1167,7 @@
       color: var(--text-muted);
       font-size: 0.72rem;
       font-weight: 700;
-      padding: 0.22rem 0.58rem;
+      padding: 0.2rem 0.55rem;
       border-radius: 9999px;
       cursor: pointer;
       font-family: inherit;
@@ -1602,25 +1604,25 @@
         <div class="hero-switcher-wrap">
           <div class="hero-switcher-label" data-i18n="hero_switcher_label">🎨 Startbildschirm live ausprobieren: 3 Design-Welten &amp; Jahreszeiten</div>
           <div class="hero-switcher" role="tablist" aria-label="Startbildschirm-Design wählen">
-            <button type="button" class="hero-switch-btn active" data-src="assets/screen-zaubertisch.png" data-caption-key="hero_cap_zaubertisch">
+            <button type="button" class="hero-switch-btn active" data-src="assets/screen-zaubertisch.png?v=1.6.1" data-caption-key="hero_cap_zaubertisch">
               <span>✨</span> <span data-i18n="hero_tab_zaubertisch">Entdecker-Zaubertisch</span>
             </button>
-            <button type="button" class="hero-switch-btn" data-src="assets/screen-zaubertisch-christmas.png" data-caption-key="hero_cap_christmas">
+            <button type="button" class="hero-switch-btn" data-src="assets/screen-zaubertisch-christmas.png?v=1.6.1" data-caption-key="hero_cap_christmas">
               <span>🎄</span> <span data-i18n="hero_tab_christmas">Weihnachten &amp; Advent</span>
             </button>
-            <button type="button" class="hero-switch-btn" data-src="assets/screen-zaubertisch-halloween.png" data-caption-key="hero_cap_halloween">
+            <button type="button" class="hero-switch-btn" data-src="assets/screen-zaubertisch-halloween.png?v=1.6.1" data-caption-key="hero_cap_halloween">
               <span>🎃</span> <span data-i18n="hero_tab_halloween">Herbst &amp; Halloween</span>
             </button>
-            <button type="button" class="hero-switch-btn" data-src="assets/screen-zaubertisch-easter.png" data-caption-key="hero_cap_easter">
+            <button type="button" class="hero-switch-btn" data-src="assets/screen-zaubertisch-easter.png?v=1.6.1" data-caption-key="hero_cap_easter">
               <span>🐣</span> <span data-i18n="hero_tab_easter">Frühling &amp; Ostern</span>
             </button>
-            <button type="button" class="hero-switch-btn" data-src="assets/screen-zaubertisch-night.png" data-caption-key="hero_cap_night">
+            <button type="button" class="hero-switch-btn" data-src="assets/screen-zaubertisch-night.png?v=1.6.1" data-caption-key="hero_cap_night">
               <span>🎆</span> <span data-i18n="hero_tab_night">Nacht &amp; Silvester</span>
             </button>
-            <button type="button" class="hero-switch-btn" data-src="assets/screen-design-edel.png" data-caption-key="hero_cap_edel">
+            <button type="button" class="hero-switch-btn" data-src="assets/screen-design-edel.png?v=1.6.1" data-caption-key="hero_cap_edel">
               <span>👑</span> <span data-i18n="hero_tab_edel">Klassik-Edel (3D &amp; Gold)</span>
             </button>
-            <button type="button" class="hero-switch-btn" data-src="assets/screen-design-bunt.png" data-caption-key="hero_cap_bunt">
+            <button type="button" class="hero-switch-btn" data-src="assets/screen-design-bunt.png?v=1.6.1" data-caption-key="hero_cap_bunt">
               <span>🎨</span> <span data-i18n="hero_tab_bunt">Klassisch (Bunt)</span>
             </button>
           </div>
@@ -1629,7 +1631,7 @@
         <!-- Mockup: Startscreen -->
         <div class="mockup-wrapper" style="margin-top: 1.5rem;">
           <div class="mockup-frame">
-            <img id="heroMockupImg" src="assets/screen-zaubertisch.png" alt="ChessLeo Academy – Entdecker-Zaubertisch &amp; Design-Welten" loading="eager">
+            <img id="heroMockupImg" src="assets/screen-zaubertisch.png?v=1.6.1" alt="ChessLeo Academy – Entdecker-Zaubertisch &amp; Design-Welten" loading="eager">
           </div>
           <p id="heroMockupCaption" class="hero-mockup-caption" data-i18n="hero_cap_zaubertisch">✨ <strong>Entdecker-Zaubertisch:</strong> Die gemalte, lebendige Schachwerkstatt für Kinder – mit wanderndem Sonnenlicht, Vogelnest am Fenster und anklickbarem Coach Vogel.</p>
         </div>
@@ -1660,10 +1662,12 @@
           <!-- World 1: Entdecker-Zaubertisch -->
           <div class="world-card featured-world">
             <div class="world-img-box">
-              <img src="assets/screen-zaubertisch.png" alt="Entdecker-Zaubertisch – Magische Schachwerkstatt für Kinder" loading="lazy">
+              <img src="assets/screen-zaubertisch.png?v=1.6.1" alt="Entdecker-Zaubertisch – Magische Schachwerkstatt für Kinder" loading="lazy">
             </div>
             <div class="world-body">
-              <span class="world-badge" style="background: rgba(245, 158, 11, 0.2); color: var(--gold-light); border: 1px solid rgba(245, 158, 11, 0.4);" data-i18n="world1_badge">✨ Kinder-Liebling • Lebendige Werkstatt</span>
+              <div class="world-meta-row">
+                <span class="world-badge" style="background: rgba(245, 158, 11, 0.2); color: var(--gold-light); border: 1px solid rgba(245, 158, 11, 0.4);" data-i18n="world1_badge">✨ Kinder-Liebling • Lebendige Werkstatt</span>
+              </div>
               <h3 data-i18n="world1_title">Entdecker-Zaubertisch</h3>
               <p data-i18n="world1_desc">Eine warm beleuchtete, gemalte Schachwerkstatt zum Entdecken: Statt klassischer Menüs warten echte Stationen auf dem Holztisch – das aufgeschlagene Schulbuch, das gläserne Freundes-Portal, der Rätsel-Turm, das Labyrinth, die Schatz-Schublade und Coach Vogel mitten auf dem Brett.</p>
             </div>
@@ -1672,14 +1676,16 @@
           <!-- World 2: Klassik-Edel -->
           <div class="world-card">
             <div class="world-img-box">
-              <img id="edelWorldImg" src="assets/screen-design-edel.png" alt="Klassik-Edel – 3D-Design mit Gold und Edelsteinen" loading="lazy">
-              <div class="world-mode-toggle" role="group" aria-label="Klassik-Edel Modus">
-                <button type="button" class="world-mode-btn active" data-edel-src="assets/screen-design-edel.png" data-i18n="world_mode_light">☀️ Hell</button>
-                <button type="button" class="world-mode-btn" data-edel-src="assets/screen-design-edel-dark.png" data-i18n="world_mode_dark">🌙 Dunkel</button>
-              </div>
+              <img id="edelWorldImg" src="assets/screen-design-edel.png?v=1.6.1" alt="Klassik-Edel – 3D-Design mit Gold und Edelsteinen" loading="lazy">
             </div>
             <div class="world-body">
-              <span class="world-badge" style="background: rgba(56, 189, 248, 0.15); color: var(--accent);" data-i18n="world2_badge">👑 74 3D-Symbole &amp; Gold</span>
+              <div class="world-meta-row">
+                <span class="world-badge" style="background: rgba(56, 189, 248, 0.15); color: var(--accent);" data-i18n="world2_badge">👑 74 3D-Symbole &amp; Gold</span>
+                <div class="world-mode-toggle" role="group" aria-label="Klassik-Edel Modus">
+                  <button type="button" class="world-mode-btn active" data-edel-src="assets/screen-design-edel.png?v=1.6.1" data-i18n="world_mode_light">☀️ Hell</button>
+                  <button type="button" class="world-mode-btn" data-edel-src="assets/screen-design-edel-dark.png?v=1.6.1" data-i18n="world_mode_dark">🌙 Dunkel</button>
+                </div>
+              </div>
               <h3 data-i18n="world2_title">Klassik-Edel</h3>
               <p data-i18n="world2_desc">Edles 3D-Design mit Goldrahmen, Edelsteinen und 74 handkuratierten 3D-Symbolen bis in alle Untermenüs. Im hellen Modus auf warmem Elfenbein-Pergament, im dunklen Modus in tiefem Obsidian &amp; Kaiser-Gold.</p>
             </div>
@@ -1688,10 +1694,12 @@
           <!-- World 3: Klassisch -->
           <div class="world-card">
             <div class="world-img-box">
-              <img src="assets/screen-design-bunt.png" alt="Klassisch – Bunt, klar und übersichtlich" loading="lazy">
+              <img src="assets/screen-design-bunt.png?v=1.6.1" alt="Klassisch – Bunt, klar und übersichtlich" loading="lazy">
             </div>
             <div class="world-body">
-              <span class="world-badge" style="background: rgba(168, 85, 247, 0.15); color: var(--purple);" data-i18n="world3_badge">🎨 Bunt &amp; Kristallklar</span>
+              <div class="world-meta-row">
+                <span class="world-badge" style="background: rgba(168, 85, 247, 0.15); color: var(--purple);" data-i18n="world3_badge">🎨 Bunt &amp; Kristallklar</span>
+              </div>
               <h3 data-i18n="world3_title">Klassisch</h3>
               <p data-i18n="world3_desc">Farbenfrohe, kristallklare Kacheln und aufgeräumte Typografie für höchste Übersichtlichkeit auf einen Blick – ideal für ältere Geschwister, Eltern oder den Unterricht, wahlweise im Hell- oder Dunkel-Modus.</p>
             </div>
