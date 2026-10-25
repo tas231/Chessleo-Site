@@ -1604,25 +1604,25 @@
         <div class="hero-switcher-wrap">
           <div class="hero-switcher-label" data-i18n="hero_switcher_label">🎨 Startbildschirm live ausprobieren: 3 Design-Welten &amp; Jahreszeiten</div>
           <div class="hero-switcher" role="tablist" aria-label="Startbildschirm-Design wählen">
-            <button type="button" class="hero-switch-btn active" data-src="assets/screen-zaubertisch.png?v=1.6.1" data-caption-key="hero_cap_zaubertisch">
+            <button type="button" class="hero-switch-btn active" data-base="screen-zaubertisch" data-caption-key="hero_cap_zaubertisch">
               <span>✨</span> <span data-i18n="hero_tab_zaubertisch">Entdecker-Zaubertisch</span>
             </button>
-            <button type="button" class="hero-switch-btn" data-src="assets/screen-zaubertisch-christmas.png?v=1.6.1" data-caption-key="hero_cap_christmas">
+            <button type="button" class="hero-switch-btn" data-base="screen-zaubertisch-christmas" data-caption-key="hero_cap_christmas">
               <span>🎄</span> <span data-i18n="hero_tab_christmas">Weihnachten &amp; Advent</span>
             </button>
-            <button type="button" class="hero-switch-btn" data-src="assets/screen-zaubertisch-halloween.png?v=1.6.1" data-caption-key="hero_cap_halloween">
+            <button type="button" class="hero-switch-btn" data-base="screen-zaubertisch-halloween" data-caption-key="hero_cap_halloween">
               <span>🎃</span> <span data-i18n="hero_tab_halloween">Herbst &amp; Halloween</span>
             </button>
-            <button type="button" class="hero-switch-btn" data-src="assets/screen-zaubertisch-easter.png?v=1.6.1" data-caption-key="hero_cap_easter">
+            <button type="button" class="hero-switch-btn" data-base="screen-zaubertisch-easter" data-caption-key="hero_cap_easter">
               <span>🐣</span> <span data-i18n="hero_tab_easter">Frühling &amp; Ostern</span>
             </button>
-            <button type="button" class="hero-switch-btn" data-src="assets/screen-zaubertisch-night.png?v=1.6.1" data-caption-key="hero_cap_night">
+            <button type="button" class="hero-switch-btn" data-base="screen-zaubertisch-night" data-caption-key="hero_cap_night">
               <span>🎆</span> <span data-i18n="hero_tab_night">Nacht &amp; Silvester</span>
             </button>
-            <button type="button" class="hero-switch-btn" data-src="assets/screen-design-edel.png?v=1.6.1" data-caption-key="hero_cap_edel">
+            <button type="button" class="hero-switch-btn" data-base="screen-design-edel" data-caption-key="hero_cap_edel">
               <span>👑</span> <span data-i18n="hero_tab_edel">Klassik-Edel (3D &amp; Gold)</span>
             </button>
-            <button type="button" class="hero-switch-btn" data-src="assets/screen-design-bunt.png?v=1.6.1" data-caption-key="hero_cap_bunt">
+            <button type="button" class="hero-switch-btn" data-base="screen-design-bunt" data-caption-key="hero_cap_bunt">
               <span>🎨</span> <span data-i18n="hero_tab_bunt">Klassisch (Bunt)</span>
             </button>
           </div>
@@ -1631,7 +1631,7 @@
         <!-- Mockup: Startscreen -->
         <div class="mockup-wrapper" style="margin-top: 1.5rem;">
           <div class="mockup-frame">
-            <img id="heroMockupImg" src="assets/screen-zaubertisch.png?v=1.6.1" alt="ChessLeo Academy – Entdecker-Zaubertisch &amp; Design-Welten" loading="eager">
+            <img id="heroMockupImg" src="assets/screen-zaubertisch-de.png?v=1.6.2" alt="ChessLeo Academy – Entdecker-Zaubertisch &amp; Design-Welten" loading="eager">
           </div>
           <p id="heroMockupCaption" class="hero-mockup-caption" data-i18n="hero_cap_zaubertisch">✨ <strong>Entdecker-Zaubertisch:</strong> Die gemalte, lebendige Schachwerkstatt für Kinder – mit wanderndem Sonnenlicht, Vogelnest am Fenster und anklickbarem Coach Vogel.</p>
         </div>
@@ -1662,7 +1662,7 @@
           <!-- World 1: Entdecker-Zaubertisch -->
           <div class="world-card featured-world">
             <div class="world-img-box">
-              <img src="assets/screen-zaubertisch.png?v=1.6.1" alt="Entdecker-Zaubertisch – Magische Schachwerkstatt für Kinder" loading="lazy">
+              <img id="zaubertischWorldImg" data-screen-base="screen-zaubertisch" src="assets/screen-zaubertisch-de.png?v=1.6.2" alt="Entdecker-Zaubertisch – Magische Schachwerkstatt für Kinder" loading="lazy">
             </div>
             <div class="world-body">
               <div class="world-meta-row">
@@ -1676,14 +1676,14 @@
           <!-- World 2: Klassik-Edel -->
           <div class="world-card">
             <div class="world-img-box">
-              <img id="edelWorldImg" src="assets/screen-design-edel.png?v=1.6.1" alt="Klassik-Edel – 3D-Design mit Gold und Edelsteinen" loading="lazy">
+              <img id="edelWorldImg" src="assets/screen-design-edel-de.png?v=1.6.2" alt="Klassik-Edel – 3D-Design mit Gold und Edelsteinen" loading="lazy">
             </div>
             <div class="world-body">
               <div class="world-meta-row">
                 <span class="world-badge" style="background: rgba(56, 189, 248, 0.15); color: var(--accent);" data-i18n="world2_badge">👑 74 3D-Symbole &amp; Gold</span>
                 <div class="world-mode-toggle" role="group" aria-label="Klassik-Edel Modus">
-                  <button type="button" class="world-mode-btn active" data-edel-src="assets/screen-design-edel.png?v=1.6.1" data-i18n="world_mode_light">☀️ Hell</button>
-                  <button type="button" class="world-mode-btn" data-edel-src="assets/screen-design-edel-dark.png?v=1.6.1" data-i18n="world_mode_dark">🌙 Dunkel</button>
+                  <button type="button" class="world-mode-btn active" data-edel-base="screen-design-edel" data-i18n="world_mode_light">☀️ Hell</button>
+                  <button type="button" class="world-mode-btn" data-edel-base="screen-design-edel-dark" data-i18n="world_mode_dark">🌙 Dunkel</button>
                 </div>
               </div>
               <h3 data-i18n="world2_title">Klassik-Edel</h3>
@@ -1694,7 +1694,7 @@
           <!-- World 3: Klassisch -->
           <div class="world-card">
             <div class="world-img-box">
-              <img src="assets/screen-design-bunt.png?v=1.6.1" alt="Klassisch – Bunt, klar und übersichtlich" loading="lazy">
+              <img id="buntWorldImg" data-screen-base="screen-design-bunt" src="assets/screen-design-bunt-de.png?v=1.6.2" alt="Klassisch – Bunt, klar und übersichtlich" loading="lazy">
             </div>
             <div class="world-body">
               <div class="world-meta-row">
@@ -1709,7 +1709,7 @@
         <!-- Welcome Screen Picker Banner -->
         <div class="welcome-picker-card">
           <div>
-            <img src="assets/screen-welcome-designs.png" alt="Willkommen in der ChessLeo Academy – Designauswahl beim ersten Start" class="welcome-picker-img" loading="lazy">
+            <img id="welcomePickerImg" data-screen-base="screen-welcome-designs" src="assets/screen-welcome-designs-de.png?v=1.6.2" alt="Willkommen in der ChessLeo Academy – Designauswahl beim ersten Start" class="welcome-picker-img" loading="lazy">
           </div>
           <div class="welcome-picker-text">
             <span class="section-tag" style="margin-bottom: 0.4rem;" data-i18n="welcome_picker_tag">Freie Wahl ab Sekunde eins</span>
@@ -1728,19 +1728,19 @@
 
           <!-- Interactive Zaubertisch Scene Tabs -->
           <div class="zt-tabs" role="tablist" aria-label="Zaubertisch-Jahreszeiten und Feste erkunden">
-            <button type="button" class="zt-tab-btn active" data-zt-src="assets/screen-zaubertisch.png" data-zt-badge="zt_scene1_badge" data-zt-title="zt_scene1_title" data-zt-desc="zt_scene1_desc">
+            <button type="button" class="zt-tab-btn active" data-zt-base="screen-zaubertisch" data-zt-badge="zt_scene1_badge" data-zt-title="zt_scene1_title" data-zt-desc="zt_scene1_desc">
               <span>☀️</span> <span data-i18n="zt_tab1">Sonnentag &amp; Frühling</span>
             </button>
-            <button type="button" class="zt-tab-btn" data-zt-src="assets/screen-zaubertisch-easter.png" data-zt-badge="zt_scene2_badge" data-zt-title="zt_scene2_title" data-zt-desc="zt_scene2_desc">
+            <button type="button" class="zt-tab-btn" data-zt-base="screen-zaubertisch-easter" data-zt-badge="zt_scene2_badge" data-zt-title="zt_scene2_title" data-zt-desc="zt_scene2_desc">
               <span>🐣</span> <span data-i18n="zt_tab2">Ostern (Eiersuche!)</span>
             </button>
-            <button type="button" class="zt-tab-btn" data-zt-src="assets/screen-zaubertisch-halloween.png" data-zt-badge="zt_scene3_badge" data-zt-title="zt_scene3_title" data-zt-desc="zt_scene3_desc">
+            <button type="button" class="zt-tab-btn" data-zt-base="screen-zaubertisch-halloween" data-zt-badge="zt_scene3_badge" data-zt-title="zt_scene3_title" data-zt-desc="zt_scene3_desc">
               <span>🎃</span> <span data-i18n="zt_tab3">Herbst &amp; Halloween</span>
             </button>
-            <button type="button" class="zt-tab-btn" data-zt-src="assets/screen-zaubertisch-christmas.png" data-zt-badge="zt_scene4_badge" data-zt-title="zt_scene4_title" data-zt-desc="zt_scene4_desc">
+            <button type="button" class="zt-tab-btn" data-zt-base="screen-zaubertisch-christmas" data-zt-badge="zt_scene4_badge" data-zt-title="zt_scene4_title" data-zt-desc="zt_scene4_desc">
               <span>🎄</span> <span data-i18n="zt_tab4">Advent &amp; Weihnachten</span>
             </button>
-            <button type="button" class="zt-tab-btn" data-zt-src="assets/screen-zaubertisch-night.png" data-zt-badge="zt_scene5_badge" data-zt-title="zt_scene5_title" data-zt-desc="zt_scene5_desc">
+            <button type="button" class="zt-tab-btn" data-zt-base="screen-zaubertisch-night" data-zt-badge="zt_scene5_badge" data-zt-title="zt_scene5_title" data-zt-desc="zt_scene5_desc">
               <span>🎆</span> <span data-i18n="zt_tab5">Nacht &amp; Silvester</span>
             </button>
           </div>
@@ -1748,7 +1748,7 @@
           <!-- Interactive Stage -->
           <div class="zt-stage">
             <div class="zt-stage-img-wrap">
-              <img id="ztStageImg" src="assets/screen-zaubertisch.png" alt="Entdecker-Zaubertisch im Wandel des Jahres" loading="lazy">
+              <img id="ztStageImg" src="assets/screen-zaubertisch-de.png?v=1.6.2" alt="Entdecker-Zaubertisch im Wandel des Jahres" loading="lazy">
             </div>
             <div class="zt-stage-info">
               <span id="ztStageBadge" class="zt-stage-badge" data-i18n="zt_scene1_badge">☀️ Tageslicht &amp; Frühlingsbrise</span>
@@ -2178,6 +2178,17 @@
         zh: { flag: '🇨🇳', code: 'ZH' }
       };
 
+      const IMG_VER = '1.6.2';
+
+      function getCurrentLang() {
+        return (document.documentElement.lang === 'zh-Hans' ? 'zh' : document.documentElement.lang) || 'de';
+      }
+
+      function localizedScreenSrc(baseName, lang) {
+        const l = lang || getCurrentLang();
+        return 'assets/' + baseName + '-' + l + '.png?v=' + IMG_VER;
+      }
+
       function setLanguage(lang) {
         if (!['de', 'en', 'es', 'fr', 'tr', 'zh'].includes(lang)) {
           lang = 'de';
@@ -2207,13 +2218,41 @@
           item.classList.toggle('active', item.getAttribute('data-lang') === lang);
         });
 
-        // Keep active hero mockup design & translate dynamic caption
+        // Update Hero mockup screenshot & caption for current language
+        const heroMockup = document.getElementById('heroMockupImg');
+        const activeHeroBtn = document.querySelector('.hero-switch-btn.active');
+        if (heroMockup && activeHeroBtn) {
+          const base = activeHeroBtn.getAttribute('data-base') || 'screen-zaubertisch';
+          heroMockup.src = localizedScreenSrc(base, lang);
+        }
         const heroCaption = document.getElementById('heroMockupCaption');
         if (heroCaption) {
           const capKey = heroCaption.getAttribute('data-i18n');
           if (capKey && i18n[capKey] && i18n[capKey][lang]) {
             heroCaption.innerHTML = i18n[capKey][lang];
           }
+        }
+
+        // Update static Design World cards & Welcome Picker screenshot for current language
+        document.querySelectorAll('[data-screen-base]').forEach(img => {
+          const base = img.getAttribute('data-screen-base');
+          if (base) img.src = localizedScreenSrc(base, lang);
+        });
+
+        // Update Klassik-Edel card screenshot (respecting active Light/Dark toggle)
+        const edelImg = document.getElementById('edelWorldImg');
+        const activeEdelBtn = document.querySelector('.world-mode-btn.active');
+        if (edelImg && activeEdelBtn) {
+          const edelBase = activeEdelBtn.getAttribute('data-edel-base') || 'screen-design-edel';
+          edelImg.src = localizedScreenSrc(edelBase, lang);
+        }
+
+        // Update Entdecker-Zaubertisch interactive stage screenshot for current language
+        const ztImg = document.getElementById('ztStageImg');
+        const activeZtBtn = document.querySelector('.zt-tab-btn.active');
+        if (ztImg && activeZtBtn) {
+          const ztBase = activeZtBtn.getAttribute('data-zt-base') || 'screen-zaubertisch';
+          ztImg.src = localizedScreenSrc(ztBase, lang);
         }
 
         // Update diploma mockup screenshot
@@ -2291,14 +2330,14 @@
         btn.addEventListener('click', function() {
           document.querySelectorAll('.hero-switch-btn').forEach(b => b.classList.remove('active'));
           this.classList.add('active');
-          const newSrc = this.getAttribute('data-src');
+          const base = this.getAttribute('data-base');
           const capKey = this.getAttribute('data-caption-key');
-          if (heroMockupImg && newSrc) {
-            heroMockupImg.src = newSrc;
+          const currentLang = getCurrentLang();
+          if (heroMockupImg && base) {
+            heroMockupImg.src = localizedScreenSrc(base, currentLang);
           }
           if (heroMockupCaption && capKey) {
             heroMockupCaption.setAttribute('data-i18n', capKey);
-            const currentLang = (document.documentElement.lang === 'zh-Hans' ? 'zh' : document.documentElement.lang) || 'de';
             if (i18n[capKey] && i18n[capKey][currentLang]) {
               heroMockupCaption.innerHTML = i18n[capKey][currentLang];
             }
@@ -2312,9 +2351,9 @@
         btn.addEventListener('click', function() {
           document.querySelectorAll('.world-mode-btn').forEach(b => b.classList.remove('active'));
           this.classList.add('active');
-          const src = this.getAttribute('data-edel-src');
-          if (edelWorldImg && src) {
-            edelWorldImg.src = src;
+          const base = this.getAttribute('data-edel-base');
+          if (edelWorldImg && base) {
+            edelWorldImg.src = localizedScreenSrc(base, getCurrentLang());
           }
         });
       });
@@ -2328,12 +2367,12 @@
         btn.addEventListener('click', function() {
           document.querySelectorAll('.zt-tab-btn').forEach(b => b.classList.remove('active'));
           this.classList.add('active');
-          const src = this.getAttribute('data-zt-src');
+          const base = this.getAttribute('data-zt-base');
           const badgeKey = this.getAttribute('data-zt-badge');
           const titleKey = this.getAttribute('data-zt-title');
           const descKey = this.getAttribute('data-zt-desc');
-          const currentLang = (document.documentElement.lang === 'zh-Hans' ? 'zh' : document.documentElement.lang) || 'de';
-          if (ztStageImg && src) ztStageImg.src = src;
+          const currentLang = getCurrentLang();
+          if (ztStageImg && base) ztStageImg.src = localizedScreenSrc(base, currentLang);
           if (ztStageBadge && badgeKey) {
             ztStageBadge.setAttribute('data-i18n', badgeKey);
             if (i18n[badgeKey] && i18n[badgeKey][currentLang]) ztStageBadge.innerHTML = i18n[badgeKey][currentLang];
@@ -2351,11 +2390,11 @@
 
       setLanguage(initialLang);
 
-      // Preload screenshots for other languages in background
+      // Preload primary screenshots for other languages in background
       ['de', 'en', 'es', 'fr', 'tr', 'zh'].forEach(l => {
         if (l !== initialLang) {
-          const preloadHome = new Image();
-          preloadHome.src = 'assets/screen-home-' + l + '.png?v=20260927';
+          const preloadZt = new Image();
+          preloadZt.src = localizedScreenSrc('screen-zaubertisch', l);
           const preloadDiplom = new Image();
           preloadDiplom.src = 'assets/screen-diplom-' + l + '.png?v=20260925';
         }
