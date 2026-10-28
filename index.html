@@ -13,18 +13,21 @@
 
   <!-- Open Graph / Facebook / WhatsApp / iMessage -->
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ChessLeo Academy">
   <meta property="og:url" content="https://tas231.github.io/Chessleo-Site/">
   <meta property="og:title" content="ChessLeo Academy – Die magische Schachschule für Kinder">
   <meta property="og:description" content="Die kindgerechte, werbefreie Schachschule für iPad &amp; Mac. 3 Design-Welten inkl. Entdecker-Zaubertisch, 5 Klassen, 26 Mini-Games &amp; Titan Engine. 100% offline &amp; sicher.">
-  <meta property="og:image" content="https://tas231.github.io/Chessleo-Site/assets/og-share-banner.png?v=1.5.0">
+  <meta property="og:image" content="https://tas231.github.io/Chessleo-Site/assets/og-share-banner.png?v=20261028">
+  <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="ChessLeo Academy – Die magische Schachschule für Kinder">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="ChessLeo Academy – Die magische Schachschule für Kinder">
   <meta name="twitter:description" content="Die kindgerechte, werbefreie Schachschule für iPad &amp; Mac. 3 Design-Welten inkl. Entdecker-Zaubertisch, 5 Klassen, 26 Mini-Games &amp; Titan Engine. 100% offline &amp; sicher.">
-  <meta name="twitter:image" content="https://tas231.github.io/Chessleo-Site/assets/og-share-banner.png?v=1.5.0">
+  <meta name="twitter:image" content="https://tas231.github.io/Chessleo-Site/assets/og-share-banner.png?v=20261028">
 
   <!-- Favicon / Apple Touch Icon -->
   <link rel="icon" type="image/jpeg" href="assets/logo-modern.jpg?v=1.5.0">
@@ -1853,9 +1856,9 @@
         <!-- SPLIT SHOWCASE: Freies Spiel / Gameplay Video -->
         <div class="showcase-split">
           <div class="showcase-img-wrap">
-            <video autoplay loop muted playsinline poster="assets/screen-freeplay.png" style="width: 100%; border-radius: 1.5rem; box-shadow: 0 20px 45px rgba(0,0,0,0.65); border: 2px solid var(--card-border); display: block;">
-              <source src="assets/gameplay-preview.mp4" type="video/mp4">
-              <img src="assets/screen-freeplay.png" alt="Freies Spiel mit Coach Vogel und Leo" loading="lazy">
+            <video autoplay loop muted playsinline poster="assets/screen-freeplay.png?v=20261028" style="width: 100%; border-radius: 1.5rem; box-shadow: 0 20px 45px rgba(0,0,0,0.65); border: 2px solid var(--card-border); display: block;">
+              <source src="assets/gameplay-preview.mp4?v=20261028" type="video/mp4">
+              <img src="assets/screen-freeplay.png?v=20261028" alt="Freies Spiel mit Coach Vogel und Leo" loading="lazy">
             </video>
           </div>
           <div class="showcase-content">
@@ -1869,7 +1872,7 @@
         <!-- SPLIT SHOWCASE: Meister-Diplom -->
         <div class="showcase-split" style="direction: rtl;">
           <div class="showcase-img-wrap" style="direction: ltr;">
-            <img id="diplomaMockupImg" src="assets/screen-diplom-de.png?v=20260925" alt="Offizielles ChessLeo Meister Diplom zum Ausdrucken" loading="lazy">
+            <img id="diplomaMockupImg" src="assets/screen-diplom-de.png?v=20261028" alt="Offizielles ChessLeo Meister Diplom zum Ausdrucken" loading="lazy">
           </div>
           <div class="showcase-content" style="direction: ltr;">
             <span class="section-tag" style="background: rgba(245, 158, 11, 0.15); color: var(--gold);" data-i18n="showcase_diplom_tag">Stolz &amp; Motivation</span>
@@ -2258,7 +2261,7 @@
         // Update diploma mockup screenshot
         const diplomaMockup = document.getElementById('diplomaMockupImg');
         if (diplomaMockup) {
-          diplomaMockup.src = 'assets/screen-diplom-' + lang + '.png?v=20260925';
+          diplomaMockup.src = 'assets/screen-diplom-' + lang + '.png?v=20261028';
         }
 
         // Store preference
@@ -2396,7 +2399,7 @@
           const preloadZt = new Image();
           preloadZt.src = localizedScreenSrc('screen-zaubertisch', l);
           const preloadDiplom = new Image();
-          preloadDiplom.src = 'assets/screen-diplom-' + l + '.png?v=20260925';
+          preloadDiplom.src = 'assets/screen-diplom-' + l + '.png?v=20261028';
         }
       });
     })();
