@@ -141,31 +141,12 @@
       gap: 1rem;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 800;
-      font-size: 1.2rem;
-      letter-spacing: -0.02em;
-      flex-shrink: 0;
-    }
-
-    .brand-logo-img {
-      width: 36px;
-      height: 36px;
-      border-radius: 9px;
-      object-fit: cover;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-    }
-
     .nav-links {
       display: flex;
       align-items: center;
       gap: 1.1rem;
       list-style: none;
+      white-space: nowrap;
     }
 
     .nav-links a {
@@ -186,6 +167,7 @@
       align-items: center;
       gap: 0.75rem;
       flex-shrink: 0;
+      margin-left: auto;
     }
 
     /* --- LANGUAGE DROPDOWN --- */
@@ -1217,7 +1199,7 @@
     }
 
     /* --- RESPONSIVE --- */
-    @media (max-width: 1180px) {
+    @media (max-width: 1120px) {
       .nav-links {
         display: none;
       }
@@ -1302,20 +1284,6 @@
       .nav-actions {
         gap: 0.35rem;
       }
-      .brand {
-        gap: 0.4rem;
-      }
-      .brand-suffix {
-        display: none;
-      }
-      .brand span {
-        font-size: 1.02rem;
-      }
-      .brand-logo-img {
-        width: 28px;
-        height: 28px;
-        border-radius: 7px;
-      }
       .lang-dropdown-btn {
         padding: 0.28rem 0.55rem;
         font-size: 0.78rem;
@@ -1354,11 +1322,6 @@
   <!-- STICKY HEADER / NAV -->
   <header class="sticky-nav">
     <div class="nav-container">
-      <a href="#" class="brand">
-        <img src="assets/logo-modern.jpg?v=1.5.0" alt="ChessLeo Academy Logo" class="brand-logo-img">
-        <span>ChessLeo<span class="brand-suffix"> Academy</span></span>
-      </a>
-
       <ul class="nav-links">
         <li><a href="#curriculum" data-i18n="nav_curriculum">Schachschule</a></li>
         <li><a href="#features" data-i18n="nav_features">Features</a></li>
