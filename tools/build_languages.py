@@ -1,0 +1,253 @@
+#!/usr/bin/env python3
+"""Build the language pages of chessleo.de from index.html.
+
+index.html is the only page to edit. It holds the German text plus all translations (the i18n
+table in its script). This script writes
+
+  en/index.html, es/index.html, fr/index.html, tr/index.html, zh/index.html
+
+with the text already in that language (search engines see real text, not a JavaScript switch),
+their own title, description, canonical link and Open Graph tags, and it fills the
+SEO-LANG block (hreflang links, og:locale, JSON-LD) on every page, the German one included.
+It also writes sitemap.xml.
+
+  python3 tools/build_languages.py          build
+  python3 tools/build_languages.py --check  exit 1 if a generated file is out of date
+
+A GitHub Action runs it after every push to main, so forgetting it only costs a minute.
+"""
+import html
+import json
+import re
+import sys
+from html.parser import HTMLParser
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+SITE = "https://chessleo.de"
+LANGS = ["de", "en", "es", "fr", "tr", "zh"]
+HTML_LANG = {"de": "de", "en": "en", "es": "es", "fr": "fr", "tr": "tr", "zh": "zh-Hans"}
+OG_LOCALE = {"de": "de_DE", "en": "en_US", "es": "es_ES", "fr": "fr_FR", "tr": "tr_TR", "zh": "zh_CN"}
+FLAG = {"de": "🇩🇪", "en": "🇬🇧", "es": "🇪🇸", "fr": "🇫🇷", "tr": "🇹🇷", "zh": "🇨🇳"}
+TITLE = {
+    "en": "ChessLeo Academy – The Magical Chess School for Kids (iPhone, iPad & Mac)",
+    "es": "ChessLeo Academy – La escuela mágica de ajedrez para niños (iPhone, iPad y Mac)",
+    "fr": "ChessLeo Academy – L’école d’échecs magique pour enfants (iPhone, iPad et Mac)",
+    "tr": "ChessLeo Academy – Çocuklar için sihirli satranç okulu (iPhone, iPad ve Mac)",
+    "zh": "ChessLeo Academy – 儿童魔法国际象棋学院（iPhone、iPad 和 Mac）",
+}
+OG_TITLE = {
+    "en": "ChessLeo Academy – The Magical Chess School for Kids",
+    "es": "ChessLeo Academy – La escuela mágica de ajedrez para niños",
+    "fr": "ChessLeo Academy – L’école d’échecs magique pour enfants",
+    "tr": "ChessLeo Academy – Çocuklar için sihirli satranç okulu",
+    "zh": "ChessLeo Academy – 儿童魔法国际象棋学院",
+}
+DESCRIPTION_KEY = "hero_subline"  # i18n text used as meta description of the language pages
+APP_STORE = "https://apps.apple.com/app/id6814943166"
+OFFERS = [("4.99", "EUR"), ("3.99", "USD")]
+VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}
+GENERATED_NOTE = "<!-- Generated from /index.html by tools/build_languages.py. Edit index.html, not this file. -->"
+
+
+def page_url(lang):
+    return f"{SITE}/" if lang == "de" else f"{SITE}/{lang}/"
+
+
+def read_i18n(page):
+    match = re.search(r"^(\s*const i18n = )(\{.*\});$", page, flags=re.M)
+    if not match:
+        sys.exit("index.html: i18n table not found")
+    return json.loads(match.group(2))
+
+
+def plain(fragment):
+    text = re.sub(r"<[^>]+>", "", fragment)
+    return re.sub(r"\s+", " ", html.unescape(text)).strip()
+
+
+class OutermostI18n(HTMLParser):
+    """Finds the inner range of every data-i18n element that is not inside another one.
+
+    The page's own script replaces innerHTML of all [data-i18n] elements in document order, so an
+    element inside another data-i18n element never shows its own translation; we do the same.
+    """
+
+    def __init__(self, text):
+        super().__init__(convert_charrefs=True)
+        self.line_starts = [0]
+        for match in re.finditer("\n", text):
+            self.line_starts.append(match.end())
+        self.stack = []  # [tag, inner_start, key or None, outermost]
+        self.i18n_depth = 0
+        self.ranges = []
+        self.feed(text)
+        self.close()
+
+    def position(self):
+        line, column = self.getpos()
+        return self.line_starts[line - 1] + column
+
+    def handle_starttag(self, tag, attrs):
+        if tag in VOID:
+            return
+        key = dict(attrs).get("data-i18n")
+        outermost = key is not None and self.i18n_depth == 0
+        if key is not None:
+            self.i18n_depth += 1
+        self.stack.append([tag, self.position() + len(self.get_starttag_text()), key, outermost])
+
+    def handle_endtag(self, tag):
+        if not any(entry[0] == tag for entry in self.stack):
+            return
+        end = self.position()
+        while self.stack:
+            entry_tag, inner_start, key, outermost = self.stack.pop()
+            if key is not None:
+                self.i18n_depth -= 1
+            if entry_tag == tag:
+                if outermost:
+                    self.ranges.append((inner_start, end, key))
+                return
+
+
+def translate_body(page, i18n, lang):
+    ranges = OutermostI18n(page).ranges
+    for start, end, key in sorted(ranges, reverse=True):
+        value = (i18n.get(key) or {}).get(lang)
+        if value:
+            page = page[:start] + value + page[end:]
+    return page, len(ranges)
+
+
+def seo_block(lang, description):
+    lines = ["  <!-- SEO-LANG:BEGIN (generated by tools/build_languages.py, do not edit by hand) -->"]
+    for other in LANGS:
+        lines.append(f'  <link rel="alternate" hreflang="{HTML_LANG[other]}" href="{page_url(other)}">')
+    lines.append(f'  <link rel="alternate" hreflang="x-default" href="{page_url("en")}">')
+    lines.append(f'  <meta property="og:locale" content="{OG_LOCALE[lang]}">')
+    for other in LANGS:
+        if other != lang:
+            lines.append(f'  <meta property="og:locale:alternate" content="{OG_LOCALE[other]}">')
+    data = {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "ChessLeo Academy",
+        "url": page_url(lang),
+        "inLanguage": HTML_LANG[lang],
+        "description": description,
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "iOS, iPadOS, macOS",
+        "image": f"{SITE}/assets/og-logo.jpg",
+        "installUrl": APP_STORE,
+        "author": {"@type": "Person", "name": "Tobias Schudy"},
+        "offers": [{"@type": "Offer", "price": price, "priceCurrency": currency} for price, currency in OFFERS],
+    }
+    ld = json.dumps(data, ensure_ascii=False, indent=2).replace("</", "<\\/")
+    lines.append('  <script type="application/ld+json">')
+    lines.extend("  " + line for line in ld.split("\n"))
+    lines.append("  </script>")
+    lines.append("  <!-- SEO-LANG:END -->")
+    return "\n".join(lines) + "\n"
+
+
+def replace_once(page, pattern, replacement, what):
+    new, count = re.subn(pattern, lambda m: replacement(m) if callable(replacement) else replacement, page,
+                         count=1, flags=re.S)
+    if count != 1:
+        sys.exit(f"index.html: {what} not found")
+    return new
+
+
+def set_meta(page, attribute, name, value):
+    return replace_once(page, r'(<meta ' + attribute + r'="' + re.escape(name) + r'" content=")[^"]*(")',
+                        lambda m: m.group(1) + html.escape(value, quote=True) + m.group(2), f"meta {name}")
+
+
+def build_page(source, i18n, lang, root_description):
+    description = root_description if lang == "de" else plain(i18n[DESCRIPTION_KEY][lang])
+    page = replace_once(source, r"  <!-- SEO-LANG:BEGIN.*?<!-- SEO-LANG:END -->\n",
+                        seo_block(lang, description), "SEO-LANG block")
+    if lang == "de":
+        return page, 0
+
+    page = replace_once(page, r"<!DOCTYPE html>\n", lambda m: m.group(0) + GENERATED_NOTE + "\n", "doctype")
+    page = replace_once(page, r'<html lang="de" data-page-lang="de"',
+                        f'<html lang="{HTML_LANG[lang]}" data-page-lang="{lang}"', "html tag")
+    page = replace_once(page, r"<title>.*?</title>", f"<title>{html.escape(TITLE[lang], quote=False)}</title>", "title")
+    page = set_meta(page, "name", "description", description)
+    page = set_meta(page, "property", "og:title", OG_TITLE[lang])
+    page = set_meta(page, "property", "og:description", description)
+    page = set_meta(page, "property", "og:url", page_url(lang))
+    page = set_meta(page, "name", "twitter:title", OG_TITLE[lang])
+    page = set_meta(page, "name", "twitter:description", description)
+    page = replace_once(page, r'<link rel="canonical" href="[^"]*">', f'<link rel="canonical" href="{page_url(lang)}">',
+                        "canonical")
+
+    page, count = translate_body(page, i18n, lang)
+
+    # Screenshots that exist per language.
+    def localize_img(match):
+        tag = match.group(0)
+        if 'id="heroMockupImg"' in tag or 'id="diplomaMockupImg"' in tag or "data-screen-base=" in tag:
+            tag = tag.replace("-de.png", f"-{lang}.png")
+        return tag
+
+    page = re.sub(r"<img\b[^>]*>", localize_img, page)
+
+    # Language menu shows this page's language without waiting for the script.
+    page = replace_once(page, r'(id="langCurrentFlag">)[^<]*(<)', lambda m: m.group(1) + FLAG[lang] + m.group(2),
+                        "menu flag")
+    page = replace_once(page, r'(id="langCurrentCode">)[^<]*(<)', lambda m: m.group(1) + lang.upper() + m.group(2),
+                        "menu code")
+    page = page.replace('class="lang-dropdown-item active" data-lang="de"', 'class="lang-dropdown-item" data-lang="de"')
+    page = replace_once(page, r'class="lang-dropdown-item" data-lang="' + lang + '"',
+                        f'class="lang-dropdown-item active" data-lang="{lang}"', "menu item")
+    return page, count
+
+
+def sitemap():
+    lines = ['<?xml version="1.0" encoding="UTF-8"?>',
+             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">']
+    for lang in LANGS:
+        lines.append("  <url>")
+        lines.append(f"    <loc>{page_url(lang)}</loc>")
+        for other in LANGS:
+            lines.append(f'    <xhtml:link rel="alternate" hreflang="{HTML_LANG[other]}" href="{page_url(other)}"/>')
+        lines.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{page_url("en")}"/>')
+        lines.append("  </url>")
+    lines.append("</urlset>")
+    return "\n".join(lines) + "\n"
+
+
+def main():
+    check = "--check" in sys.argv[1:]
+    source_path = ROOT / "index.html"
+    source = source_path.read_text(encoding="utf-8")
+    i18n = read_i18n(source)
+    match = re.search(r'<meta name="description" content="([^"]*)"', source)
+    root_description = html.unescape(match.group(1))
+
+    outputs = {source_path: build_page(source, i18n, "de", root_description)[0]}
+    for lang in LANGS[1:]:
+        page, count = build_page(outputs[source_path], i18n, lang, root_description)
+        outputs[ROOT / lang / "index.html"] = page
+        print(f"{lang}: {count} translated text blocks")
+    outputs[ROOT / "sitemap.xml"] = sitemap()
+
+    stale = []
+    for path, content in outputs.items():
+        old = path.read_text(encoding="utf-8") if path.exists() else None
+        if old != content:
+            stale.append(path.relative_to(ROOT).as_posix())
+            if not check:
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text(content, encoding="utf-8")
+    if check and stale:
+        print("out of date:", ", ".join(stale))
+        sys.exit(1)
+    print("updated:" if stale else "up to date", ", ".join(stale))
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,38 @@
+# Rebuilds /en/, /es/, /fr/, /tr/, /zh/ and sitemap.xml from index.html after every push to main,
+# in case someone edited index.html without running tools/build_languages.py. The bot commit goes
+# online through the same Plesk webhook as every other push.
+name: Build language pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - index.html
+      - tools/build_languages.py
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-languages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build language pages
+        run: python3 tools/build_languages.py
+      - name: Commit generated files if they changed
+        run: |
+          if [ -n "$(git status --porcelain -- index.html en es fr tr zh sitemap.xml)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add index.html en es fr tr zh sitemap.xml
+            git commit -m "Rebuild language pages from index.html"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          else
+            echo "Language pages are up to date."
+          fi
