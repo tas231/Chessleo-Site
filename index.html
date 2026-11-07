@@ -2,6 +2,12 @@
 <html lang="de" translate="no" class="notranslate">
 <head>
   <meta charset="UTF-8">
+  <!-- One address for the site: www.chessleo.de goes to chessleo.de -->
+  <script>
+    if (location.hostname === 'www.chessleo.de') {
+      location.replace('https://chessleo.de' + location.pathname + location.search + location.hash);
+    }
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ChessLeo Academy – Die magische Schachschule für Kinder (iPhone, iPad &amp; Mac)</title>
   <meta name="robots" content="index, follow">
