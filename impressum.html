@@ -484,8 +484,10 @@
             break;
           }
         }
-        // A Mac set to English with a German (Spanish, …) region reports e.g. "en-DE" before "de-DE".
-        // If the list also holds a language of that region, the visitor reads it: prefer it.
+        // Chrome can report English with the visitor's region first, e.g. "en-DE" before "de-DE",
+        // and in incognito even "en-DE,en-US,en" without German at all. English with the region of
+        // another language we have therefore means that language: one the visitor lists for that
+        // region first, otherwise the region's main language.
         const homeRegions = {
           de: ['DE', 'AT', 'CH', 'LI', 'LU'],
           es: ['ES', 'MX', 'AR', 'CO', 'CL', 'PE', 'VE', 'UY', 'EC', 'BO', 'PY', 'CR', 'GT', 'DO', 'PA', 'SV', 'HN', 'NI', 'CU', 'PR'],
@@ -493,18 +495,28 @@
           tr: ['TR', 'CY'],
           zh: ['CN', 'TW', 'HK', 'MO', 'SG']
         };
+        const regionMainLang = {
+          DE: 'de', AT: 'de', CH: 'de', LI: 'de',
+          ES: 'es', MX: 'es', AR: 'es', CO: 'es', CL: 'es', PE: 'es', VE: 'es', UY: 'es', EC: 'es', BO: 'es',
+          PY: 'es', CR: 'es', GT: 'es', DO: 'es', PA: 'es', SV: 'es', HN: 'es', NI: 'es', CU: 'es',
+          FR: 'fr', MC: 'fr',
+          TR: 'tr',
+          CN: 'zh', TW: 'zh', HK: 'zh', MO: 'zh'
+        };
         const regionPart = firstIndex >= 0
           ? String(browserLangs[firstIndex]).split('-').slice(1).find(part => /^[A-Za-z]{2}$/.test(part))
           : null;
         const region = regionPart ? regionPart.toUpperCase() : '';
         if (initialLang === 'en' && region) {
+          let listedRegionLang = null;
           for (let i = firstIndex + 1; i < browserLangs.length; i++) {
             const code = String(browserLangs[i]).toLowerCase().split('-')[0];
             if (code !== 'en' && supportedLangs.includes(code) && (homeRegions[code] || []).includes(region)) {
-              initialLang = code;
+              listedRegionLang = code;
               break;
             }
           }
+          initialLang = listedRegionLang || regionMainLang[region] || 'en';
         }
       }
 
