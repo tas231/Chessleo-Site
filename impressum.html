@@ -475,11 +475,35 @@
         const browserLangs = (navigator.languages && navigator.languages.length)
           ? navigator.languages
           : [navigator.language || navigator.userLanguage || 'en'];
-        for (const browserLang of browserLangs) {
-          const code = String(browserLang).toLowerCase().split('-')[0];
+        let firstIndex = -1;
+        for (let i = 0; i < browserLangs.length; i++) {
+          const code = String(browserLangs[i]).toLowerCase().split('-')[0];
           if (supportedLangs.includes(code)) {
             initialLang = code;
+            firstIndex = i;
             break;
+          }
+        }
+        // A Mac set to English with a German (Spanish, …) region reports e.g. "en-DE" before "de-DE".
+        // If the list also holds a language of that region, the visitor reads it: prefer it.
+        const homeRegions = {
+          de: ['DE', 'AT', 'CH', 'LI', 'LU'],
+          es: ['ES', 'MX', 'AR', 'CO', 'CL', 'PE', 'VE', 'UY', 'EC', 'BO', 'PY', 'CR', 'GT', 'DO', 'PA', 'SV', 'HN', 'NI', 'CU', 'PR'],
+          fr: ['FR', 'BE', 'CH', 'LU', 'MC', 'CA'],
+          tr: ['TR', 'CY'],
+          zh: ['CN', 'TW', 'HK', 'MO', 'SG']
+        };
+        const regionPart = firstIndex >= 0
+          ? String(browserLangs[firstIndex]).split('-').slice(1).find(part => /^[A-Za-z]{2}$/.test(part))
+          : null;
+        const region = regionPart ? regionPart.toUpperCase() : '';
+        if (initialLang === 'en' && region) {
+          for (let i = firstIndex + 1; i < browserLangs.length; i++) {
+            const code = String(browserLangs[i]).toLowerCase().split('-')[0];
+            if (code !== 'en' && supportedLangs.includes(code) && (homeRegions[code] || []).includes(region)) {
+              initialLang = code;
+              break;
+            }
           }
         }
       }
