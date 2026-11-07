@@ -394,9 +394,9 @@
         zh: { flag: '🇨🇳', code: 'ZH' }
       };
 
-      function setLanguage(lang) {
+      function setLanguage(lang, remember) {
         if (!['de', 'en', 'es', 'fr', 'tr', 'zh'].includes(lang)) {
-          lang = 'de';
+          lang = 'en';
         }
 
         document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : lang;
@@ -418,9 +418,12 @@
           item.classList.toggle('active', item.getAttribute('data-lang') === lang);
         });
 
-        try {
-          localStorage.setItem('chessleo_lang', lang);
-        } catch(e) {}
+        // Remember the language only when the visitor picks it in the menu
+        if (remember) {
+          try {
+            localStorage.setItem('chessleo_lang_choice', lang);
+          } catch(e) {}
+        }
       }
 
       // Dropdown
@@ -437,7 +440,7 @@
           btn.addEventListener('click', function(e) {
             e.preventDefault();
             const targetLang = this.getAttribute('data-lang');
-            setLanguage(targetLang);
+            setLanguage(targetLang, true);
             dropdown.classList.remove('open');
           });
         });
@@ -449,21 +452,31 @@
         });
       }
 
+      // Starting language: the visitor's own pick from the menu, otherwise the first
+      // browser language the site has (navigator.languages, in the visitor's order), otherwise English.
+      const supportedLangs = ['de', 'en', 'es', 'fr', 'tr', 'zh'];
       let initialLang = 'en';
+      let chosenLang = null;
       try {
-        const stored = localStorage.getItem('chessleo_lang') || localStorage.getItem('chessling_lang');
-        if (stored && ['de', 'en', 'es', 'fr', 'tr', 'zh'].includes(stored)) {
-          initialLang = stored;
-        } else {
-          const navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-          if (navLang.startsWith('de')) initialLang = 'de';
-          else if (navLang.startsWith('es')) initialLang = 'es';
-          else if (navLang.startsWith('fr')) initialLang = 'fr';
-          else if (navLang.startsWith('tr')) initialLang = 'tr';
-          else if (navLang.startsWith('zh')) initialLang = 'zh';
-          else initialLang = 'en';
-        }
+        // Older versions stored every language automatically, even without a pick; forget those.
+        localStorage.removeItem('chessleo_lang');
+        localStorage.removeItem('chessling_lang');
+        chosenLang = localStorage.getItem('chessleo_lang_choice');
       } catch(e) {}
+      if (supportedLangs.includes(chosenLang)) {
+        initialLang = chosenLang;
+      } else {
+        const browserLangs = (navigator.languages && navigator.languages.length)
+          ? navigator.languages
+          : [navigator.language || navigator.userLanguage || 'en'];
+        for (const browserLang of browserLangs) {
+          const code = String(browserLang).toLowerCase().split('-')[0];
+          if (supportedLangs.includes(code)) {
+            initialLang = code;
+            break;
+          }
+        }
+      }
 
       setLanguage(initialLang);
     })();
