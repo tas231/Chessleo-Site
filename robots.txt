@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /impressum.html
-Disallow: /imprint.html
 
 Sitemap: https://chessleo.de/sitemap.xml
