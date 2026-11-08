@@ -36,3 +36,12 @@ jobs:
           else
             echo "Language pages are up to date."
           fi
+      # Tell Bing and the other IndexNow engines that the pages changed. The key is public by design:
+      # https://chessleo.de/024b3b96a1fd1f4670237e51c4a97c7e.txt proves we own the site.
+      # The pause gives Plesk time to pull the push before the crawlers come.
+      - name: Report the pages to IndexNow
+        run: |
+          sleep 90
+          curl -sS -o /dev/null -w "IndexNow answered %{http_code}\n" -X POST https://api.indexnow.org/indexnow \
+            -H 'Content-Type: application/json; charset=utf-8' \
+            --data '{"host":"chessleo.de","key":"024b3b96a1fd1f4670237e51c4a97c7e","keyLocation":"https://chessleo.de/024b3b96a1fd1f4670237e51c4a97c7e.txt","urlList":["https://chessleo.de/","https://chessleo.de/en/","https://chessleo.de/es/","https://chessleo.de/fr/","https://chessleo.de/tr/","https://chessleo.de/zh/"]}'
