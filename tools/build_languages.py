@@ -190,7 +190,7 @@ def build_page(source, i18n, lang, root_description):
     def localize_img(match):
         tag = match.group(0)
         if 'id="heroMockupImg"' in tag or 'id="diplomaMockupImg"' in tag or "data-screen-base=" in tag:
-            tag = tag.replace("-de.png", f"-{lang}.png")
+            tag = tag.replace("-de.webp", f"-{lang}.webp")
         return tag
 
     page = re.sub(r"<img\b[^>]*>", localize_img, page)

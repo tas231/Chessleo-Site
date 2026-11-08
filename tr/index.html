@@ -313,6 +313,7 @@
       cursor: pointer;
       width: 100%;
       text-align: left;
+      text-decoration: none;
       transition: all 0.15s ease;
       font-family: inherit;
     }
@@ -1403,30 +1404,30 @@
             <span class="dropdown-chevron">▾</span>
           </button>
           <div class="lang-dropdown-menu" id="langDropdownMenu" role="menu">
-            <button class="lang-dropdown-item" data-lang="de" type="button" role="menuitem">
+            <a class="lang-dropdown-item" data-lang="de" href="/" hreflang="de" role="menuitem">
               <span class="lang-flag">🇩🇪</span>
               <span class="lang-name">Deutsch</span>
-            </button>
-            <button class="lang-dropdown-item" data-lang="en" type="button" role="menuitem">
+            </a>
+            <a class="lang-dropdown-item" data-lang="en" href="/en/" hreflang="en" role="menuitem">
               <span class="lang-flag">🇬🇧</span>
               <span class="lang-name">English</span>
-            </button>
-            <button class="lang-dropdown-item" data-lang="es" type="button" role="menuitem">
+            </a>
+            <a class="lang-dropdown-item" data-lang="es" href="/es/" hreflang="es" role="menuitem">
               <span class="lang-flag">🇪🇸</span>
               <span class="lang-name">Español</span>
-            </button>
-            <button class="lang-dropdown-item" data-lang="fr" type="button" role="menuitem">
+            </a>
+            <a class="lang-dropdown-item" data-lang="fr" href="/fr/" hreflang="fr" role="menuitem">
               <span class="lang-flag">🇫🇷</span>
               <span class="lang-name">Français</span>
-            </button>
-            <button class="lang-dropdown-item active" data-lang="tr" type="button" role="menuitem">
+            </a>
+            <a class="lang-dropdown-item active" data-lang="tr" href="/tr/" hreflang="tr" role="menuitem">
               <span class="lang-flag">🇹🇷</span>
               <span class="lang-name">Türkçe</span>
-            </button>
-            <button class="lang-dropdown-item" data-lang="zh" type="button" role="menuitem">
+            </a>
+            <a class="lang-dropdown-item" data-lang="zh" href="/zh/" hreflang="zh-Hans" role="menuitem">
               <span class="lang-flag">🇨🇳</span>
               <span class="lang-name">简体中文</span>
-            </button>
+            </a>
           </div>
         </div>
 
@@ -1440,7 +1441,7 @@
     <section class="hero">
       <div class="container">
         <div class="hero-logo-box">
-          <img src="/assets/logo-artistic-transparent.png?v=1.5.0" alt="ChessLeo Academy Logo" class="hero-logo-img">
+          <img src="/assets/logo-artistic-transparent.webp?v=1.7.0" alt="ChessLeo Academy Logo" class="hero-logo-img">
           <h2 class="hero-logo-title">ChessLeo Academy</h2>
         </div>
 
@@ -1489,7 +1490,7 @@
             <!-- Mockup: Startscreen -->
             <div class="mockup-wrapper">
               <div class="mockup-frame">
-                <img id="heroMockupImg" src="/assets/screen-zaubertisch-tr.png?v=1.6.3" alt="ChessLeo Academy – Entdecker-Zaubertisch &amp; Design-Welten" loading="eager">
+                <img id="heroMockupImg" src="/assets/screen-zaubertisch-tr.webp?v=1.7.0" alt="ChessLeo Academy – Entdecker-Zaubertisch &amp; Design-Welten" loading="eager">
               </div>
               <p id="heroMockupCaption" class="hero-mockup-caption" data-i18n="hero_cap_zaubertisch">✨ <strong>Kaşif’in Sihirli Masası:</strong> Çocuklar için canlı satranç atölyesi – süzülen güneş ışığı, pencerede kuş yuvası ve dokunulabilir Kuş Koç ile.</p>
             </div>
@@ -1520,15 +1521,15 @@
         <!-- Echte Lektionen -->
         <div class="school-gallery">
           <figure class="school-shot">
-            <img data-screen-base="screen-school-prolog" src="/assets/screen-school-prolog-tr.png?v=1.6.3" alt="Prolog „Was ist Schach?“ mit Coach Vogel" loading="lazy">
+            <img data-screen-base="screen-school-prolog" src="/assets/screen-school-prolog-tr.webp?v=1.7.0" alt="Prolog „Was ist Schach?“ mit Coach Vogel" loading="lazy">
             <figcaption data-i18n="school_shot1"><strong>Giriş:</strong> “Satranç nedir?” – hiç oynamamış çocuklar için yumuşak bir başlangıç.</figcaption>
           </figure>
           <figure class="school-shot">
-            <img data-screen-base="screen-school-bishop" src="/assets/screen-school-bishop-tr.png?v=1.6.3" alt="Lektion Der Läufer mit Zauberbrille" loading="lazy">
+            <img data-screen-base="screen-school-bishop" src="/assets/screen-school-bishop-tr.webp?v=1.7.0" alt="Lektion Der Läufer mit Zauberbrille" loading="lazy">
             <figcaption data-i18n="school_shot2"><strong>1. Sınıf:</strong> Her taşın bir hikâyesi var – sihirli gözlüklü fil gibi.</figcaption>
           </figure>
           <figure class="school-shot">
-            <img data-screen-base="screen-school-italian" src="/assets/screen-school-italian-tr.png?v=1.6.3" alt="Lektion Italienische Partie mit Coach Vogel" loading="lazy">
+            <img data-screen-base="screen-school-italian" src="/assets/screen-school-italian-tr.webp?v=1.7.0" alt="Lektion Italienische Partie mit Coach Vogel" loading="lazy">
             <figcaption data-i18n="school_shot3"><strong>3. Sınıf:</strong> Hamle hamle gerçek açılışlar – İtalyan Oyunu “dans pisti”nde başlıyor.</figcaption>
           </figure>
         </div>
@@ -1593,7 +1594,7 @@
         <!-- SPLIT SHOWCASE: Meister-Diplom -->
         <div class="showcase-split" style="direction: rtl;">
           <div class="showcase-img-wrap" style="direction: ltr;">
-            <img id="diplomaMockupImg" src="/assets/screen-diplom-tr.png?v=20261028" alt="Persönliches ChessLeo Meister Diplom zum Ausdrucken" loading="lazy">
+            <img id="diplomaMockupImg" src="/assets/screen-diplom-tr.webp?v=1.7.0" alt="Persönliches ChessLeo Meister Diplom zum Ausdrucken" loading="lazy">
           </div>
           <div class="showcase-content" style="direction: ltr;">
             <span class="section-tag" style="background: rgba(245, 158, 11, 0.15); color: var(--gold);" data-i18n="showcase_diplom_tag">Gurur ve Motivasyon</span>
@@ -1660,9 +1661,9 @@
         <!-- SPLIT SHOWCASE: Freies Spiel / Gameplay Video -->
         <div class="showcase-split">
           <div class="showcase-img-wrap">
-            <video autoplay loop muted playsinline poster="/assets/screen-freeplay.png?v=20261028" style="width: 100%; border-radius: 1.5rem; box-shadow: 0 20px 45px rgba(0,0,0,0.65); border: 2px solid var(--card-border); display: block;">
+            <video autoplay loop muted playsinline poster="/assets/screen-freeplay.webp?v=1.7.0" style="width: 100%; border-radius: 1.5rem; box-shadow: 0 20px 45px rgba(0,0,0,0.65); border: 2px solid var(--card-border); display: block;">
               <source src="/assets/gameplay-preview.mp4?v=20261028" type="video/mp4">
-              <img src="/assets/screen-freeplay.png?v=20261028" alt="Freies Spiel mit Coach Vogel und Leo" loading="lazy">
+              <img src="/assets/screen-freeplay.webp?v=1.7.0" alt="Freies Spiel mit Coach Vogel und Leo" loading="lazy">
             </video>
           </div>
           <div class="showcase-content">
@@ -1738,7 +1739,7 @@
           <!-- Set 1: Kawaii Chibi -->
           <div class="piece-card">
             <div class="piece-img-box">
-              <img src="/assets/pieces-kawaii.jpg" alt="Kawaii Chibi Schachfiguren Set" loading="lazy">
+              <img src="/assets/pieces-kawaii.webp" alt="Kawaii Chibi Schachfiguren Set" loading="lazy">
             </div>
             <div class="piece-info">
               <span class="piece-tag" style="background: rgba(244, 63, 94, 0.15); color: var(--rose);" data-i18n="boutique_set1_tag">Sevimli ve Neşeli</span>
@@ -1750,7 +1751,7 @@
           <!-- Set 2: Imperial Jade & Dragon -->
           <div class="piece-card">
             <div class="piece-img-box">
-              <img src="/assets/pieces-asia.jpg" alt="Kaiserliches Jade & Drachen Schachfiguren Set" loading="lazy">
+              <img src="/assets/pieces-asia.webp" alt="Kaiserliches Jade & Drachen Schachfiguren Set" loading="lazy">
             </div>
             <div class="piece-info">
               <span class="piece-tag" style="background: rgba(16, 185, 129, 0.15); color: var(--emerald);" data-i18n="boutique_set2_tag">Görkemli ve Mistik</span>
@@ -1762,7 +1763,7 @@
           <!-- Set 3: Crystal Glass & Moonlight -->
           <div class="piece-card">
             <div class="piece-img-box">
-              <img src="/assets/pieces-fantasy.jpg" alt="Kristallglas & Mondlicht Schachfiguren Set" loading="lazy">
+              <img src="/assets/pieces-fantasy.webp" alt="Kristallglas & Mondlicht Schachfiguren Set" loading="lazy">
             </div>
             <div class="piece-info">
               <span class="piece-tag" style="background: rgba(168, 85, 247, 0.15); color: var(--purple);" data-i18n="boutique_set3_tag">Masalsı ve Zarif</span>
@@ -1789,9 +1790,9 @@
         </div>
 
         <div class="characters-grid">
-          <!-- Leo (File: avatar_max.jpg) - Einsteiger -->
+          <!-- Leo (File: avatar_max.webp) - Einsteiger -->
           <div class="char-card">
-            <img src="/assets/avatar_max.jpg" alt="Leo - Einsteiger" class="char-avatar-img" loading="lazy">
+            <img src="/assets/avatar_max.webp" alt="Leo - Einsteiger" class="char-avatar-img" loading="lazy">
             <h4 class="char-name" data-i18n="char_leo_name">Leo</h4>
             <span class="char-role" style="background: rgba(168, 85, 247, 0.15); color: var(--purple);" data-i18n="char_leo_role">Başlangıç</span>
             <p data-i18n="char_leo_desc">Meraklı minik aslan. Çılgınca ve hevesle oynar, tüm hataları bağışlar – ilk hamleler için idealdir.</p>
@@ -1799,7 +1800,7 @@
 
           <!-- Lina - Leicht -->
           <div class="char-card">
-            <img src="/assets/avatar_lina.jpg" alt="Lina - Leicht" class="char-avatar-img" loading="lazy">
+            <img src="/assets/avatar_lina.webp" alt="Lina - Leicht" class="char-avatar-img" loading="lazy">
             <h4 class="char-name" data-i18n="char_lina_name">Lina</h4>
             <span class="char-role" style="background: rgba(56, 189, 248, 0.15); color: var(--accent);" data-i18n="char_lina_role">Kolay</span>
             <p data-i18n="char_lina_desc">Akıllı taktik tilkisi. Taşlarını dikkatle korur, savunmanızı test eder ve ilk küçük tuzaklarıyla sizi zorlar.</p>
@@ -1807,7 +1808,7 @@
 
           <!-- Opa Theo - Legende -->
           <div class="char-card">
-            <img src="/assets/avatar_theo.jpg" alt="Opa Theo - Legende" class="char-avatar-img" loading="lazy">
+            <img src="/assets/avatar_theo.webp" alt="Opa Theo - Legende" class="char-avatar-img" loading="lazy">
             <h4 class="char-name" data-i18n="char_theo_name">Theo Dede</h4>
             <span class="char-role" style="background: rgba(245, 158, 11, 0.15); color: var(--gold);" data-i18n="char_theo_role">Efsane</span>
             <p data-i18n="char_theo_desc">Bilge ve sabırlı usta. Klasik ve düşünerek oynar – geleceğin şampiyonları için ideal sparring arkadaşı.</p>
@@ -1815,7 +1816,7 @@
 
           <!-- Titan Engine - ChessLeo Meister -->
           <div class="char-card">
-            <img src="/assets/avatar_titan.jpg" alt="Titan Engine - ChessLeo Meister" class="char-avatar-img" loading="lazy">
+            <img src="/assets/avatar_titan.webp" alt="Titan Engine - ChessLeo Meister" class="char-avatar-img" loading="lazy">
             <h4 class="char-name" data-i18n="char_titan_name">Titan Engine</h4>
             <span class="char-role" style="background: rgba(245, 158, 11, 0.2); color: var(--gold-light); border: 1px solid rgba(245, 158, 11, 0.4);" data-i18n="char_titan_role">ChessLeo Ustası</span>
             <p data-i18n="char_titan_desc">Turnuva seviyesinde acımasız yapay zeka. Gerçek bir ustalık mücadelesi arayanlar için derin ve kusursuz hesaplama.</p>
@@ -1942,7 +1943,7 @@
         zh: { flag: '🇨🇳', code: 'ZH' }
       };
 
-      const IMG_VER = '1.6.3';
+      const IMG_VER = '1.7.0';
 
       function getCurrentLang() {
         return (document.documentElement.lang === 'zh-Hans' ? 'zh' : document.documentElement.lang) || 'de';
@@ -1950,7 +1951,7 @@
 
       function localizedScreenSrc(baseName, lang) {
         const l = lang || getCurrentLang();
-        return '/assets/' + baseName + '-' + l + '.png?v=' + IMG_VER;
+        return '/assets/' + baseName + '-' + l + '.webp?v=' + IMG_VER;
       }
 
       function setLanguage(lang, remember) {
@@ -2006,7 +2007,7 @@
         // Update diploma mockup screenshot
         const diplomaMockup = document.getElementById('diplomaMockupImg');
         if (diplomaMockup) {
-          diplomaMockup.src = '/assets/screen-diplom-' + lang + '.png?v=20261028';
+          diplomaMockup.src = '/assets/screen-diplom-' + lang + '.webp?v=' + IMG_VER;
         }
 
         // Remember the language only when the visitor picks it in the menu
@@ -2030,6 +2031,11 @@
 
         document.querySelectorAll('.lang-dropdown-item').forEach(btn => {
           btn.addEventListener('click', function(e) {
+            // Cmd/Ctrl/Shift/middle click opens the language in a new tab or window as usual.
+            if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) {
+              try { localStorage.setItem('chessleo_lang_choice', this.getAttribute('data-lang')); } catch(err) {}
+              return;
+            }
             e.preventDefault();
             const targetLang = this.getAttribute('data-lang');
             setLanguage(targetLang, true);
