@@ -1,0 +1,51 @@
+============================================================
+CHESSLEO ACADEMY – PRESSE-FACTSHEET & MEDIENINFORMATION
+============================================================
+
+PRODUKT-ÜBERSICHT
+-----------------
+App-Name:        ChessLeo Academy
+Untertitel:      Die kindgerechte, werbefreie Schachschule für iPad, iPhone & Mac
+Entwickler:      Tobias Schudy (Indie-Entwickler aus Markt Schwaben bei München)
+App Store Link:  https://apps.apple.com/app/id6814943166
+Webseite:        https://chessleo.de
+Pressebereich:   https://chessleo.de/presse.html
+Pressekontakt:   chessleoacademy@gmail.com
+
+PREIS & VERFÜGBARKEIT
+---------------------
+Preismodell:     4,99 € Einmalkauf (Universal Purchase für iPad, iPhone & Mac)
+Abonnement:      Kein Abonnement, keine laufenden Kosten
+In-App-Käufe:    Keine In-App-Käufe, keine versteckten Kosten
+Familienfreigabe:Voll teilbar über die Apple Familienfreigabe
+Kompatibilität:  iPadOS 17+, iOS 17+, macOS 14+ (Apple Silicon optimiert)
+Sprachen:        Deutsch, Englisch, Spanisch, Französisch, Türkisch, Chinesisch (komplett lokalisiert)
+
+ZIELGRUPPE & PÄDAGOGISCHES KONZEPT
+-----------------------------------
+Zielgruppe:      Kinder im Grundschulalter (insbesondere Schulanfänger)
+Coach & Mentor:  „Coach Vogel“ liest jede Lektion laut vor (ideal für Leseanfänger)
+Lehrplan:        5 strukturierte Schulklassen (Prolog + Klasse 1 bis 5)
+                 Vom Bauern-Diplom (Figurenbewegungen & Spezialregeln) über Taktik
+                 (Springergabel, Fesselung, Spieß) bis zu 7 Meister-Mattbildern.
+Abschluss:       Persönliches druckbares Meister-Diplom nach bestandener Meisterprüfung.
+Minispiele:      27 Minispiele & 6.300+ Rätsel zur spielerischen Festigung:
+                 Taktik-Detektive, Turm-Münzrausch, Feld-Ninja, Patt-Falle,
+                 Bauern-Krieg und Springer-Parcours.
+Schachwelten:    3 wählbare visuelle Designs (Klassisch-Edel, Bunt, Kunst & Kultur).
+
+SICHERHEIT & DATENSCHUTZ (ELTERNSCHUTZ)
+----------------------------------------
+Werbung:         100 % werbefrei
+Datenschutz:     Keine Erhebung von Kinderdaten, kein Tracking, keine Werbe-IDs (IDFA)
+Online-Chat:     Kein Online-Chat mit Fremden, keine Community-Risiken
+Offline:         Lektionen, Minispiele und Computermatches funktionieren ohne Internet
+                 (ideal für Reisen, Bahnfahrten und Urlaub).
+
+REZENSIONSEXEMPLARE & INTERVIEWS
+--------------------------------
+Journalisten, Fachredaktionen und Blogger erhalten gerne kostenlose TestFlight-Beta-Zugänge
+oder direkte App Store Promo-Codes für redaktionelle Tests auf Redaktions-iPads.
+Für Rückfragen, Entwickler-Zitate oder Interviews steht Tobias Schudy gerne zur Verfügung:
+E-Mail: chessleoacademy@gmail.com
+============================================================
