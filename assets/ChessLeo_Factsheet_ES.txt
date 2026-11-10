@@ -1,0 +1,47 @@
+============================================================
+CHESSLEO ACADEMY – DOSSIER DE PRENSA & FICHA TÉCNICA
+============================================================
+
+INFORMACIÓN GENERAL
+-------------------
+Título:          ChessLeo Academy
+Subtítulo:       La escuela mágica de ajedrez para niños en iPad, iPhone y Mac
+Desarrollador:   Tobias Schudy (Desarrollador independiente en Múnich, Alemania)
+Enlace App Store:https://apps.apple.com/app/id6814943166
+Sitio web:       https://chessleo.de/es/
+Contacto prensa: chessleoacademy@gmail.com
+
+PRECIO Y DISPONIBILIDAD
+-----------------------
+Precio:          4,99 € / .00 MXN compra única (Compra universal iPad, iPhone y Mac)
+Suscripción:     Sin suscripciones, sin costes periódicos
+Compras in-app:  Sin compras dentro de la app, sin costes ocultos
+En familia:      Totalmente compatible con «En familia» de Apple
+Compatibilidad:  iPadOS 17+, iOS 17+, macOS 14+ (Optimizado para Apple Silicon)
+Idiomas:         Español, Alemán, Inglés, Francés, Turco, Chino simplificado
+
+DESTINATARIOS Y ENFOQUE PEDAGÓGICO
+----------------------------------
+Público objetivo:Niños en edad escolar primaria (especialmente principiantes)
+Mentor de voz:   El «Entrenador Pájaro» lee cada lección en voz alta (ideal para primeros lectores)
+Plan de estudio: 5 cursos estructurados (Prólogo + Cursos 1 al 5)
+                 Desde el Diploma de Peón hasta horquillas, clavadas, enfiladas y
+                 7 patrones de mate maestro con examen final.
+Diploma:         Diploma personal imprimible de maestro al superar el examen.
+Minijuegos:      27 dinámicos minijuegos y más de 6.300 puzles tácticos:
+                 Detectives Tácticos, Fiebre de Oro de la Torre, Ninja del Tablero,
+                 Trampa del Ahogado, Guerra de Peones y Circuito del Caballo.
+
+SEGURIDAD Y PRIVACIDAD INFANTIL
+-------------------------------
+Publicidad:      100 % sin publicidad
+Privacidad:      Cero recopilación de datos de menores, sin rastreadores ni publicidad dirigida
+Chat online:     Sin chat con desconocidos, entorno seguro
+Sin conexión:    Las lecciones, minijuegos y partidas contra el ordenador funcionan sin internet.
+
+COPIAS DE REVISIÓN PARA PRENSA
+------------------------------
+Invitamos a periodistas y medios especializados a solicitar acceso beta gratuito mediante
+Apple TestFlight o códigos promocionales de App Store para probar la app en iPad o Mac.
+Contacto: chessleoacademy@gmail.com
+============================================================

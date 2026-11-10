@@ -1,0 +1,46 @@
+============================================================
+CHESSLEO ACADEMY – BASIN BİLGİ NOTU & MEDYA KİTİ
+============================================================
+
+ÜRÜN BİLGİSİ
+------------
+Uygulama Adı:    ChessLeo Academy
+Alt Başlık:      iPad, iPhone ve Mac için çocuklar için sihirli ve reklamsız satranç okulu
+Geliştirici:     Tobias Schudy (Münih yakınlarında bağımsız geliştirici, Almanya)
+App Store Linki: https://apps.apple.com/app/id6814943166
+Web Sitesi:      https://chessleo.de/tr/
+Basın İletişim:  chessleoacademy@gmail.com
+
+FİYATLANDIRMA & ERİŞİLEBİLİRLİK
+--------------------------------
+Fiyat Modeli:    ₺199,99 tek seferlik satın alma (iPad, iPhone ve Mac için ortak lisans)
+Abonelik:        Abonelik yok, periyodik ücret yok
+Uygulama İçi:    Uygulama içi satın alma veya gizli maliyet yok
+Aile Paylaşımı:  Apple Aile Paylaşımı ile tam uyumlu
+Uyumluluk:       iPadOS 17+, iOS 17+, macOS 14+ (Apple Silicon optimize)
+Diller:          Türkçe, Almanca, İngilizce, Fransızca, İspanyolca, Basitleştirilmiş Çince
+
+HEDEF KİTLE & PEDAGOJİK YAKLAŞIM
+--------------------------------
+Hedef Kitle:     İlkokul çağındaki çocuklar (özellikle satranca yeni başlayanlar)
+Sesli Rehber:    «Koç Kuş» her dersi tane tane sesli okur (okuma bilmeyen çocuklar için ideal)
+Müfredat:        5 aşamalı ders sınıfı (Önsöz + 1-5. Sınıflar)
+                 Taş hareketlerinden çatal, açmaz, şiş taktiklerine ve 7 usta matına.
+Mezuniyet:       Ustalık sınavını geçtikten sonra yazdırılabilir kişisel usta diploması.
+Mini Oyunlar:    27 eğlenceli mini oyun ve 6.300’den fazla bulmaca:
+                 Taktik Dedektifleri, Kale Altın Hücumu, Kare Ninjası, Pat Tuzağı,
+                 Piyon Savaşı ve At Parkuru.
+
+GÜVENLİK & ÇOCUK GİZLİLİĞİ
+--------------------------
+Reklam:          %100 reklamsız
+Gizlilik:        Çocuk verisi toplanmaz, reklam kimliği veya analitik takipçisi içermez
+Çevrimiçi Sohbet:Yabancılarla sohbet içermez, tam korumalı ortam
+İnternetsiz:     Dersler, mini oyunlar ve bilgisayara karşı maçlar internetsiz de çalışır.
+
+BASIN İNCELEME KOPYALARI
+------------------------
+Gazeteciler ve eğitim yazarları, iPad veya Mac cihazlarında inceleme yapmak üzere
+ücretsiz Apple TestFlight beta erişimi veya App Store promosyon kodu talep edebilirler.
+İletişim: chessleoacademy@gmail.com
+============================================================

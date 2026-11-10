@@ -1,0 +1,51 @@
+============================================================
+CHESSLEO ACADEMY – PRESS FACTSHEET & MEDIA KIT
+============================================================
+
+PRODUCT OVERVIEW
+----------------
+App Title:       ChessLeo Academy
+Subtitle:        The child-friendly, ad-free chess school for iPad, iPhone & Mac
+Developer:       Tobias Schudy (Independent developer near Munich, Germany)
+App Store Link:  https://apps.apple.com/app/id6814943166
+Website:         https://chessleo.de/en/
+Press Page:      https://chessleo.de/en/press.html
+Press Contact:   chessleoacademy@gmail.com
+
+PRICING & AVAILABILITY
+----------------------
+Pricing Model:   .99 USD / £3.99 GBP / CA.99 (Universal Purchase for iPad, iPhone & Mac)
+Subscription:    No subscriptions, no recurring fees
+In-App Purchases:None, no hidden costs
+Family Sharing:  Fully shareable with up to 5 family members via Apple Family Sharing
+Compatibility:   iPadOS 17+, iOS 17+, macOS 14+ (Native Apple Silicon support)
+Languages:       English, German, Spanish, French, Turkish, Simplified Chinese
+
+TARGET AUDIENCE & PEDAGOGICAL CONCEPT
+-------------------------------------
+Target Audience: Elementary-school beginners (ages around early school years)
+Spoken Mentor:   "Coach Bird" reads every lesson aloud (ideal for young beginners who cannot yet read fluently)
+Curriculum:      5 structured school grades (Prologue + Grades 1 to 5)
+                 From piece movements and special rules (castling, en passant) to tactics
+                 (forks, pins, skewers) and 7 master checkmate patterns.
+Graduation:      Personal printable Master Diploma upon passing the master exam.
+Mini-Games:      27 interactive mini-games & 6,300+ puzzles:
+                 Tactics Detectives, Rook Coin Rush, Board Ninja, Stalemate Trap,
+                 Pawn Wars, and Knight Parkour.
+Design Worlds:   3 selectable visual worlds (Classic Elegant, Vibrant Kids, Art & Culture).
+
+SAFETY & CHILD PRIVACY
+----------------------
+Advertising:     100% ad-free
+Data Privacy:    Zero child data collection, no analytics SDKs, no tracking, no IDFA
+Online Chat:     No online chat with strangers, no social media feeds
+Offline:         Lessons, mini-games, and computer matches work without internet
+                 (ideal for road trips, flights, and school commutes).
+
+REVIEW COPIES & INTERVIEWS
+--------------------------
+Journalists, educators, and app reviewers are warmly invited to request complimentary
+TestFlight beta access or App Store promo codes for editorial review on iPads/Macs.
+For press inquiries, quotes, or interview availability with developer Tobias Schudy:
+Email: chessleoacademy@gmail.com
+============================================================

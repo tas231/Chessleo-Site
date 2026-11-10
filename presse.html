@@ -570,6 +570,98 @@
       color: var(--gold-light);
     }
 
+    /* KITS GRID */
+    .kits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .kit-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .kit-card:hover {
+      border-color: var(--card-border-hover);
+      transform: translateY(-2px);
+    }
+
+    .kit-card-head {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .kit-flag {
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+
+    .kit-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #f8fafc;
+    }
+
+    .kit-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .kit-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .btn-kit-download {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, rgba(245,158,11,0.2), rgba(245,158,11,0.35));
+      border: 1px solid rgba(245,158,11,0.5);
+      color: #fef3c7;
+      font-weight: 600;
+      font-size: 0.88rem;
+      padding: 0.6rem 0.9rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+
+    .btn-kit-download:hover {
+      background: linear-gradient(135deg, rgba(245,158,11,0.35), rgba(245,158,11,0.5));
+    }
+
+    .btn-kit-txt {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      padding: 0.45rem 0.75rem;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    .btn-kit-txt:hover {
+      color: var(--text);
+      border-color: rgba(255,255,255,0.2);
+    }
+
     @media (max-width: 768px) {
       h1 { font-size: 2rem; }
       .nav-links { display: none; }
@@ -599,6 +691,7 @@
       </ul>
 
       <div class="nav-actions">
+        <a href="/en/press.html" class="back-btn" style="background:rgba(168,85,247,0.12); color:#e9d5ff; border-color:rgba(192,132,252,0.3);">🇬🇧 English Page</a>
         <a href="/" class="back-btn">← Zur Startseite</a>
       </div>
     </div>
@@ -624,6 +717,131 @@
           <a href="https://apps.apple.com/app/id6814943166" target="_blank" class="btn-secondary">
             🍏 Im App Store ansehen
           </a>
+        </div>
+      </section>
+
+      <!-- INTERNATIONALE PRESSE-KITS -->
+      <section id="kits" style="scroll-margin-top: 5rem; margin-bottom: 3.5rem;">
+        <h2 class="section-title">🌍 Presse-Kits in 6 Sprachen / International Press Kits</h2>
+        <p class="section-sub">Für jede Sprachregion stehen lokalisierte Pressemappen mit hochauflösenden Screenshots, Meister-Diplomen und Factsheets bereit:</p>
+
+        <div class="kits-grid">
+          <!-- DEUTSCH -->
+          <div class="kit-card">
+            <div class="kit-card-head">
+              <div class="kit-flag">🇩🇪</div>
+              <div>
+                <div class="kit-title">Deutsch (DACH)</div>
+                <div class="kit-meta">Coach Vogel · 14,7 MB ZIP</div>
+              </div>
+            </div>
+            <div class="kit-actions">
+              <a href="/assets/ChessLeo_Pressekit.zip" download="ChessLeo_Pressekit.zip" class="btn-kit-download">
+                ⬇️ Presse-Kit herunterladen
+              </a>
+              <a href="/assets/ChessLeo_Factsheet_Presse.txt" target="_blank" class="btn-kit-txt">
+                📄 Factsheet (TXT)
+              </a>
+            </div>
+          </div>
+
+          <!-- ENGLISH -->
+          <div class="kit-card">
+            <div class="kit-card-head">
+              <div class="kit-flag">🇬🇧</div>
+              <div>
+                <div class="kit-title">English (Global / US)</div>
+                <div class="kit-meta">Coach Bird · 14,6 MB ZIP</div>
+              </div>
+            </div>
+            <div class="kit-actions">
+              <a href="/assets/ChessLeo_PressKit_EN.zip" download="ChessLeo_PressKit_EN.zip" class="btn-kit-download">
+                ⬇️ Download Press Kit
+              </a>
+              <a href="/assets/ChessLeo_Factsheet_EN.txt" target="_blank" class="btn-kit-txt">
+                📄 Factsheet (TXT)
+              </a>
+              <a href="/en/press.html" class="btn-kit-txt" style="color:var(--accent);">
+                🌐 English Press Page &rarr;
+              </a>
+            </div>
+          </div>
+
+          <!-- FRANCAIS -->
+          <div class="kit-card">
+            <div class="kit-card-head">
+              <div class="kit-flag">🇫🇷</div>
+              <div>
+                <div class="kit-title">Français (FR / QC)</div>
+                <div class="kit-meta">Coach Oiseau · 14,6 MB ZIP</div>
+              </div>
+            </div>
+            <div class="kit-actions">
+              <a href="/assets/ChessLeo_DossierPresse_FR.zip" download="ChessLeo_DossierPresse_FR.zip" class="btn-kit-download">
+                ⬇️ Télécharger le dossier
+              </a>
+              <a href="/assets/ChessLeo_Factsheet_FR.txt" target="_blank" class="btn-kit-txt">
+                📄 Fiche technique (TXT)
+              </a>
+            </div>
+          </div>
+
+          <!-- ESPANOL -->
+          <div class="kit-card">
+            <div class="kit-card-head">
+              <div class="kit-flag">🇪🇸</div>
+              <div>
+                <div class="kit-title">Español (ES / LATAM)</div>
+                <div class="kit-meta">Entrenador Pájaro · 14,6 MB ZIP</div>
+              </div>
+            </div>
+            <div class="kit-actions">
+              <a href="/assets/ChessLeo_KitPrensa_ES.zip" download="ChessLeo_KitPrensa_ES.zip" class="btn-kit-download">
+                ⬇️ Descargar kit de prensa
+              </a>
+              <a href="/assets/ChessLeo_Factsheet_ES.txt" target="_blank" class="btn-kit-txt">
+                📄 Hoja de datos (TXT)
+              </a>
+            </div>
+          </div>
+
+          <!-- TURKCE -->
+          <div class="kit-card">
+            <div class="kit-card-head">
+              <div class="kit-flag">🇹🇷</div>
+              <div>
+                <div class="kit-title">Türkçe (TR)</div>
+                <div class="kit-meta">Koç Kuş · 14,6 MB ZIP</div>
+              </div>
+            </div>
+            <div class="kit-actions">
+              <a href="/assets/ChessLeo_BasinKiti_TR.zip" download="ChessLeo_BasinKiti_TR.zip" class="btn-kit-download">
+                ⬇️ Basın Kitini İndir
+              </a>
+              <a href="/assets/ChessLeo_Factsheet_TR.txt" target="_blank" class="btn-kit-txt">
+                📄 Bilgi Formu (TXT)
+              </a>
+            </div>
+          </div>
+
+          <!-- CHINESE -->
+          <div class="kit-card">
+            <div class="kit-card-head">
+              <div class="kit-flag">🇨🇳</div>
+              <div>
+                <div class="kit-title">中文 (TW / HK / SG)</div>
+                <div class="kit-meta">小鸟教练 · 14,6 MB ZIP</div>
+              </div>
+            </div>
+            <div class="kit-actions">
+              <a href="/assets/ChessLeo_PressKit_ZH.zip" download="ChessLeo_PressKit_ZH.zip" class="btn-kit-download">
+                ⬇️ 下載新聞資料包
+              </a>
+              <a href="/assets/ChessLeo_Factsheet_ZH.txt" target="_blank" class="btn-kit-txt">
+                📄 資料簡報 (TXT)
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
