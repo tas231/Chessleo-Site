@@ -41,7 +41,6 @@ Sin conexión:    Las lecciones, minijuegos y partidas contra el ordenador funci
 
 COPIAS DE REVISIÓN PARA PRENSA
 ------------------------------
-Invitamos a periodistas y medios especializados a solicitar acceso beta gratuito mediante
-Apple TestFlight o códigos promocionales de App Store para probar la app en iPad o Mac.
+Invitamos a periodistas y medios especializados a solicitar copias de revisión gratuitas o códigos promocionales de App Store para probar la app en iPad o Mac.
 Contacto: chessleoacademy@gmail.com
 ============================================================
