@@ -186,14 +186,15 @@ def build_page(source, i18n, lang, root_description):
 
     page, count = translate_body(page, i18n, lang)
 
-    # Screenshots that exist per language.
-    def localize_img(match):
+    # Screenshots and media that exist per language.
+    def localize_media(match):
         tag = match.group(0)
-        if 'id="heroMockupImg"' in tag or 'id="diplomaMockupImg"' in tag or "data-screen-base=" in tag:
-            tag = tag.replace("-de.webp", f"-{lang}.webp")
+        if ('id="heroMockupImg"' in tag or 'id="diplomaMockupImg"' in tag or "data-screen-base=" in tag or
+            'id="gameplayVideo"' in tag or 'id="gameplayVideoSource"' in tag or 'id="gameplayFallbackImg"' in tag):
+            tag = tag.replace("-de.webp", f"-{lang}.webp").replace("-de.mp4", f"-{lang}.mp4")
         return tag
 
-    page = re.sub(r"<img\b[^>]*>", localize_img, page)
+    page = re.sub(r"<(img|video|source)\b[^>]*>", localize_media, page)
 
     # Language menu shows this page's language without waiting for the script.
     page = replace_once(page, r'(id="langCurrentFlag">)[^<]*(<)', lambda m: m.group(1) + FLAG[lang] + m.group(2),
