@@ -60,6 +60,19 @@ Offline-Fokus:      Lektionen, Minispiele und Partien gegen den Computer funktio
 Datenschutz:        Keine Erhebung von Kinderdaten, kein Tracking, keine Werbe-IDs (IDFA), keine Analyse-SDKs
 Profil:             Ein lokales Spielerprofil auf dem Gerät
 
+ENTSTEHUNGSGESCHICHTE (GRÜNDER-STATEMENT)
+-----------------------------------------
+„Der eigentliche Auslöser für ChessLeo Academy war mein eigener Sohn.“
+Es begann in einem Familienurlaub: Mein Sohn entdeckte ein Schachspiel und wollte
+unbedingt die Regeln lernen, um gegen seine Freunde spielen zu können. Die großen
+Online-Schach-Apps überforderten Schulanfänger jedoch mit unübersichtlichen Menüs,
+Abo-Modellen, Dauerwerbung und psychologischem Druck durch Erfahrungs-Verlust.
+Deshalb habe ich als Vater ChessLeo Academy gebaut: 100 % werbefrei, ohne Abo,
+mit Vorlesefunktion durch Coach Vogel und strukturiertem Lehrplan in 5 Schulklassen.
+Das Schönste für mich: Zu seinem Geburtstag wünschte sich mein Sohn keine Videospiele,
+sondern ein echtes Schachbrett aus Holz – heute spielen wir gemeinsam am Tisch!
+(Vollständige Gründer-Story siehe: Die_wahre_Entstehungsgeschichte_Gruenderstory.txt)
+
 REZENSIONSEXEMPLARE & MEDIENKONTAKT
 ------------------------------------
 Redaktionen, Journalisten, Podcaster und Bildungsblogger erhalten auf Anfrage kostenlose

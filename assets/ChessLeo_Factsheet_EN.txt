@@ -59,6 +59,19 @@ Offline Play:       Lessons, mini-games, and games against the computer work wit
 Data Privacy:       Zero child data collection, no analytics tracking, no advertising IDs (IDFA), no account registration required
 Profile:            One local player profile on the device
 
+FOUNDER STORY & BACKGROUND
+--------------------------
+"The true catalyst for ChessLeo Academy was my own son."
+It all started during a family vacation: my son discovered chess and eagerly wanted
+to learn the rules to play matches with his friends. However, existing apps overwhelmed
+elementary-school beginners with text barriers, subscription traps, advertising interruptions,
+and artificial pressure from losing streaks.
+As a father, I created ChessLeo Academy: 100% ad-free, no subscriptions, featuring
+voice narration by Coach Bird and a structured 5-grade curriculum.
+The most rewarding result: for his birthday, my son asked for a real wooden chess set—
+today, we sit together and play matches on a real board!
+(Full founder story available in: The_True_Origin_Story_Founder_Story.txt)
+
 REVIEW COPIES & MEDIA INQUIRIES
 -------------------------------
 Journalists, educators, app reviewers, and bloggers can request complimentary review copies
