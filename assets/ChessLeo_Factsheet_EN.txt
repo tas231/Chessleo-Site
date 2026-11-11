@@ -10,7 +10,7 @@ Developer:          Tobias Schudy (Independent developer based near Munich, Germ
 App Store Link:     https://apps.apple.com/app/id6814943166
 Official Website:   https://chessleo.de/en/
 Press Page:         https://chessleo.de/en/press.html
-Press Contact:      chessleoacademy@gmail.com
+Press Contact:      presse@chessleo.de
 
 PRICING & FAMILY
 ----------------
@@ -24,7 +24,7 @@ Languages:          English, German, Spanish, French, Turkish, Chinese (fully lo
 
 TARGET AUDIENCE & PEDAGOGICAL CONCEPT
 -------------------------------------
-Target Audience:    for elementary-school beginners (App Store age category 6–8, rated 4+)
+Target Audience:    for elementary-school beginners (thanks to spoken explanations by Coach Bird, also ideal for early readers)
 Coach & Mentor:     Coach Bird reads every lesson aloud – also for kids who cannot yet read fluently
 Curriculum:         Prologue 'What is Chess?' (6 interactive pages) plus 5 progressive grades:
                     • Grade 1: The chessboard, movement of all pieces from pawn to queen, en passant (ninja special rule)
@@ -77,7 +77,7 @@ REVIEW COPIES & MEDIA INQUIRIES
 Journalists, educators, app reviewers, and bloggers can request complimentary review copies
 (TestFlight beta access or App Store promo codes for editorial review on iPad/Mac).
 Developer Tobias Schudy is available for interviews, background comments, and quotes:
-Email:              chessleoacademy@gmail.com
+Email:              presse@chessleo.de
 Press Room:         https://chessleo.de/en/press.html
 
 USAGE RIGHTS

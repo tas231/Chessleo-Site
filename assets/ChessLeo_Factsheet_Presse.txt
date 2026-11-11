@@ -10,7 +10,7 @@ Entwickler:         Tobias Schudy (Indie-Entwickler aus Markt Schwaben bei Münc
 App Store Link:     https://apps.apple.com/app/id6814943166
 Offizielle Website: https://chessleo.de
 Pressebereich:      https://chessleo.de/presse.html
-Pressekontakt:      chessleoacademy@gmail.com
+Pressekontakt:      presse@chessleo.de
 
 PREISMODELL & FAMILIE
 ---------------------
@@ -24,7 +24,7 @@ Sprachen:           Deutsch, Englisch, Spanisch, Französisch, Türkisch, Chines
 
 ZIELGRUPPE & PÄDAGOGIK
 ----------------------
-Zielgruppe:         Kinder im Grundschulalter (App Store Altersgruppe 6–8 Jahre, Einstufung 4+)
+Zielgruppe:         Kinder im Grundschulalter (dank Vorlesefunktion durch Coach Vogel auch für Leseanfänger)
 Coach & Mentor:     Coach Vogel liest jede Lektion vor – auch für Kinder, die noch nicht sicher lesen
 Didaktischer Aufbau:Prolog 'Was ist Schach?' (6 interaktive Seiten) plus 5 Schulklassen:
                     • Klasse 1: Das Schachbrett, Gangarten aller Figuren vom Bauern bis zur Dame, En Passant (Ninja-Sonderregel)
@@ -77,7 +77,7 @@ REZENSIONSEXEMPLARE & MEDIENKONTAKT
 Redaktionen, Journalisten, Podcaster und Bildungsblogger erhalten auf Anfrage kostenlose
 Rezensionsexemplare (TestFlight-Beta-Zugang oder App Store Promo-Codes für Tests auf Redaktions-iPads/Macs).
 Für Interviews, Zitate und Hintergrundgespräche steht Tobias Schudy gerne zur Verfügung:
-E-Mail:             chessleoacademy@gmail.com
+E-Mail:             presse@chessleo.de
 Pressebereich:      https://chessleo.de/presse.html
 
 NUTZUNGSRECHTE
