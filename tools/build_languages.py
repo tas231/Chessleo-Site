@@ -50,6 +50,9 @@ VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "met
 GENERATED_NOTE = "<!-- Generated from /index.html by tools/build_languages.py. Edit index.html, not this file. -->"
 
 
+PRESS_URLS = {"de": "https://chessleo.de/presse.html", "en": "https://chessleo.de/en/press.html"}
+
+
 def page_url(lang):
     return f"{SITE}/" if lang == "de" else f"{SITE}/{lang}/"
 
@@ -196,6 +199,10 @@ def build_page(source, i18n, lang, root_description):
 
     page = re.sub(r"<(img|video|source)\b[^>]*>", localize_media, page)
 
+    # The press page exists in German and English only; every other language links the English one.
+    if lang != "de":
+        page = page.replace('href="/presse.html"', 'href="/en/press.html"')
+
     # Language menu shows this page's language without waiting for the script.
     page = replace_once(page, r'(id="langCurrentFlag">)[^<]*(<)', lambda m: m.group(1) + FLAG[lang] + m.group(2),
                         "menu flag")
@@ -216,6 +223,14 @@ def sitemap():
         for other in LANGS:
             lines.append(f'    <xhtml:link rel="alternate" hreflang="{HTML_LANG[other]}" href="{page_url(other)}"/>')
         lines.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{page_url("en")}"/>')
+        lines.append("  </url>")
+    # Press pages: German and English only, hand-written (not built from index.html).
+    for url in PRESS_URLS.values():
+        lines.append("  <url>")
+        lines.append(f"    <loc>{url}</loc>")
+        for other, other_url in PRESS_URLS.items():
+            lines.append(f'    <xhtml:link rel="alternate" hreflang="{other}" href="{other_url}"/>')
+        lines.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{PRESS_URLS["en"]}"/>')
         lines.append("  </url>")
     lines.append("</urlset>")
     return "\n".join(lines) + "\n"

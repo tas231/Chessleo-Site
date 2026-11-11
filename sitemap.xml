@@ -60,4 +60,16 @@
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://chessleo.de/zh/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chessleo.de/en/"/>
   </url>
+  <url>
+    <loc>https://chessleo.de/presse.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://chessleo.de/presse.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chessleo.de/en/press.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chessleo.de/en/press.html"/>
+  </url>
+  <url>
+    <loc>https://chessleo.de/en/press.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://chessleo.de/presse.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chessleo.de/en/press.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chessleo.de/en/press.html"/>
+  </url>
 </urlset>

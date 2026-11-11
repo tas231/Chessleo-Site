@@ -5,7 +5,7 @@ CHESSLEO ACADEMY – OFFICIAL PRESS FACTSHEET
 PRODUCT OVERVIEW
 ----------------
 App Title:          ChessLeo Academy (App Store: ChessLeo: Learn Chess for Kids)
-Subtitle:           The child-friendly, ad-free chess school for iPad, iPhone & Mac
+Tagline:            The child-friendly, ad-free chess school for iPad, iPhone & Mac
 Developer:          Tobias Schudy (Independent developer based near Munich, Germany)
 App Store Link:     https://apps.apple.com/app/id6814943166
 Official Website:   https://chessleo.de/en/
@@ -43,14 +43,14 @@ Tactic Puzzles:     6,300+ tactic puzzles from 500 to 2,500 Elo (including daily
 
 GAME MODES & VISUAL WORLDS
 --------------------------
-Game Modes:         • Play against the computer (from beginner bot Lina to Titan, the strongest optional computer opponent in Free Play)
+Game Modes:         • Play against the computer (4 levels: Leo – Easy, Lina – Medium, Grandpa Theo – Legend, Titan – Super AI)
                     • Pass & Play (two kids playing together on a single device)
                     • Online games with friends via Apple Game Center (invitation-based)
-Visual Worlds:      3 selectable visual styles:
-                    • Magic Table: Enchanting lighting effects and interactive move assistant
-                    • Classic Noble: Timeless wooden design for quiet, focused gameplay
-                    • Art & Culture / Vibrant: Colorful boards and lovingly illustrated piece sets
-Extras:             Sticker Album with costume party collectibles and Boutique with unlockable chess sets
+Home Screen:        3 selectable designs:
+                    • Magic Explorer Table: a painted chess workshop with the real time of day, seasons and festivals
+                    • Classic Elegant: refined 3D design with gold, light or dark
+                    • Classic: colorful, clear and simple
+Extras:             Boutique with piece sets and boards, unlocked with star coins earned in lessons and puzzles
 
 SAFETY & PRIVACY (CHILD PROTECTION)
 -----------------------------------

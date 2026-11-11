@@ -23,4 +23,11 @@ for name in pieces-kawaii pieces-asia pieces-fantasy; do
   cwebp -quiet -q 82 -m 6 "$name.jpg" -o "$name.webp"
 done
 
+# Press page previews (presse.html, en/press.html): small WebP copies, the download buttons keep the originals.
+for name in coach-vogel-freigestellt leo-freigestellt lina-freigestellt; do
+  cwebp -quiet -q 85 -m 6 -alpha_q 90 -resize 0 570 "$name.png" -o "$name-preview.webp"
+done
+cwebp -quiet -q 85 -m 6 -resize 330 0 app-icon.png -o app-icon-preview.webp
+cwebp -quiet -q 80 -m 6 -resize 1200 0 universal-family-banner.jpg -o universal-family-banner-preview.webp
+
 echo "WebP images rebuilt."

@@ -6,7 +6,7 @@ INFORMACIÓN GENERAL
 -------------------
 Título:          ChessLeo Academy
 Subtítulo:       La escuela mágica de ajedrez para niños en iPad, iPhone y Mac
-Desarrollador:   Tobias Schudy (Desarrollador independiente en Múnich, Alemania)
+Desarrollador:   Tobias Schudy (Desarrollador independiente cerca de Múnich, Alemania)
 Enlace App Store:https://apps.apple.com/app/id6814943166
 Sitio web:       https://chessleo.de/es/
 Contacto prensa: presse@chessleo.de
@@ -25,7 +25,7 @@ DESTINATARIOS Y ENFOQUE PEDAGÓGICO
 Público objetivo:Niños en edad escolar primaria (especialmente principiantes)
 Mentor de voz:   El «Entrenador Pájaro» lee cada lección en voz alta (ideal para primeros lectores)
 Plan de estudio: 5 cursos estructurados (Prólogo + Cursos 1 al 5)
-                 Desde el Diploma de Peón hasta horquillas, clavadas, enfiladas y
+                 Desde el prólogo «¿Qué es el ajedrez?» hasta horquillas, clavadas, enfiladas y
                  7 patrones de mate maestro con examen final.
 Diploma:         Diploma personal imprimible de maestro al superar el examen.
 Minijuegos:      27 dinámicos minijuegos y más de 6.300 puzles tácticos:
