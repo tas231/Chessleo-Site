@@ -9,7 +9,7 @@ Subtítulo:       La escuela mágica de ajedrez para niños en iPad, iPhone y Ma
 Desarrollador:   Tobias Schudy (Desarrollador independiente en Múnich, Alemania)
 Enlace App Store:https://apps.apple.com/app/id6814943166
 Sitio web:       https://chessleo.de/es/
-Contacto prensa: chessleoacademy@gmail.com
+Contacto prensa: presse@chessleo.de
 
 PRECIO Y DISPONIBILIDAD
 -----------------------
@@ -42,5 +42,5 @@ Sin conexión:    Las lecciones, minijuegos y partidas contra el ordenador funci
 COPIAS DE REVISIÓN PARA PRENSA
 ------------------------------
 Invitamos a periodistas y medios especializados a solicitar copias de revisión gratuitas o códigos promocionales de App Store para probar la app en iPad o Mac.
-Contacto: chessleoacademy@gmail.com
+Contacto: presse@chessleo.de
 ============================================================

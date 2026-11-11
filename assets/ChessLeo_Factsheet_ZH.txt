@@ -9,7 +9,7 @@ CHESSLEO ACADEMY – 媒体资料包与新闻事实清单
 独立开发者：     Tobias Schudy（来自德国慕尼黑近郊的独立开发者）
 App Store 链接： https://apps.apple.com/app/id6814943166
 官方网站：       https://chessleo.de/zh/
-媒体联络：       chessleoacademy@gmail.com
+媒体联络：       presse@chessleo.de
 
 售价与平台支持
 --------------
@@ -41,5 +41,5 @@ App Store 链接： https://apps.apple.com/app/id6814943166
 ----------------
 诚挚邀请教育媒体、少儿科技测评博主体验完整版本。我们乐意为您的评测设备（iPad 或 Mac）
 提供专属评测版本或 App Store 兑换码。
-媒体联络信箱：chessleoacademy@gmail.com
+媒体联络信箱：presse@chessleo.de
 ============================================================
