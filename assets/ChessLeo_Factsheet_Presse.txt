@@ -1,51 +1,88 @@
 ============================================================
-CHESSLEO ACADEMY – PRESSE-FACTSHEET & MEDIENINFORMATION
+CHESSLEO ACADEMY – OFFIZIELLES PRESSE-FACTSHEET
 ============================================================
 
 PRODUKT-ÜBERSICHT
 -----------------
-App-Name:        ChessLeo Academy
-Untertitel:      Die kindgerechte, werbefreie Schachschule für iPad, iPhone & Mac
-Entwickler:      Tobias Schudy (Indie-Entwickler aus Markt Schwaben bei München)
-App Store Link:  https://apps.apple.com/app/id6814943166
-Webseite:        https://chessleo.de
-Pressebereich:   https://chessleo.de/presse.html
-Pressekontakt:   chessleoacademy@gmail.com
+App-Name:           ChessLeo Academy (im App Store: ChessLeo: Schach für Kinder)
+Untertitel:         Die kindgerechte, werbefreie Schachschule für iPad, iPhone & Mac
+Entwickler:         Tobias Schudy (Indie-Entwickler aus Markt Schwaben bei München)
+App Store Link:     https://apps.apple.com/app/id6814943166
+Offizielle Website: https://chessleo.de
+Pressebereich:      https://chessleo.de/presse.html
+Pressekontakt:      chessleoacademy@gmail.com
 
 PREIS & VERFÜGBARKEIT
 ---------------------
-Preismodell:     4,99 € Einmalkauf (Universal Purchase für iPad, iPhone & Mac)
-Abonnement:      Kein Abonnement, keine laufenden Kosten
-In-App-Käufe:    Keine In-App-Käufe, keine versteckten Kosten
-Familienfreigabe:Voll teilbar über die Apple Familienfreigabe
-Kompatibilität:  iPadOS 17+, iOS 17+, macOS 14+ (Apple Silicon optimiert)
-Sprachen:        Deutsch, Englisch, Spanisch, Französisch, Türkisch, Chinesisch (komplett lokalisiert)
+Preismodell:        4,99 € Einmalkauf (Universal Purchase für iPad, iPhone & Mac)
+                    USA: $3.99 | UK: £3.99 | Kanada: CA$4.99 | Schweiz: CHF 3.00
+Abonnement:         Kein Abonnement, keine laufenden Kosten
+In-App-Käufe:       Keine In-App-Käufe, keine versteckten Kosten
+Werbung:            100 % werbefrei
+Familienfreigabe:   Unterstützt Apple Familienfreigabe (bis zu 6 Familienmitglieder)
+Systemanforderung:  iPadOS 17+, iOS 17+, macOS 14+ (optimiert für Apple Silicon)
+Sprachen:           Deutsch, Englisch, Spanisch, Französisch, Türkisch, Chinesisch (komplett lokalisiert)
 
-ZIELGRUPPE & PÄDAGOGISCHES KONZEPT
------------------------------------
-Zielgruppe:      Kinder im Grundschulalter (insbesondere Schulanfänger)
-Coach & Mentor:  „Coach Vogel“ liest jede Lektion laut vor (ideal für Leseanfänger)
-Lehrplan:        5 strukturierte Schulklassen (Prolog + Klasse 1 bis 5)
-                 Vom Bauern-Diplom (Figurenbewegungen & Spezialregeln) über Taktik
-                 (Springergabel, Fesselung, Spieß) bis zu 7 Meister-Mattbildern.
-Abschluss:       Persönliches druckbares Meister-Diplom nach bestandener Meisterprüfung.
-Minispiele:      27 Minispiele & 6.300+ Rätsel zur spielerischen Festigung:
-                 Taktik-Detektive, Turm-Münzrausch, Feld-Ninja, Patt-Falle,
-                 Bauern-Krieg und Springer-Parcours.
-Schachwelten:    3 wählbare visuelle Designs (Klassisch-Edel, Bunt, Kunst & Kultur).
+ZIELGRUPPE & PÄDAGOGIK
+----------------------
+Zielgruppe:         Kinder im Grundschulalter (App Store Altersgruppe 6–8 Jahre, Einstufung 4+)
+Coach & Mentor:     Coach Vogel liest jede Lektion vor – auch für Kinder, die noch nicht sicher lesen
+Didaktischer Aufbau:Prolog 'Was ist Schach?' (6 interaktive Seiten) plus 5 Schulklassen:
+                    • Klasse 1: Das Schachbrett, Gangarten aller Figuren vom Bauern bis zur Dame, En Passant (Ninja-Sonderregel)
+                    • Klasse 2: Figurenwerte, goldene Eröffnungsregeln (Zentrum, Figuren entwickeln, Rochade) und erste Taktik (Springergabel, Fesselung, Spieß)
+                    • Klasse 3: Erste Mattbilder (Treppenmatt, Kuss des Todes), Schäfermatt erkennen und abwehren, Italienische Partie
+                    • Klasse 4: Die 7 Meister-Mattbilder (Grundreihenmatt, Ersticktes Matt, Schwalbenschwanz u. a.) und die Meisterprüfung beim Coach
+                    • Klasse 5: Endspiele (Opposition, Schlüsselfelder, Festung, Spieß im Turmendspiel) – schaltet sich nach bestandener Meisterprüfung frei
+Abschluss:          Ein persönliches druckbares Meister-Diplom nach bestandener Meisterprüfung am Ende von Klasse 4 (per AirPrint druckbar)
 
-SICHERHEIT & DATENSCHUTZ (ELTERNSCHUTZ)
-----------------------------------------
-Werbung:         100 % werbefrei
-Datenschutz:     Keine Erhebung von Kinderdaten, kein Tracking, keine Werbe-IDs (IDFA)
-Online-Chat:     Kein Online-Chat mit Fremden, keine Community-Risiken
-Offline:         Lektionen, Minispiele und Computermatches funktionieren ohne Internet
-                 (ideal für Reisen, Bahnfahrten und Urlaub).
+MINISPIELE & RÄTSEL
+-------------------
+Minispiele:         27 Minispiele & Übungen zur spielerischen Vertiefung:
+                    Taktik-Detektive (Gabel, Matt, Abzug, Köder), Turm-Münzrausch (5 Stufen),
+                    Feld-Ninja, Patt-Falle, Bauern-Krieg und Springer-Parcours
+Taktik-Rätsel:      6.300+ Taktik-Rätsel von 500 bis 2.500 Elo (inkl. täglichen Puzzles und Rätsel-Turm)
 
-REZENSIONSEXEMPLARE & INTERVIEWS
---------------------------------
-Journalisten, Fachredaktionen und Blogger erhalten gerne kostenlose Rezensionsexemplare
-oder direkte App Store Promo-Codes für redaktionelle Tests auf Redaktions-iPads.
-Für Rückfragen, Entwickler-Zitate oder Interviews steht Tobias Schudy gerne zur Verfügung:
-E-Mail: chessleoacademy@gmail.com
+SPIELMODI & WELTEN
+------------------
+Spielmodi:          • Freies Spiel gegen den Computer (vom Einsteiger-Bot Lina bis zu Titan, dem stärksten optionalen Computergegner im Freien Spiel)
+                    • Pass & Play (zwei Kinder spielen gemeinsam an einem Gerät)
+                    • Online-Partien mit Freunden über Apple Game Center (einladungsbasiert)
+Schachwelten:       3 wählbare visuelle Designs:
+                    • Zaubertisch: Magische Leuchteffekte und interaktiver Zugassistent
+                    • Klassik-Edel: Edles Holzdesign für konzentriertes, ruhiges Spielen
+                    • Kunst & Kultur / Bunt: Farbenfrohe Bretter und liebevoll gestaltete Figuren-Sets
+Extras:             Sticker-Album mit Kostümfest-Motiven und Boutique mit freischaltbaren Figuren-Sets
+
+KINDERSCHUTZ & PRIVATSPHÄRE
+---------------------------
+Sicherheit:         Für Kinder gemacht: keine Werbung, keine In-App-Käufe, kein Abo, kein Chat mit Fremden
+Offline-Fokus:      Lektionen, Minispiele und Partien gegen den Computer funktionieren ohne Internet
+Datenschutz:        Keine Erhebung von Kinderdaten, kein Tracking, keine Werbe-IDs (IDFA), keine Analyse-SDKs
+Profil:             Ein lokales Spielerprofil auf dem Gerät
+
+ENTSTEHUNGSGESCHICHTE (GRÜNDER-STATEMENT)
+-----------------------------------------
+„Der eigentliche Auslöser für ChessLeo Academy war mein eigener Sohn.“
+Es begann in einem Familienurlaub: Mein Sohn entdeckte ein Schachspiel und wollte
+unbedingt die Regeln lernen, um gegen seine Freunde spielen zu können. Die großen
+Online-Schach-Apps überforderten Schulanfänger jedoch mit unübersichtlichen Menüs,
+Abo-Modellen, Dauerwerbung und psychologischem Druck durch Erfahrungs-Verlust.
+Deshalb habe ich als Vater ChessLeo Academy gebaut: 100 % werbefrei, ohne Abo,
+mit Vorlesefunktion durch Coach Vogel und strukturiertem Lehrplan in 5 Schulklassen.
+Das Schönste für mich: Zu seinem Geburtstag wünschte sich mein Sohn keine Videospiele,
+sondern ein echtes Schachbrett aus Holz – heute spielen wir gemeinsam am Tisch!
+(Vollständige Gründer-Story siehe: Die_wahre_Entstehungsgeschichte_Gruenderstory.txt)
+
+REZENSIONSEXEMPLARE & MEDIENKONTAKT
+------------------------------------
+Redaktionen, Journalisten, Podcaster und Bildungsblogger erhalten auf Anfrage kostenlose
+Rezensionsexemplare (TestFlight-Beta-Zugang oder App Store Promo-Codes für Tests auf Redaktions-iPads/Macs).
+Für Interviews, Zitate und Hintergrundgespräche steht Tobias Schudy gerne zur Verfügung:
+E-Mail:             chessleoacademy@gmail.com
+Pressebereich:      https://chessleo.de/presse.html
+
+NUTZUNGSRECHTE
+--------------
+Alle in diesem Presse-Kit enthaltenen Screenshots, Charakter-Artworks, Logos und Grafiken
+sind für die redaktionelle Berichterstattung über ChessLeo Academy honorarfrei freigegeben.
 ============================================================
