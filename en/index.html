@@ -612,9 +612,12 @@
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: 1.5rem;
-      padding: 2rem 1.75rem;
+      padding: 1.85rem 1.75rem;
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       backdrop-filter: blur(12px);
+      display: flex;
+      align-items: flex-start;
+      gap: 1.25rem;
     }
 
     .feature-card:hover {
@@ -631,20 +634,29 @@
       align-items: center;
       justify-content: center;
       font-size: 1.6rem;
-      margin-bottom: 1.25rem;
+      flex-shrink: 0;
+      margin-bottom: 0;
+    }
+
+    .feature-card-body {
+      flex: 1;
+      min-width: 0;
     }
 
     .feature-card h3 {
       font-size: 1.25rem;
       font-weight: 800;
-      margin-bottom: 0.65rem;
+      margin-top: 0.15rem;
+      margin-bottom: 0.55rem;
       color: #ffffff;
+      line-height: 1.3;
     }
 
     .feature-card p {
       color: var(--text-muted);
       font-size: 0.95rem;
       line-height: 1.55;
+      margin: 0;
     }
 
     /* --- SPLIT SHOWCASE SECTIONS --- */
@@ -1537,7 +1549,7 @@
             <!-- Mockup: Startscreen -->
             <div class="mockup-wrapper">
               <div class="mockup-frame">
-                <img id="heroMockupImg" src="/assets/screen-zaubertisch-en.webp?v=1.7.0" alt="ChessLeo Academy – Entdecker-Zaubertisch &amp; Design-Welten" loading="eager">
+                <img id="heroMockupImg" src="/assets/screen-zaubertisch-en.webp?v=1.7.3" alt="ChessLeo Academy – Entdecker-Zaubertisch &amp; Design-Welten" loading="eager">
               </div>
               <p id="heroMockupCaption" class="hero-mockup-caption" data-i18n="hero_cap_zaubertisch">✨ <strong>Explorer’s Magic Table:</strong> The painted, living chess workshop for kids – with moving sunbeams, a bird’s nest at the window, and an interactive Coach Bird.</p>
             </div>
@@ -1669,48 +1681,60 @@
             <div class="card-icon-wrap" style="background: rgba(168, 85, 247, 0.15); color: var(--purple);">
               🎮
             </div>
-            <h3 data-i18n="feat_card2_title">27 Mini-Games &amp; Drills</h3>
+            <div class="feature-card-body">
+              <h3 data-i18n="feat_card2_title">27 Mini-Games &amp; Drills</h3>
             <p data-i18n="feat_card2_text">Action-packed Arena games: Tactics Detectives (Fork, Mate, Discovered Attack, Decoy), 5-tier Rook’s Coin Rush, Square Ninja, Stalemate Trap, Pawn Wars &amp; Knight’s Course!</p>
+            </div>
           </div>
 
           <div class="feature-card">
             <div class="card-icon-wrap" style="background: rgba(244, 63, 94, 0.15); color: var(--rose);">
               🧩
             </div>
-            <h3 data-i18n="feat_card5_title">6,300+ Tactical Puzzles</h3>
+            <div class="feature-card-body">
+              <h3 data-i18n="feat_card5_title">6,300+ Tactical Puzzles</h3>
             <p data-i18n="feat_card5_text">Puzzle fun from 500 to 2,500 Elo that grows with your child – and whenever a puzzle is missed, the Puzzle Tower demonstrates the solution move by move!</p>
+            </div>
           </div>
 
           <div class="feature-card">
             <div class="card-icon-wrap" style="background: rgba(16, 185, 129, 0.15); color: var(--emerald);">
               🛡️
             </div>
-            <h3 data-i18n="feat_card4_title">Safe &amp; No Internet Needed</h3>
+            <div class="feature-card-body">
+              <h3 data-i18n="feat_card4_title">Safe &amp; No Internet Needed</h3>
             <p data-i18n="feat_card4_text">Zero ads, zero account registration, no internet required. All game progress and certificates stay strictly on your device.</p>
+            </div>
           </div>
 
           <div class="feature-card">
             <div class="card-icon-wrap" style="background: rgba(99, 102, 241, 0.15); color: #818cf8;">
               ⚔️
             </div>
-            <h3 data-i18n="feat_card6_title">Play with Friends</h3>
+            <div class="feature-card-body">
+              <h3 data-i18n="feat_card6_title">Play with Friends</h3>
             <p data-i18n="feat_card6_text">Optional two-player matches (classic or Giveaway Chess): Play together on one device, locally in the same room via Wi-Fi/Bluetooth without internet, or online via Apple Game Center.</p>
+            </div>
           </div>
 
           <div class="feature-card">
             <div class="card-icon-wrap" style="background: rgba(245, 158, 11, 0.15); color: var(--gold);">
               🦝
             </div>
-            <h3 data-i18n="feat_card7_title">Giveaway Chess Included</h3>
+            <div class="feature-card-body">
+              <h3 data-i18n="feat_card7_title">Giveaway Chess Included</h3>
             <p data-i18n="feat_card7_text">The well-known chess variant, also called Antichess: if you can capture, you must, and whoever loses all their pieces first wins. Play alone against Leo or Lina, with two players on one device, or with friends nearby and via Game Center. There are whole apps just for it – in ChessLeo Academy it’s simply included.</p>
+            </div>
           </div>
 
           <div class="feature-card">
             <div class="card-icon-wrap" style="background: rgba(234, 179, 8, 0.15); color: var(--gold);">
               📒
             </div>
-            <h3 data-i18n="feat_card8_title">Daily Puzzles &amp; Sticker Album</h3>
+            <div class="feature-card-body">
+              <h3 data-i18n="feat_card8_title">Daily Puzzles &amp; Sticker Album</h3>
             <p data-i18n="feat_card8_text">10 fresh tactical puzzles every day: Solve the daily challenges, open the golden treasure chest, and collect fun chess piece stickers to paste into your interactive album. Engaging motivation every single day!</p>
+            </div>
           </div>
         </div>
 
@@ -2042,7 +2066,7 @@
         zh: { flag: '🇨🇳', code: 'ZH' }
       };
 
-      const IMG_VER = '1.7.0';
+      const IMG_VER = '1.7.3';
 
       function getCurrentLang() {
         return (document.documentElement.lang === 'zh-Hans' ? 'zh' : document.documentElement.lang) || 'de';

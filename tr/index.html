@@ -612,9 +612,12 @@
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: 1.5rem;
-      padding: 2rem 1.75rem;
+      padding: 1.85rem 1.75rem;
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       backdrop-filter: blur(12px);
+      display: flex;
+      align-items: flex-start;
+      gap: 1.25rem;
     }
 
     .feature-card:hover {
@@ -631,20 +634,29 @@
       align-items: center;
       justify-content: center;
       font-size: 1.6rem;
-      margin-bottom: 1.25rem;
+      flex-shrink: 0;
+      margin-bottom: 0;
+    }
+
+    .feature-card-body {
+      flex: 1;
+      min-width: 0;
     }
 
     .feature-card h3 {
       font-size: 1.25rem;
       font-weight: 800;
-      margin-bottom: 0.65rem;
+      margin-top: 0.15rem;
+      margin-bottom: 0.55rem;
       color: #ffffff;
+      line-height: 1.3;
     }
 
     .feature-card p {
       color: var(--text-muted);
       font-size: 0.95rem;
       line-height: 1.55;
+      margin: 0;
     }
 
     /* --- SPLIT SHOWCASE SECTIONS --- */
@@ -1537,7 +1549,7 @@
             <!-- Mockup: Startscreen -->
             <div class="mockup-wrapper">
               <div class="mockup-frame">
-                <img id="heroMockupImg" src="/assets/screen-zaubertisch-tr.webp?v=1.7.0" alt="ChessLeo Academy – Entdecker-Zaubertisch &amp; Design-Welten" loading="eager">
+                <img id="heroMockupImg" src="/assets/screen-zaubertisch-tr.webp?v=1.7.3" alt="ChessLeo Academy – Entdecker-Zaubertisch &amp; Design-Welten" loading="eager">
               </div>
               <p id="heroMockupCaption" class="hero-mockup-caption" data-i18n="hero_cap_zaubertisch">✨ <strong>Kaşif’in Sihirli Masası:</strong> Çocuklar için canlı satranç atölyesi – süzülen güneş ışığı, pencerede kuş yuvası ve dokunulabilir Kuş Koç ile.</p>
             </div>
@@ -1669,48 +1681,60 @@
             <div class="card-icon-wrap" style="background: rgba(168, 85, 247, 0.15); color: var(--purple);">
               🎮
             </div>
-            <h3 data-i18n="feat_card2_title">27 Mini Oyun ve Antrenman</h3>
+            <div class="feature-card-body">
+              <h3 data-i18n="feat_card2_title">27 Mini Oyun ve Antrenman</h3>
             <p data-i18n="feat_card2_text">Heyecanlı Arena oyunları: Taktik Dedektifleri (Çatal, Mat, Açarak Saldırı, Yem), 5 seviyeli Kale Altın Avı, Kare Ninjası, Pat Tuzağı, Piyon Savaşı ve At Parkuru!</p>
+            </div>
           </div>
 
           <div class="feature-card">
             <div class="card-icon-wrap" style="background: rgba(244, 63, 94, 0.15); color: var(--rose);">
               🧩
             </div>
-            <h3 data-i18n="feat_card5_title">6.300'den Fazla Taktik Bulmaca</h3>
+            <div class="feature-card-body">
+              <h3 data-i18n="feat_card5_title">6.300'den Fazla Taktik Bulmaca</h3>
             <p data-i18n="feat_card5_text">500’den 2.500 Elo’ya kadar dinamik bulmacalar – ve bir bulmaca kaçırıldığında Bulmaca Kulesi çözümü hamle hamle anlaşılır şekilde gösterir!</p>
+            </div>
           </div>
 
           <div class="feature-card">
             <div class="card-icon-wrap" style="background: rgba(16, 185, 129, 0.15); color: var(--emerald);">
               🛡️
             </div>
-            <h3 data-i18n="feat_card4_title">Güvenli ve İnternetsiz</h3>
+            <div class="feature-card-body">
+              <h3 data-i18n="feat_card4_title">Güvenli ve İnternetsiz</h3>
             <p data-i18n="feat_card4_text">Uygulama içi reklam yok, hesap zorunluluğu yok, internet gerekmez. Tüm ilerleme ve sertifikalar cihazınızda kalır.</p>
+            </div>
           </div>
 
           <div class="feature-card">
             <div class="card-icon-wrap" style="background: rgba(99, 102, 241, 0.15); color: #818cf8;">
               ⚔️
             </div>
-            <h3 data-i18n="feat_card6_title">Arkadaşlarla Oyna</h3>
+            <div class="feature-card-body">
+              <h3 data-i18n="feat_card6_title">Arkadaşlarla Oyna</h3>
             <p data-i18n="feat_card6_text">İsteğe bağlı iki kişilik oyun (klasik veya Kaybeden Kazanır): Tek cihazda, aynı odada internetsiz Wi-Fi/Bluetooth ile veya Apple Game Center üzerinden çevrimiçi.</p>
+            </div>
           </div>
 
           <div class="feature-card">
             <div class="card-icon-wrap" style="background: rgba(245, 158, 11, 0.15); color: var(--gold);">
               🦝
             </div>
-            <h3 data-i18n="feat_card7_title">Kaybeden Kazanır dahil</h3>
+            <div class="feature-card-body">
+              <h3 data-i18n="feat_card7_title">Kaybeden Kazanır dahil</h3>
             <p data-i18n="feat_card7_text">Taş almanın zorunlu olduğu ve taşlarını ilk bitirenin kazandığı bilinen satranç çeşidi (Antichess). Leo ya da Lina’ya karşı tek başına, aynı cihazda iki kişi ya da yakındaki arkadaşlarla ve Game Center üzerinden. Bunun için ayrı uygulamalar var – ChessLeo Academy’de zaten dahil.</p>
+            </div>
           </div>
 
           <div class="feature-card">
             <div class="card-icon-wrap" style="background: rgba(234, 179, 8, 0.15); color: var(--gold);">
               📒
             </div>
-            <h3 data-i18n="feat_card8_title">Günlük Bulmacalar ve Çıkartma Albümü</h3>
+            <div class="feature-card-body">
+              <h3 data-i18n="feat_card8_title">Günlük Bulmacalar ve Çıkartma Albümü</h3>
             <p data-i18n="feat_card8_text">Her gün 10 taze taktik bulmaca: Günlük görevleri tamamlayın, hazine sandığını açın ve eğlenceli satranç çıkartmalarını interaktif albümünüze yapıştırın. Çocuklar için her gün yepyeni bir motivasyon!</p>
+            </div>
           </div>
         </div>
 
@@ -2042,7 +2066,7 @@
         zh: { flag: '🇨🇳', code: 'ZH' }
       };
 
-      const IMG_VER = '1.7.0';
+      const IMG_VER = '1.7.3';
 
       function getCurrentLang() {
         return (document.documentElement.lang === 'zh-Hans' ? 'zh' : document.documentElement.lang) || 'de';
