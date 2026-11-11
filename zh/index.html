@@ -2131,13 +2131,15 @@
         const gameplayVideo = document.getElementById('gameplayVideo');
         const gameplayVideoSource = document.getElementById('gameplayVideoSource');
         const gameplayFallbackImg = document.getElementById('gameplayFallbackImg');
+        // Keep the ?v= cache buster from the HTML, so a re-recorded video reaches every browser.
+        const mediaVersion = gameplayVideoSource ? ((gameplayVideoSource.getAttribute('src').match(/\?v=[^"&]*/) || [''])[0]) : '';
         if (gameplayVideo && gameplayVideoSource) {
-          gameplayVideoSource.src = '/assets/gameplay-preview-' + lang + '.mp4';
-          gameplayVideo.poster = '/assets/screen-freeplay-' + lang + '.webp';
+          gameplayVideoSource.src = '/assets/gameplay-preview-' + lang + '.mp4' + mediaVersion;
+          gameplayVideo.poster = '/assets/screen-freeplay-' + lang + '.webp' + mediaVersion;
           gameplayVideo.load();
         }
         if (gameplayFallbackImg) {
-          gameplayFallbackImg.src = '/assets/screen-freeplay-' + lang + '.webp';
+          gameplayFallbackImg.src = '/assets/screen-freeplay-' + lang + '.webp' + mediaVersion;
         }
 
         // Remember the language only when the visitor picks it in the menu
