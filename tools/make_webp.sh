@@ -29,5 +29,6 @@ for name in coach-vogel-freigestellt leo-freigestellt lina-freigestellt; do
 done
 cwebp -quiet -q 85 -m 6 -resize 330 0 app-icon.png -o app-icon-preview.webp
 cwebp -quiet -q 80 -m 6 -resize 1200 0 universal-family-banner.jpg -o universal-family-banner-preview.webp
+cwebp -quiet -q 80 -m 6 -resize 1200 0 chessleo-key-visual.jpg -o chessleo-key-visual-preview.webp
 
 echo "WebP images rebuilt."
