@@ -737,19 +737,23 @@
     header.menu-open .nav-menu-icon span:nth-child(2) { opacity: 0; }
     header.menu-open .nav-menu-icon span:nth-child(3) { transform: translateY(-5px) rotate(-45deg); }
 
+    /* Narrow: menu button on the left (as on the start page), logo and name move to the right. */
     header.nav-compact .nav-menu-btn {
       display: inline-flex;
+      order: -1;
+      margin-left: 0;
     }
 
     header.nav-compact .brand {
       white-space: normal;
+      margin-left: auto;
     }
 
     header.nav-compact .nav-menu {
       display: none;
       position: absolute;
       top: calc(100% + 0.4rem);
-      right: 1.5rem;
+      left: 1.5rem;
       width: min(300px, calc(100vw - 2rem));
       max-height: calc(100vh - 6rem);
       max-height: calc(100dvh - 6rem);
@@ -763,7 +767,7 @@
       border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: 1rem;
       box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 20px rgba(245, 158, 11, 0.1);
-      transform-origin: top right;
+      transform-origin: top left;
       z-index: 250;
     }
 
