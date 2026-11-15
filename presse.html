@@ -849,6 +849,97 @@
       .review-banner { flex-direction: column; align-items: flex-start; }
       .btn-tf { width: 100%; }
     }
+
+    /* --- BLACK WEEK 2026: hero card and factsheet line, shown only by the scripts next to them.
+       Remove both, their scripts and these styles after 1 December 2026. --- */
+    .promo-card {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      width: fit-content;
+      max-width: 100%;
+      margin: 1.6rem auto 0;
+      padding: 0.65rem 1rem 0.65rem 0.7rem;
+      border-radius: 1rem;
+      background: linear-gradient(100deg, rgba(245, 158, 11, 0.18), rgba(251, 191, 36, 0.06) 55%, rgba(245, 158, 11, 0.16));
+      border: 1px solid rgba(251, 191, 36, 0.45);
+      box-shadow: 0 6px 22px rgba(245, 158, 11, 0.12);
+      color: var(--text);
+      text-decoration: none;
+      text-align: left;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .promo-card[hidden],
+    .fact-card-promo[hidden] {
+      display: none;
+    }
+
+    .promo-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--gold-light);
+      box-shadow: 0 10px 28px rgba(245, 158, 11, 0.22);
+    }
+
+    .promo-tag {
+      flex: none;
+      background: #000000;
+      color: var(--gold-light);
+      border: 1px solid rgba(251, 191, 36, 0.55);
+      border-radius: 0.55rem;
+      padding: 0.35rem 0.6rem;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      line-height: 1.15;
+      text-align: center;
+    }
+
+    .promo-body {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      min-width: 0;
+    }
+
+    .promo-title {
+      font-size: 1.02rem;
+      font-weight: 800;
+      line-height: 1.25;
+    }
+
+    .promo-title b {
+      color: var(--gold-light);
+    }
+
+    .promo-title s {
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .promo-sub {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+
+    .promo-go {
+      flex: none;
+      margin-left: auto;
+      color: var(--gold-light);
+      font-size: 1.25rem;
+      font-weight: 800;
+    }
+
+    .fact-card-promo {
+      margin-top: 0.6rem;
+      padding-top: 0.55rem;
+      border-top: 1px solid rgba(251, 191, 36, 0.35);
+      font-size: 0.8rem;
+      line-height: 1.45;
+      color: var(--gold-light);
+    }
   </style>
 </head>
 <body>
@@ -959,6 +1050,24 @@
             🍏 Im App Store ansehen
           </a>
         </div>
+        <!-- BLACK WEEK 2026: hidden unless the script below shows it (App Store price 2.99 € from 23 Nov to 30 Nov 2026) -->
+        <a href="https://apps.apple.com/app/apple-store/id6814943166?pt=129481811&amp;ct=blackweek26&amp;mt=8" class="promo-card" id="promoCard" target="_blank" rel="noopener noreferrer" hidden>
+          <span class="promo-tag">Black Week</span>
+          <span class="promo-body">
+            <span class="promo-title">Nur <b>2,99&nbsp;€</b> statt <s>4,99&nbsp;€</s></span>
+            <span class="promo-sub">Aktionspreis vom 23. bis 30. November 2026 in den Euro-Ländern</span>
+          </span>
+          <span class="promo-go" aria-hidden="true">→</span>
+        </a>
+        <script>
+          // Shows the card only while the sale price is live (10:00 on 23 Nov to midnight German time on 30 Nov); ?promo=1 forces it on preview.chessleo.de and localhost.
+          (function () {
+            var now = Date.now();
+            var live = now >= Date.parse('2026-11-23T10:00:00+01:00') && now < Date.parse('2026-12-01T00:00:00+01:00');
+            var forced = /(^|[?&])promo=1(&|$)/.test(location.search.slice(1)) && /^(preview\.chessleo\.de|localhost|127\.0\.0\.1)$/.test(location.hostname);
+            if (live || forced) document.getElementById('promoCard').hidden = false;
+          })();
+        </script>
       </section>
 
       <!-- INTERNATIONALE PRESSE-KITS -->
@@ -1120,6 +1229,17 @@
             <div class="fact-card-label">Preismodell &amp; Familie</div>
             <div class="fact-card-val">Einmalkauf</div>
             <div class="fact-card-sub">Kein Abo, keine In-App-Käufe, voll teilbar über Apple Familienfreigabe</div>
+            <!-- BLACK WEEK 2026: shown until the sale ends, so editors can plan ahead -->
+            <div class="fact-card-promo" id="promoFact" hidden>Black-Week-Aktion 23.–30.11.2026: 2,99&nbsp;€ statt 4,99&nbsp;€ (Euro-Länder), USA $2.99 statt $3.99, UK £2.99 statt £3.99</div>
+            <script>
+              // Shows the line until the sale ends; ?promo=1 forces it on preview.chessleo.de and localhost.
+              (function () {
+                var now = Date.now();
+                var live = now < Date.parse('2026-12-01T00:00:00+01:00');
+                var forced = /(^|[?&])promo=1(&|$)/.test(location.search.slice(1)) && /^(preview\.chessleo\.de|localhost|127\.0\.0\.1)$/.test(location.hostname);
+                if (live || forced) document.getElementById('promoFact').hidden = false;
+              })();
+            </script>
           </div>
 
           <div class="fact-card">
