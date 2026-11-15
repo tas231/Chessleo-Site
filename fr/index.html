@@ -490,6 +490,33 @@
       font-weight: 800;
     }
 
+    /* Black Week picture under the trust badges; shown together with the card above (class set by its script). */
+    .promo-strip {
+      display: none;
+      max-width: 1092px;
+      margin: 0.5rem auto 0;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(251, 191, 36, 0.35);
+      box-shadow: 0 10px 34px rgba(0, 0, 0, 0.45);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .promo-live .promo-strip {
+      display: block;
+    }
+
+    .promo-strip:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 40px rgba(245, 158, 11, 0.25);
+    }
+
+    .promo-strip img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
     /* --- MENU BUTTON (narrow windows only, see RESPONSIVE) --- */
     .nav-menu-btn {
       display: none;
@@ -1825,6 +1852,7 @@
                   }
                   document.getElementById('promoTitle').innerHTML = title;
                   document.getElementById('promoCard').hidden = false;
+                  document.documentElement.classList.add('promo-live');
                 })();
               </script>
               <a href="https://apps.apple.com/app/apple-store/id6814943166?pt=129481811&amp;ct=chessleo&amp;mt=8" class="btn-hero-appstore" target="_blank" rel="noopener noreferrer">
@@ -1875,6 +1903,20 @@
           <div class="trust-badge"><span>🎓</span> <span data-i18n="trust_kids_rec">Pour l’École Primaire</span></div>
           <div class="trust-badge"><span>👶</span> <span data-i18n="trust_apple_kids">Dans la catégorie Enfants de l’App Store</span></div>
         </div>
+
+        <!-- BLACK WEEK 2026: picture (source RawAssets/Advertisement/BlackFriday2026.jpeg in the app repo), shown only
+             while the sale card above is shown (.promo-live on <html>). Remove with the card after 1 December 2026. -->
+        <a href="https://apps.apple.com/app/apple-store/id6814943166?pt=129481811&amp;ct=blackweek26&amp;mt=8" class="promo-strip" target="_blank" rel="noopener noreferrer">
+          <img id="promoStripImg" data-src="/assets/black-friday-2026-1100.webp" data-srcset="/assets/black-friday-2026-1100.webp 1100w, /assets/black-friday-2026-2200.webp 2200w" sizes="(max-width: 1140px) calc(100vw - 3rem), 1092px" width="2200" height="934" alt="ChessLeo Academy – Black Friday">
+        </a>
+        <script>
+          // Load the picture only when it is shown, so visitors outside the sale do not download it.
+          if (document.documentElement.classList.contains('promo-live')) {
+            var promoImg = document.getElementById('promoStripImg');
+            promoImg.srcset = promoImg.getAttribute('data-srcset');
+            promoImg.src = promoImg.getAttribute('data-src');
+          }
+        </script>
       </div>
     </section>
 
