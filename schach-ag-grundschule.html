@@ -8,12 +8,13 @@
       location.replace('https://chessleo.de' + location.pathname + location.search + location.hash);
     }
   </script>
-  <!-- German only, hand-written. The lesson names must match the app (AcademyHomeView.swift), and the order matters:
-       grade 2 opens only after all lessons of grade 1, grade 3 only after all lessons of grade 2. -->
+  <!-- German only, hand-written. Lesson and game names must match the app (AcademyHomeView.swift, MiniGamesHubView.swift),
+       and the order matters: grade 2 opens only after all eight lessons of grade 1. Every position and answer was checked
+       with python-chess and Stockfish on 2026-11-22: check again after changing a task or a board picture. -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Schach-AG in der Grundschule: Stundenplan für 12 Treffen – ChessLeo</title>
+  <title>Schach-AG in der Grundschule: Grundkurs in 12 Treffen – ChessLeo</title>
   <meta name="robots" content="index, follow">
-  <meta name="description" content="Material für die Schach-AG in der Grundschule: 12 Treffen zu je 45 Minuten mit Übungen am echten Brett, zum Ausdrucken. Ein iPad oder Mac genügt.">
+  <meta name="description" content="Material für die Schach-AG in der Grundschule: 12 Treffen zu je 45 Minuten mit Aufgaben, Lösungen, Spielen und Urkunde zum Ausdrucken.">
   <link rel="canonical" href="https://chessleo.de/schach-ag-grundschule.html">
   <meta name="apple-itunes-app" content="app-id=6814943166, affiliate-data=ct=schule&amp;pt=129481811">
 
@@ -21,8 +22,8 @@
   <meta property="og:locale" content="de_DE">
   <meta property="og:site_name" content="ChessLeo Academy">
   <meta property="og:url" content="https://chessleo.de/schach-ag-grundschule.html">
-  <meta property="og:title" content="Schach-AG in der Grundschule: Stundenplan für 12 Treffen">
-  <meta property="og:description" content="12 Treffen zu je 45 Minuten mit Übungen am echten Brett, zum Ausdrucken.">
+  <meta property="og:title" content="Schach-AG in der Grundschule: Grundkurs in 12 Treffen">
+  <meta property="og:description" content="12 Treffen zu je 45 Minuten mit Aufgaben, Lösungen, Spielen und Urkunde zum Ausdrucken.">
   <meta property="og:image" content="https://chessleo.de/assets/og-logo.jpg?v=20261101">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -110,18 +111,92 @@
     footer { margin-top: 3rem; border-top: 1px solid var(--line); padding: 1.5rem 0 2.5rem; font-size: 0.9rem; }
     footer a { margin-right: 1rem; }
 
+    .overview { width: 100%; border-collapse: collapse; }
+    .overview th, .overview td { padding: 0.4rem 0.5rem; border-bottom: 1px solid var(--line); color: var(--muted); text-align: left; vertical-align: top; }
+    .overview th { color: var(--text); }
+    .overview td:first-child { color: var(--text); font-weight: 700; }
+
+    .meeting { scroll-margin-top: 1rem; }
+    .meeting h3, .meeting b { color: var(--text); }
+    .meeting .times { color: var(--gold); font-size: 0.9rem; }
+    .meeting .answer { padding-left: 0.75rem; border-left: 2px solid var(--gold); }
+    .meeting .done { color: var(--text); }
+    .meeting-body.with-board { display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 1.2rem; align-items: start; }
+    .boards { display: grid; gap: 0.6rem; padding-top: 0.3rem; }
+    .board { margin: 0; }
+    .board img { border-radius: 0.3rem; }
+    .board figcaption { text-align: center; }
+
+    .credit { margin-top: 2rem; font-size: 0.85rem; overflow-wrap: anywhere; }
+
+    .certificate {
+      margin-top: 2.5rem;
+      padding: 2rem 1.5rem;
+      border: 6px double #b98f2d;
+      border-radius: 1rem;
+      background: #fff;
+      text-align: center;
+    }
+    .certificate img { width: 130px; height: auto; }
+    .certificate h2 { margin: 0.5rem 0 0; color: #7a5a10; font-size: 2.6rem; }
+    .certificate p { color: #222; }
+    .certificate .certificate-course { font-size: 1.2rem; font-weight: 700; }
+    .certificate .line { margin: 3.5rem auto 1rem; max-width: 24rem; border-top: 1px solid #222; }
+    .certificate .line span { font-size: 0.8rem; }
+    .signatures { display: grid; grid-template-columns: 1fr 1fr; gap: 0 2rem; }
+    .signatures .line { width: 100%; }
+
+    @media (max-width: 700px) {
+      .meeting-body.with-board { grid-template-columns: minmax(0, 1fr); }
+      .boards { grid-template-columns: repeat(auto-fit, minmax(130px, 240px)); justify-content: center; }
+    }
+
     @media (max-width: 520px) {
       h1 { font-size: 1.7rem; hyphens: auto; }
+      .meetings li { padding: 1rem 0.85rem; }
+      .overview { font-size: 0.88rem; }
+      .overview th, .overview td { padding: 0.35rem 0.25rem; hyphens: auto; }
+      .signatures { grid-template-columns: 1fr; }
     }
+
+    @page { size: A4; margin: 12mm; }
 
     @media print {
       :root { --bg: #fff; --surface: #fff; --line: #bbb; --text: #000; --muted: #222; --gold: #000; --accent: #000; }
-      body { font-size: 10pt; line-height: 1.4; }
+      body { font-size: 9.6pt; line-height: 1.3; }
+      .wrap { max-width: none; padding: 0; }
       .no-print, .top, footer { display: none; }
+      a { color: inherit; text-decoration: none; }
       h1 { margin-top: 0; font-size: 18pt; }
-      h2 { margin-top: 12pt; font-size: 13pt; break-after: avoid; }
-      .meetings li { margin-top: 5pt; padding: 5pt 8pt; break-inside: avoid; }
+      h2 { margin-top: 10pt; font-size: 13pt; break-after: avoid; }
+      .lead { font-size: 11pt; }
+      .overview th, .overview td { padding: 1.5pt 4pt; }
+      .course-start { break-before: page; margin-top: 0; }
+      .meetings li { margin-top: 4pt; padding: 4pt 7pt; border-radius: 5pt; break-inside: avoid; }
+      .meetings p { margin-top: 1pt; }
+      .meetings h3 { font-size: 11pt; margin-bottom: 1pt; }
+      .boards { padding-top: 0; }
+      .meeting-body.with-board { grid-template-columns: minmax(0, 1fr) 31mm; gap: 3mm; }
+      .boards { grid-template-columns: 1fr; gap: 1mm; }
+      .board figcaption { margin-top: 0; font-size: 8pt; }
+      .credit { margin-top: 4pt; font-size: 7.5pt; }
       .print-source { display: block !important; }
+      .certificate {
+        break-before: page;
+        break-inside: avoid;
+        height: 260mm;
+        margin: 0;
+        padding: 20mm 15mm;
+        border-radius: 0;
+      }
+      .certificate img { width: 55mm; }
+      .certificate h2 { margin-top: 5mm; color: #7a5a10; font-size: 44pt; }
+      .certificate p { font-size: 13pt; }
+      .certificate .line { margin-top: 24mm; }
+      .certificate .line span { font-size: 9pt; }
+      .signatures { grid-template-columns: 1fr 1fr; }
+      body.only-certificate main > :not(.certificate) { display: none !important; }
+      body.only-certificate .certificate { break-before: auto; }
     }
 
     .print-source { display: none; }
@@ -138,109 +213,353 @@
   </header>
 
   <main class="wrap">
-    <h1>Schach-AG in der Grundschule: Stundenplan für 12&nbsp;Treffen</h1>
-    <p class="lead">Vom leeren Brett bis zum kleinen Abschlussturnier: zwölf Treffen zu je 45 Minuten. Coach Vogel erklärt am großen Bild, geübt wird zu zweit am echten Brett. Die Kinder brauchen keine Vorkenntnisse.</p>
+    <h1>Schach-AG in der Grundschule: Grundkurs in 12&nbsp;Treffen</h1>
+    <p class="lead">Das Ziel: Am Ende spielt jedes Kind eine ganze Partie nach den Regeln und fragt vor dem Zug, was hängt. Jedes Treffen hat eine Aufgabe mit Lösung, und es wird von Anfang an gespielt. Die Kinder brauchen keine Vorkenntnisse.</p>
 
     <div class="actions no-print">
-      <button class="button main" type="button" onclick="window.print()">Stundenplan drucken</button>
+      <button class="button main" type="button" onclick="printPages('')">Grundkurs drucken</button>
+      <button class="button" type="button" onclick="printPages('only-certificate')">Nur die Urkunde drucken</button>
       <a class="button" href="https://apps.apple.com/app/apple-store/id6814943166?pt=129481811&amp;ct=schule&amp;mt=8" target="_blank" rel="noopener noreferrer">ChessLeo im App Store</a>
     </div>
 
     <h2>Das brauchen Sie</h2>
     <ul>
       <li><strong>Ein iPad oder einen Mac</strong> mit ChessLeo Academy, dazu Beamer oder großen Bildschirm mit Ton.</li>
-      <li><strong>Ein Schachspiel für je zwei Kinder</strong> und ein paar Spielsteine oder Münzen.</li>
-      <li><strong>Etwas Vorbereitung:</strong> Sehen Sie sich die Lektionen des Tages vorher einmal an.</li>
+      <li><strong>Ein Schachspiel für je zwei Kinder</strong> und zehn Spielsteine oder Münzen je Brett.</li>
+      <li><strong>15 Minuten Vorbereitung:</strong> Spielen Sie die Lektion des Tages vorher durch. Sie lässt sich danach beliebig wiederholen.</li>
     </ul>
 
-    <h2>So läuft ein Treffen ab</h2>
+    <h2>So laufen die 45 Minuten</h2>
     <ul>
-      <li><strong>5 Minuten:</strong> Aufbauen und kurz wiederholen.</li>
-      <li><strong>15 Minuten:</strong> Lektion gemeinsam am großen Bild. Die Kinder sagen die Züge an.</li>
-      <li><strong>20 Minuten:</strong> Üben zu zweit am Brett.</li>
-      <li><strong>5 Minuten:</strong> Was haben wir gelernt? Aufräumen.</li>
+      <li><strong>5 Minuten wiederholen:</strong> die Frage vom letzten Mal.</li>
+      <li><strong>12 Minuten App:</strong> gemeinsam am großen Bild. Die Kinder sagen die Züge an.</li>
+      <li><strong>8 Minuten Aufgabe:</strong> zu zweit am Brett, dann die Lösung besprechen.</li>
+      <li><strong>20 Minuten spielen:</strong> Gehen Sie herum und prüfen Sie dabei „Geschafft, wenn“.</li>
     </ul>
-    <p>Spielen Sie jede Lektion in der App zu Ende. Die 2. und die 3. Klasse öffnen sich erst, wenn die Klasse davor geschafft ist.</p>
+    <p>Treffen 5 und 12 haben eigene Zeiten. Wird es knapp, entfällt das Minispiel in der App, nicht das Spielen am Brett.</p>
 
     <figure class="no-print">
       <img src="/assets/screen-school-bishop-de.webp?v=1.7.0" width="1200" height="923" alt="Die Läufer-Lektion mit Coach Vogel in ChessLeo Academy" loading="lazy">
       <figcaption>Treffen 2: Der Läufer bleibt immer auf seiner Feldfarbe.</figcaption>
     </figure>
 
-    <h2>1. Klasse: Figuren-Regeln</h2>
+    <h2>Der Kurs auf einen Blick</h2>
+    <table class="overview">
+      <thead>
+        <tr><th>Nr.</th><th>Lektion</th><th>Spielen</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td><a href="#treffen-1">Was ist Schach?, Brett</a></td><td>Aufbau-Wettlauf</td></tr>
+        <tr><td>2</td><td><a href="#treffen-2">Turm, Läufer</a></td><td>Sammel-Duell</td></tr>
+        <tr><td>3</td><td><a href="#treffen-3">Dame</a></td><td>Beutejagd</td></tr>
+        <tr><td>4</td><td><a href="#treffen-4">König</a></td><td>Königsjagd</td></tr>
+        <tr><td>5</td><td><a href="#treffen-5">Springer, Bauer</a></td><td>Bauern-Krieg</td></tr>
+        <tr><td>6</td><td><a href="#treffen-6">Rochade</a></td><td>Erste ganze Partie</td></tr>
+        <tr><td>7</td><td><a href="#treffen-7">Taschengeld-Check</a></td><td>Partie mit Zug-Frage</td></tr>
+        <tr><td>8</td><td><a href="#treffen-8">Vier Retter</a></td><td>Partie mit Zug-Frage</td></tr>
+        <tr><td>9</td><td><a href="#treffen-9">Eröffnungs-Regeln</a></td><td>Partie ab Zug 1</td></tr>
+        <tr><td>10</td><td><a href="#treffen-10">Treppenmatt (Arena)</a></td><td>Partie zu Ende spielen</td></tr>
+        <tr><td>11</td><td><a href="#treffen-11">Springer-Gabel</a></td><td>Partie mit Gabel-Punkt</td></tr>
+        <tr><td>12</td><td><a href="#treffen-12">Abschluss</a></td><td>Turnier</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Hilfen für die Leitung</h2>
+    <ul>
+      <li><strong>Schachschrift:</strong> K König, D Dame, T Turm, L Läufer, S Springer. Ohne Buchstaben zieht ein Bauer. Ein x heißt schlagen, ein + Schach. „1.&nbsp;e4 e5“ heißt: Weiß zieht auf e4, dann Schwarz auf e5.</li>
+      <li><strong>Brettbilder:</strong> Weiß spielt immer von unten nach oben.</li>
+      <li><strong>In der App:</strong> Die Lektionen stehen in der Schach-Grundschule. Nach den meisten bietet „Jetzt üben“ das passende Minispiel an, alle stehen auch in der Mini-Games Arena. Die 2. Klasse öffnet sich erst, wenn alle acht Lektionen der 1. Klasse geschafft sind.</li>
+    </ul>
+
+    <h2 class="course-start">Die zwölf Treffen</h2>
     <ol class="meetings">
-      <li>
+      <li class="meeting" id="treffen-1">
         <h3>Treffen 1: Das Brett</h3>
-        <p><strong>In der App:</strong> „Start hier: Was ist Schach?“ und „Das Schachbrett &amp; Grundregeln“.</p>
-        <p><strong>Am Brett:</strong> Das Brett richtig hinlegen (rechts unten ist weiß) und aufbauen. Danach nennt ein Kind ein Feld wie e4, das andere legt einen Stein darauf.</p>
+        <div class="meeting-body">
+          <div>
+            <p><strong>Ziel:</strong> Die Kinder legen das Brett richtig hin, bauen auf und finden Felder wie e4.</p>
+            <p><strong>Einstieg:</strong> Wer kennt Schach schon? Lassen Sie die Figuren benennen. Wer sie kennt, hilft später beim Aufbauen.</p>
+            <p><strong>In der App:</strong> „Start hier: Was ist Schach?“ und „Das Schachbrett &amp; Grundregeln“, danach eine Runde Feld-Ninja.</p>
+            <p><strong>Aufgabe:</strong> Je einen Stein auf b2, e4, g7 und a8 legen. Das andere Kind prüft.</p>
+            <p class="answer"><strong>Lösung:</strong> Erst kommt der Buchstabe, dann die Zahl. Für Weiß liegen a8 oben links und b2 unten links.</p>
+            <p><strong>Für Schnelle:</strong> Ohne Brett: Welche Farbe haben h1, a1 und e4?</p>
+            <p class="answer"><strong>Lösung:</strong> h1 hell, a1 dunkel, e4 hell.</p>
+            <p><strong>Typischer Fehler:</strong> Das Brett liegt gedreht. Rechts unten ist immer ein helles Feld.</p>
+            <p><strong>Spielen:</strong> <b>Aufbau-Wettlauf:</b> Zwei Paare bauen gleichzeitig auf, das schnellere fehlerfreie Paar bekommt einen Punkt. <b>Felder-Duell:</b> Ein Kind nennt ein Feld, das andere legt einen Stein darauf. Nach zehn Feldern wird getauscht.</p>
+            <p class="done"><strong>Geschafft, wenn:</strong> das Kind allein aufbaut und die Dame auf ihrer Farbe steht.</p>
+          </div>
+        </div>
       </li>
-      <li>
+      <li class="meeting" id="treffen-2">
         <h3>Treffen 2: Turm und Läufer</h3>
-        <p><strong>In der App:</strong> „Der Turm“ und „Der Läufer“.</p>
-        <p><strong>Am Brett:</strong> Acht Steine verteilen. Mit wie wenigen Zügen sammelt der Turm alle ein? Dann der Läufer, mit Steinen nur auf seiner Feldfarbe.</p>
+        <div class="meeting-body with-board">
+          <div>
+            <p><strong>Ziel:</strong> Die Kinder ziehen Turm und Läufer sicher und springen nicht über andere Figuren.</p>
+            <p><strong>Wiederholen:</strong> Welches Feld liegt rechts unten? Zeige d4.</p>
+            <p><strong>In der App:</strong> „Der Turm“ und „Der Läufer“, dazwischen eine Stufe Turm-Münzrausch.</p>
+            <p><strong>Aufgabe:</strong> Die Stellung aufbauen. Was kann der Turm schlagen, was der Läufer?</p>
+            <p class="answer"><strong>Lösung:</strong> Der Turm den Springer d6, aber nicht den Turm dahinter. Der Läufer den Bauern a6. Den Läufer g4 erreicht keiner.</p>
+            <p><strong>Für Schnelle:</strong> Wie kommt der Turm in zwei Zügen nach g4?</p>
+            <p class="answer"><strong>Lösung:</strong> Zum Beispiel über g2.</p>
+            <p><strong>Typischer Fehler:</strong> Turm oder Läufer springen über eine Figur.</p>
+            <p><strong>Spielen:</strong> <b>Sammel-Duell:</b> Weiß hat Ta1 und Lc1, Schwarz Th8 und Lf8, dazu liegen zehn Steine auf dem Brett. Abwechselnd ziehen und auf einem Stein landen: eingesammelt. Über Steine springt niemand, Figuren werden nicht geschlagen. Wer mehr Steine hat, gewinnt.</p>
+            <p class="done"><strong>Geschafft, wenn:</strong> das Kind erklärt, warum der Turm den Turm d8 nicht schlagen kann.</p>
+          </div>
+          <div class="boards">
+            <figure class="board">
+              <img src="/assets/schach-ag/t02-schlagen.webp" width="548" height="548" alt="Weiß: Turm d2, Läufer f1. Schwarz: Turm d8, Springer d6, Bauer a6, Läufer g4.">
+              <figcaption>Was kann geschlagen werden?</figcaption>
+            </figure>
+          </div>
+        </div>
       </li>
-      <li>
-        <h3>Treffen 3: Dame und König</h3>
-        <p><strong>In der App:</strong> „Die Dame“ und „Der König“.</p>
-        <p><strong>Am Brett:</strong> Ein Kind gibt dem einzelnen König mit der Dame Schach. Das andere zeigt alle Felder, auf die er fliehen darf.</p>
+      <li class="meeting" id="treffen-3">
+        <h3>Treffen 3: Die Dame</h3>
+        <div class="meeting-body with-board">
+          <div>
+            <p><strong>Ziel:</strong> Die Kinder ziehen die Dame und fragen vor dem Schlagen: Kann jemand zurückschlagen?</p>
+            <p><strong>Wiederholen:</strong> Wie zieht der Turm, wie der Läufer? Wer bleibt auf seiner Farbe?</p>
+            <p><strong>In der App:</strong> „Die Dame“, danach eine Runde Figuren-Jagd mit der Dame als Heldin.</p>
+            <p><strong>Aufgabe:</strong> Die Dame kann zwei Figuren schlagen. Welche ist die bessere Beute?</p>
+            <p class="answer"><strong>Lösung:</strong> Der Turm h6, denn er ist frei. Den Springer d6 decken Turm und Läufer: Die Dame wäre weg.</p>
+            <p><strong>Für Schnelle:</strong> Wie viele Felder erreicht eine Dame, die allein auf d4 steht?</p>
+            <p class="answer"><strong>Lösung:</strong> 27.</p>
+            <p><strong>Typischer Fehler:</strong> Die Dame schlägt alles, was sie erreicht, und geht dabei verloren.</p>
+            <p><strong>Spielen:</strong> <b>Beutejagd:</b> Weiß hat Ta1, Lc1 und Dd1, Schwarz Th8, Lf8 und De8. Abwechselnd ziehen und schlagen. Nach fünf Minuten zählt die Beute: Läufer 3, Turm 5, Dame 9. Dann die Farben tauschen.</p>
+            <p class="done"><strong>Geschafft, wenn:</strong> das Kind vor dem Schlagen nach dem Beschützer sucht.</p>
+          </div>
+          <div class="boards">
+            <figure class="board">
+              <img src="/assets/schach-ag/t03-dame.webp" width="548" height="548" alt="Weiß: Dame d2. Schwarz: Läufer e7, Springer d6, Turm h6.">
+              <figcaption>Welche Beute ist frei?</figcaption>
+            </figure>
+          </div>
+        </div>
       </li>
-      <li>
-        <h3>Treffen 4: Springer und Bauer</h3>
-        <p><strong>In der App:</strong> „Der Springer“ und „Der Bauer“.</p>
-        <p><strong>Am Brett:</strong> Bauern-Krieg, nur mit den 16 Bauern. Wer zuerst die letzte Reihe erreicht oder alle gegnerischen Bauern schlägt, gewinnt. Kann niemand mehr ziehen, ist es unentschieden.</p>
+      <li class="meeting" id="treffen-4">
+        <h3>Treffen 4: König, Schach, Matt und Patt</h3>
+        <div class="meeting-body with-board">
+          <div>
+            <p><strong>Ziel:</strong> Die Kinder unterscheiden Schach, Matt und Patt.</p>
+            <p><strong>Wiederholen:</strong> Was prüfst du, bevor die Dame schlägt?</p>
+            <p><strong>In der App:</strong> „Der König“, danach zwei Aufgaben im Matt-Detektiv.</p>
+            <p><strong>Aufgabe:</strong> Beide Stellungen aufbauen, Schwarz ist am Zug. Matt oder Patt?</p>
+            <p class="answer"><strong>Lösung:</strong> A ist Matt: Schach und kein Ausweg. B ist Patt: kein Schach, aber auch kein Zug. Das ist unentschieden.</p>
+            <p><strong>Für Schnelle:</strong> In B die Dame auf g5 stellen. Weiß zieht: Findest du alle fünf Matts?</p>
+            <p class="answer"><strong>Lösung:</strong> Dg8, Dg7, Dh6, Dh5 und Dh4.&nbsp;Dg6 und Df5 wären Patt.</p>
+            <p><strong>Typischer Fehler:</strong> „Der König kann nicht ziehen, also ist es Matt.“ Matt gibt es nur mit Schach.</p>
+            <p><strong>Spielen:</strong> <b>Königsjagd:</b> Weiß hat Ke1, Dd1, Ta1 und Th1, Schwarz nur Ke5. Weiß hat 15 Züge für das Matt, bei Patt gewinnt Schwarz. Danach die Farben tauschen.</p>
+            <p class="done"><strong>Geschafft, wenn:</strong> das Kind Matt und Patt mit eigenen Worten erklärt.</p>
+          </div>
+          <div class="boards">
+            <figure class="board">
+              <img src="/assets/schach-ag/t04-matt.webp" width="548" height="548" alt="Weiß: König f7, Dame g7. Schwarz: König h8.">
+              <figcaption>A</figcaption>
+            </figure>
+            <figure class="board">
+              <img src="/assets/schach-ag/t04-patt.webp" width="548" height="548" alt="Weiß: König f7, Dame g6. Schwarz: König h8.">
+              <figcaption>B</figcaption>
+            </figure>
+          </div>
+        </div>
       </li>
-      <li>
-        <h3>Treffen 5: Die Rochade</h3>
-        <p><strong>In der App:</strong> „Die Rochade“.</p>
-        <p><strong>Am Brett:</strong> Die erste ganze Partie. Jedes Kind versucht, zu rochieren.</p>
+      <li class="meeting" id="treffen-5">
+        <h3>Treffen 5: Springer und Bauer</h3>
+        <p class="times">Minuten heute: 5 wiederholen · 20 App · 5 Aufgabe · 15 spielen</p>
+        <div class="meeting-body with-board">
+          <div>
+            <p><strong>Ziel:</strong> Die Kinder kennen den Springersprung und ziehen und schlagen richtig mit dem Bauern.</p>
+            <p><strong>Wiederholen:</strong> Was ist Schach, was Matt, was Patt?</p>
+            <p><strong>In der App:</strong> „Der Springer“ und „Der Bauer“. Die beiden Bauern-Spiele am Ende löst die Gruppe gemeinsam. Geht dort für Weiß kein Zug mehr, tippen Sie auf „Neu starten“.</p>
+            <p><strong>Aufgabe:</strong> Was darf der Bauer e4 schlagen, was der Springer?</p>
+            <p class="answer"><strong>Lösung:</strong> Der Bauer nur d5, denn e5 versperrt ihm den Weg. Der Springer schlägt den Läufer f3.</p>
+            <p><strong>Für Schnelle:</strong> Weißer Bauer auf e5, schwarzer Bauer auf d7. Schwarz zieht d7–d5. Was darf Weiß sofort?</p>
+            <p class="answer"><strong>Lösung:</strong> En passant auf d6 schlagen.</p>
+            <p><strong>Typischer Fehler:</strong> Der Bauer schlägt geradeaus oder zieht rückwärts.</p>
+            <p><strong>Spielen:</strong> <b>Bauern-Krieg:</b> Nur die 16 Bauern. Es gewinnt, wer zuerst die letzte Reihe erreicht oder alle gegnerischen Bauern schlägt. Geht kein Zug mehr, ist es unentschieden.</p>
+            <p class="done"><strong>Geschafft, wenn:</strong> das Kind beim Bauern „gerade ziehen, schräg schlagen“ zeigt.</p>
+          </div>
+          <div class="boards">
+            <figure class="board">
+              <img src="/assets/schach-ag/t05-schlagen.webp" width="548" height="548" alt="Weiß: Bauer e4, Springer d2. Schwarz: Bauern d5 und e5, Läufer f3.">
+              <figcaption>Wer darf was schlagen?</figcaption>
+            </figure>
+          </div>
+        </div>
+      </li>
+      <li class="meeting" id="treffen-6">
+        <h3>Treffen 6: Rochade und erste Partie</h3>
+        <div class="meeting-body with-board">
+          <div>
+            <p><strong>Ziel:</strong> Die Kinder rochieren richtig und spielen eine Partie nach allen Regeln.</p>
+            <p><strong>Wiederholen:</strong> Wie zieht der Bauer? Was passiert auf der letzten Reihe?</p>
+            <p><strong>In der App:</strong> „Die Rochade“. Damit ist die 1. Klasse geschafft und die 2. Klasse öffnet sich.</p>
+            <p><strong>Aufgabe:</strong> Weiß ist am Zug. Darf er kurz rochieren? Darf er lang rochieren?</p>
+            <p class="answer"><strong>Lösung:</strong> Kurz nein: Der König liefe über f1, das der Läufer angreift. Lang ja: König c1, Turm d1.</p>
+            <p><strong>Für Schnelle:</strong> Den schwarzen Läufer wegnehmen. Und jetzt?</p>
+            <p class="answer"><strong>Lösung:</strong> Beide Rochaden gehen, wenn König und Türme noch nicht gezogen haben.</p>
+            <p><strong>Typischer Fehler:</strong> Das Kind zieht zuerst den Turm. Bei der Rochade kommt zuerst der König.</p>
+            <p><strong>Spielen:</strong> <b>Ganze Partie:</b> Hand geben, Weiß beginnt. Ein unmöglicher Zug wird zurückgenommen. Der König wird nie geschlagen. Nicht fertig? Stellung fotografieren oder die Figurenwerte zählen.</p>
+            <p class="done"><strong>Geschafft, wenn:</strong> das Kind rochiert, ohne dass jemand hilft.</p>
+          </div>
+          <div class="boards">
+            <figure class="board">
+              <img src="/assets/schach-ag/t06-rochade.webp" width="548" height="548" alt="Weiß: König e1, Türme a1 und h1, Bauern a2, b2, c2, f2, g2, h2. Schwarz: König e8, Läufer b5.">
+              <figcaption>Wohin darf der König?</figcaption>
+            </figure>
+          </div>
+        </div>
+      </li>
+      <li class="meeting" id="treffen-7">
+        <h3>Treffen 7: Was hängt?</h3>
+        <div class="meeting-body with-board">
+          <div>
+            <p><strong>Ziel:</strong> Die Kinder finden ungedeckte Figuren und rechnen einen Tausch nach.</p>
+            <p><strong>Wiederholen:</strong> Wann ist die Rochade verboten?</p>
+            <p><strong>In der App:</strong> „Der Schach-Taschengeld-Check“, danach drei Aufgaben im Figuren-Check.</p>
+            <p><strong>Aufgabe:</strong> A aufbauen: 1.&nbsp;e4 e5 2.&nbsp;Sf3 h6. Was kann Weiß gratis schlagen? Dann B: 2.&nbsp;…&nbsp;Sc6 statt h6. Und jetzt?</p>
+            <p class="answer"><strong>Lösung:</strong> In A den Bauern e5, er ist ungedeckt. In B nichts: Schlägt der Springer e5, schlägt der Springer c6 zurück. Das kostet 3 und bringt 1.</p>
+            <p><strong>Für Schnelle:</strong> Nach 1.&nbsp;e4 e5 2.&nbsp;Sf3 Sf6: Was hängt?</p>
+            <p class="answer"><strong>Lösung:</strong> Beide Bauern, e4 und e5. Weiß ist am Zug und kann e5 schlagen.</p>
+            <p><strong>Typischer Fehler:</strong> Schlagen, nur weil es geht.</p>
+            <p><strong>Spielen:</strong> <b>Ganze Partie mit Zug-Frage:</b> Vor jedem Zug leise fragen: „Was hängt bei mir, was beim anderen?“</p>
+            <p class="done"><strong>Geschafft, wenn:</strong> das Kind vor dem Schlagen sagt, ob die Figur gedeckt ist.</p>
+          </div>
+          <div class="boards">
+            <figure class="board">
+              <img src="/assets/schach-ag/t07-haengt.webp" width="548" height="548" alt="Grundstellung nach 1.&nbsp;e4 e5 2.&nbsp;Sf3 h6.">
+              <figcaption>A: nach 2.&nbsp;…&nbsp;h6</figcaption>
+            </figure>
+            <figure class="board">
+              <img src="/assets/schach-ag/t07-gedeckt.webp" width="548" height="548" alt="Grundstellung nach 1.&nbsp;e4 e5 2.&nbsp;Sf3 Sc6.">
+              <figcaption>B: nach 2.&nbsp;…&nbsp;Sc6</figcaption>
+            </figure>
+          </div>
+        </div>
+      </li>
+      <li class="meeting" id="treffen-8">
+        <h3>Treffen 8: Die vier Retter</h3>
+        <div class="meeting-body with-board">
+          <div>
+            <p><strong>Ziel:</strong> Die Kinder retten angegriffene Figuren: weglaufen, blockieren, schlagen oder decken.</p>
+            <p><strong>Wiederholen:</strong> Was sind Bauer, Springer, Läufer, Turm und Dame wert?</p>
+            <p><strong>In der App:</strong> „Die vier Retter“, danach drei Aufgaben in „Rette dich!“.</p>
+            <p><strong>Aufgabe:</strong> Der Turm greift den Springer an, Weiß ist am Zug. Findet alle vier Retter. Welcher ist der beste?</p>
+            <p class="answer"><strong>Lösung:</strong> Weg: zum Beispiel Sc3. Blockieren: Le5, vom Bauern d4 gedeckt. Decken: f3. Am besten ist Schlagen: Lxe8, der Turm ist frei.</p>
+            <p><strong>Für Schnelle:</strong> Statt des Turms einen schwarzen Bauern auf d5 stellen, beide Läufer wegnehmen. Hilft Decken mit f3?</p>
+            <p class="answer"><strong>Lösung:</strong> Nein. Springer 3 gegen Bauer 1 kostet zwei Punkte. Der Springer muss weg.</p>
+            <p><strong>Typischer Fehler:</strong> Immer nur weglaufen oder eine wertvolle Figur gegen einen billigen Angreifer decken.</p>
+            <p><strong>Spielen:</strong> <b>Ganze Partie:</b> Nach jedem Zug des anderen fragen: „Was greift er an?“</p>
+            <p class="done"><strong>Geschafft, wenn:</strong> das Kind zu einem Angriff mindestens zwei Retter nennt.</p>
+          </div>
+          <div class="boards">
+            <figure class="board">
+              <img src="/assets/schach-ag/t08-retter.webp" width="548" height="548" alt="Weiß: König g1, Läufer b5 und f4, Springer e4, Bauern d4, f2, g2, h2. Schwarz: König g8, Turm e8, Bauern f7, g7, h7.">
+              <figcaption>Rette den Springer</figcaption>
+            </figure>
+          </div>
+        </div>
+      </li>
+      <li class="meeting" id="treffen-9">
+        <h3>Treffen 9: Gut beginnen, Schäfermatt abwehren</h3>
+        <div class="meeting-body with-board">
+          <div>
+            <p><strong>Ziel:</strong> Die Kinder entwickeln ihre Figuren und wehren das Schäfermatt bis zum Ende ab.</p>
+            <p><strong>Wiederholen:</strong> Welche vier Retter kennst du?</p>
+            <p><strong>In der App:</strong> „Die 4 Eröffnungs-Regeln“. Das Schäfermatt zeigen Sie am Brett, die Lektion dazu gehört zur 3. Klasse.</p>
+            <p><strong>Aufgabe:</strong> A aufbauen: 1.&nbsp;e4 e5 2.&nbsp;Dh5 Sc6 3.&nbsp;Lc4. Schwarz ist am Zug: Was droht? Nach der Abwehr zieht Weiß 4.&nbsp;Df3 (B). Und jetzt?</p>
+            <p class="answer"><strong>Lösung:</strong> In A droht Dxf7 matt, gut ist 3.&nbsp;…&nbsp;g6. In B droht es noch einmal, gut ist 4.&nbsp;…&nbsp;Sf6: Der Springer versperrt der Dame den Weg.</p>
+            <p><strong>Für Schnelle:</strong> Warum ist nach 2.&nbsp;Dh5 sofort g6 schlecht?</p>
+            <p class="answer"><strong>Lösung:</strong> 3.&nbsp;Dxe5+ gibt Schach und greift zugleich den Turm h8 an.</p>
+            <p><strong>Typischer Fehler:</strong> Nach g6 aufatmen. Auf 4.&nbsp;Df3 d6 folgt 5.&nbsp;Dxf7 matt.</p>
+            <p><strong>Spielen:</strong> <b>Ganze Partie:</b> Nach zehn Zügen kurz anhalten. Wer hat einen Bauern im Zentrum, Springer und Läufer draußen und rochiert? Dann weiterspielen.</p>
+            <p class="done"><strong>Geschafft, wenn:</strong> das Kind beide Abwehrzüge zeigt: g6 und Sf6.</p>
+          </div>
+          <div class="boards">
+            <figure class="board">
+              <img src="/assets/schach-ag/t09-drohung.webp" width="548" height="548" alt="Stellung nach 1.&nbsp;e4 e5 2.&nbsp;Dh5 Sc6 3.&nbsp;Lc4.">
+              <figcaption>A: nach 3.&nbsp;Lc4</figcaption>
+            </figure>
+            <figure class="board">
+              <img src="/assets/schach-ag/t09-df3.webp" width="548" height="548" alt="Stellung nach 1.&nbsp;e4 e5 2.&nbsp;Dh5 Sc6 3.&nbsp;Lc4 g6 4.&nbsp;Df3.">
+              <figcaption>B: nach 4.&nbsp;Df3</figcaption>
+            </figure>
+          </div>
+        </div>
+      </li>
+      <li class="meeting" id="treffen-10">
+        <h3>Treffen 10: Mattsetzen mit zwei Türmen</h3>
+        <div class="meeting-body with-board">
+          <div>
+            <p><strong>Ziel:</strong> Die Kinder setzen mit zwei Türmen den einzelnen König matt.</p>
+            <p><strong>Wiederholen:</strong> Was ist der Unterschied zwischen Matt und Patt?</p>
+            <p><strong>In der App:</strong> In der Mini-Games Arena das Treppenmatt-Rennen. Es beginnt mit den Übungen, mit „Zurück“ kommen Sie zu den Erklärungen.</p>
+            <p><strong>Aufgabe:</strong> Weiß ist am Zug: Matt in einem Zug.</p>
+            <p class="answer"><strong>Lösung:</strong> Tb8 matt. Der Turm a7 bewacht die 7. Reihe, der andere gibt Schach.</p>
+            <p><strong>Für Schnelle:</strong> Weiß Kg1, Ta5 und Tb1, Schwarz Kf6. Matt in drei Zügen?</p>
+            <p class="answer"><strong>Lösung:</strong> 1.&nbsp;Tb6+, dann 2.&nbsp;Ta7+, dann 3.&nbsp;Tb8 matt, egal wohin der König geht.</p>
+            <p><strong>Typischer Fehler:</strong> Beide Türme geben Schach, keiner hält die Schranke.</p>
+            <p><strong>Spielen:</strong> <b>Partie zu Ende spielen:</b> Wer klar vorn liegt, versucht mattzusetzen statt weiter Figuren zu sammeln. Wer fertig ist, übt das Treppenmatt gegen den einzelnen König.</p>
+            <p class="done"><strong>Geschafft, wenn:</strong> das Kind das Treppenmatt ohne Hilfe schafft.</p>
+          </div>
+          <div class="boards">
+            <figure class="board">
+              <img src="/assets/schach-ag/t10-treppe.webp" width="548" height="548" alt="Weiß: König g1, Türme a7 und b1. Schwarz: König e8.">
+              <figcaption>Matt in einem Zug</figcaption>
+            </figure>
+          </div>
+        </div>
+      </li>
+      <li class="meeting" id="treffen-11">
+        <h3>Treffen 11: Die Springer-Gabel</h3>
+        <div class="meeting-body with-board">
+          <div>
+            <p><strong>Ziel:</strong> Die Kinder finden Gabeln und prüfen, ob das Gabelfeld sicher ist.</p>
+            <p><strong>Wiederholen:</strong> Wie setzen zwei Türme matt? Was hängt?</p>
+            <p><strong>In der App:</strong> „Die Springer-Gabel“, danach drei Aufgaben im Gabel-Detektiv.</p>
+            <p><strong>Aufgabe:</strong> Weiß ist am Zug und gewinnt die Dame.</p>
+            <p class="answer"><strong>Lösung:</strong> 1.&nbsp;Se7+ greift König und Dame an. Nach 1.&nbsp;…&nbsp;Kf8 oder 1.&nbsp;…&nbsp;Kh8 folgt 2.&nbsp;Sxc8.</p>
+            <p><strong>Für Schnelle:</strong> Einen schwarzen Läufer auf d6 stellen. Geht die Gabel noch?</p>
+            <p class="answer"><strong>Lösung:</strong> Nein. Der Läufer bewacht e7 und schlägt den Springer.</p>
+            <p><strong>Typischer Fehler:</strong> Die Gabel sehen, aber nicht den Wächter des Gabelfelds.</p>
+            <p><strong>Spielen:</strong> <b>Ganze Partie:</b> Für jede gelungene Gabel gibt es einen Extrapunkt, egal wie die Partie ausgeht.</p>
+            <p class="done"><strong>Geschafft, wenn:</strong> das Kind beide Ziele und das sichere Feld nennt.</p>
+          </div>
+          <div class="boards">
+            <figure class="board">
+              <img src="/assets/schach-ag/t11-gabel.webp" width="548" height="548" alt="Weiß: König g1, Springer d5, Bauern f2, g2, h3. Schwarz: König g8, Dame c8, Bauern f7, g7, h7.">
+              <figcaption>Gewinne die Dame</figcaption>
+            </figure>
+          </div>
+        </div>
+      </li>
+      <li class="meeting" id="treffen-12">
+        <h3>Treffen 12: Turnier und Urkunde</h3>
+        <p class="times">Minuten heute: 5 Regeln · 30 Turnier · 10 Urkunden</p>
+        <div class="meeting-body">
+          <div>
+            <p><strong>Ziel:</strong> Jedes Kind spielt drei kurze Partien und geht fair mit Sieg und Niederlage um.</p>
+            <p><strong>Einstieg:</strong> Hand geben, leise spielen, niemand sagt vor. Bei Streit die Hand heben.</p>
+            <p><strong>In der App:</strong> Heute keine.</p>
+            <p><strong>Spielen:</strong> <b>Drei Runden zu je zehn Minuten.</b> Die erste wird gelost, danach spielen Kinder mit gleich vielen Punkten gegeneinander. Sieg 1 Punkt, Unentschieden ½. Ist die Zeit um, zählen die Figuren: Bauer 1, Springer und Läufer 3, Turm 5, Dame 9. Gleichstand ist unentschieden. Bei ungerader Zahl spielt die Leitung mit.</p>
+            <p class="done"><strong>Geschafft, wenn:</strong> jedes Kind seine Partien gespielt hat. Alle bekommen eine Urkunde, unabhängig von den Punkten.</p>
+          </div>
+        </div>
       </li>
     </ol>
 
-    <h2>2. Klasse: Schlaue Schachtaktiken</h2>
-    <ol class="meetings" start="6">
-      <li>
-        <h3>Treffen 6: Werte und Verteidigung</h3>
-        <p><strong>In der App:</strong> „Der Schach-Taschengeld-Check“ und „Die vier Retter“.</p>
-        <p><strong>Am Brett:</strong> Eine Figur angreifen. Das andere Kind rettet sie: weglaufen, blockieren, schlagen oder decken. Welche Wege gehen hier?</p>
-      </li>
-      <li>
-        <h3>Treffen 7: Gut beginnen</h3>
-        <p><strong>In der App:</strong> „Die 4 Eröffnungs-Regeln“.</p>
-        <p><strong>Am Brett:</strong> Eine Partie beginnen und nach zehn Zügen anhalten. Wer hat das Zentrum besetzt, Springer und Läufer entwickelt und rochiert?</p>
-      </li>
-      <li>
-        <h3>Treffen 8: Die Gabel</h3>
-        <p><strong>In der App:</strong> „Die Springer-Gabel“.</p>
-        <p><strong>Am Brett:</strong> Selbst eine Gabel bauen: König und Turm so hinstellen, dass ein Springer beide zugleich angreift.</p>
-      </li>
-      <li>
-        <h3>Treffen 9: Fesselung und Spieß</h3>
-        <p><strong>In der App:</strong> „Die Fesselung“ und „Der Spieß“.</p>
-        <p><strong>Am Brett:</strong> Einen weißen Turm, davor einen schwarzen Springer und dahinter den schwarzen König auf eine Linie stellen: eine Fesselung. Steht der König vorn und die schwarze Dame dahinter, ist es ein Spieß. Beides nachbauen und erklären.</p>
-      </li>
-    </ol>
+    <p><strong>Danach:</strong> Für einen Aufbaukurs bieten sich „Die Fesselung“ und „Der Spieß“ an. Damit ist die 2. Klasse vollständig, und die 3. Klasse mit den Mattbildern öffnet sich.</p>
 
-    <h2>3. Klasse: Meister-Schachmatt</h2>
-    <ol class="meetings" start="10">
-      <li>
-        <h3>Treffen 10: Die ersten Matts</h3>
-        <p><strong>In der App:</strong> „Das Treppenmatt“ und „Der Kuss des Todes“.</p>
-        <p><strong>Am Brett:</strong> Mit zwei Türmen und König den einzelnen König mattsetzen. Danach Rollen tauschen.</p>
-      </li>
-      <li>
-        <h3>Treffen 11: Eröffnung und Falle</h3>
-        <p><strong>In der App:</strong> „Schäfermatt abwehren“ und „Die Italienische Partie“.</p>
-        <p><strong>Am Brett:</strong> 1. e4 e5 2. Lc4 Sc6 3. Dh5 aufbauen. Was droht? Eine gute Abwehr ist 3. … g6.</p>
-      </li>
-      <li>
-        <h3>Treffen 12: Damen-Matt und Turnier</h3>
-        <p><strong>In der App:</strong> „Das Damen-Matt“.</p>
-        <p><strong>Am Brett:</strong> Kleines Abschlussturnier mit kurzen Partien. Ist die Zeit um, zählen die Figurenwerte: Bauer 1, Springer und Läufer 3, Turm 5, Dame 9.</p>
-      </li>
-    </ol>
-
-    <p>Danach geht es in der App mit „Das Turm-Matt“ und „Matt in 2“ weiter, dann mit den Meister-Mattbildern der 4. Klasse.</p>
-    <p class="print-source">Aus: chessleo.de/schach-ag-grundschule.html · ChessLeo Academy</p>
+    <section class="no-print">
+      <h2>Im Verein: Stationen für gemischte Gruppen</h2>
+      <p>Der Grundkurs passt für eine Anfängergruppe. Für gemischte Gruppen eignen sich Stationen aus der Mini-Games Arena, sie sind alle ohne Freischalten offen.</p>
+      <ul>
+        <li><strong>Regeln sicher:</strong> Feld-Ninja, Turm-Münzrausch, Läufer-Labyrinth, Springer-Parcours, Bauer zur Krone.</li>
+        <li><strong>Nichts einstellen:</strong> Rette dich!, Figuren-Check, Wachposten.</li>
+        <li><strong>Taktik:</strong> Gabel-, Fesselungs-, Spieß- und Abzugs-Detektiv, für Geübte der Meisterdetektiv.</li>
+        <li><strong>Mattsetzen:</strong> Matt-Detektiv, Patt-Falle, Treppenmatt-Rennen, Endspiel-Akademie.</li>
+      </ul>
+    </section>
 
     <section class="no-print">
       <h2>Gut zu wissen für Schulen</h2>
@@ -256,7 +575,32 @@
       <p>Lehrkräfte, AG-Leitungen und Vereine dürfen gern schreiben, auch mit Erfahrungen aus der eigenen Gruppe: <a href="mailto:chessleoacademy@gmail.com?subject=ChessLeo%20Schach-AG">chessleoacademy@gmail.com</a>.</p>
       <p><small>Ihre E-Mail nutzen wir nur, um zu antworten. Das Postfach liegt bei Google (Gmail). Bitte keine Namen oder Daten von Kindern mitschicken. Mehr dazu in der <a href="/#privacy">Datenschutzerklärung</a>.</small></p>
     </section>
+
+    <p class="print-source">Aus: chessleo.de/schach-ag-grundschule.html · ChessLeo Academy</p>
+    <p class="credit">Schachfiguren der Brettbilder: <a href="https://commons.wikimedia.org/wiki/Category:SVG_chess_pieces">Cburnett, Wikimedia Commons</a>, skaliert und auf Bretter gesetzt. Figuren und Brettbilder stehen unter <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.de">CC BY-SA 3.0</a> (creativecommons.org/licenses/by-sa/3.0).</p>
+
+    <section class="certificate" aria-labelledby="urkunde">
+      <img src="/assets/coach-vogel-freigestellt-preview.webp" width="421" height="570" alt="Coach Vogel">
+      <h2 id="urkunde">Urkunde</h2>
+      <p class="certificate-course">Schach-AG: Grundkurs</p>
+      <p class="line"><span>Name</span></p>
+      <p>hat am Grundkurs Schach teilgenommen und dabei geübt, wie alle Figuren ziehen, wie man Figuren beschützt, wie man mattsetzt und wie man fair spielt.</p>
+      <div class="signatures">
+        <p class="line"><span>Ort und Datum</span></p>
+        <p class="line"><span>Leitung der Schach-AG</span></p>
+      </div>
+    </section>
   </main>
+
+  <script>
+    function printPages(mode) {
+      document.body.classList.toggle('only-certificate', mode === 'only-certificate');
+      window.print();
+    }
+    window.addEventListener('afterprint', function () {
+      document.body.classList.remove('only-certificate');
+    });
+  </script>
 
   <footer>
     <div class="wrap">
