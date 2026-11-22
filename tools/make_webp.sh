@@ -8,7 +8,7 @@ cd "$(dirname "$0")/../assets"
 # Screenshots: full size, they fill the mockup frames on retina screens.
 for base in screen-zaubertisch screen-design-edel screen-design-bunt screen-school-prolog \
             screen-school-bishop screen-school-italian screen-diplom; do
-  for lang in de en es fr tr zh; do
+  for lang in de en es fr tr zh zh-hant; do
     cwebp -quiet -q 82 -m 6 -sharp_yuv "$base-$lang.png" -o "$base-$lang.webp"
   done
 done

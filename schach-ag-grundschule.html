@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <!-- One address for the site: www.chessleo.de goes to chessleo.de -->
+  <script>
+    if (location.hostname === 'www.chessleo.de') {
+      location.replace('https://chessleo.de' + location.pathname + location.search + location.hash);
+    }
+  </script>
+  <!-- German only, hand-written. The lesson names must match the app (AcademyHomeView.swift), and the order matters:
+       grade 2 opens only after all lessons of grade 1, grade 3 only after all lessons of grade 2. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schach-AG in der Grundschule: Stundenplan für 12 Treffen – ChessLeo</title>
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Material für die Schach-AG in der Grundschule: 12 Treffen zu je 45 Minuten mit Übungen am echten Brett, zum Ausdrucken. Ein iPad oder Mac genügt.">
+  <link rel="canonical" href="https://chessleo.de/schach-ag-grundschule.html">
+  <meta name="apple-itunes-app" content="app-id=6814943166, affiliate-data=ct=schule&amp;pt=129481811">
+
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="ChessLeo Academy">
+  <meta property="og:url" content="https://chessleo.de/schach-ag-grundschule.html">
+  <meta property="og:title" content="Schach-AG in der Grundschule: Stundenplan für 12 Treffen">
+  <meta property="og:description" content="12 Treffen zu je 45 Minuten mit Übungen am echten Brett, zum Ausdrucken.">
+  <meta property="og:image" content="https://chessleo.de/assets/og-logo.jpg?v=20261101">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/jpeg" href="/assets/logo-modern.jpg?v=1.5.0">
+  <link rel="apple-touch-icon" href="/assets/logo-modern.jpg?v=1.5.0">
+  <link href="/assets/fonts/fonts.css?v=20261107" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b1120;
+      --surface: #131d31;
+      --line: rgba(255, 255, 255, 0.1);
+      --text: #f8fafc;
+      --muted: #a5b4c8;
+      --gold: #fbbf24;
+      --accent: #38bdf8;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 1rem/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    a { color: var(--accent); }
+
+    .wrap { max-width: 900px; margin: 0 auto; padding: 0 1.25rem; }
+
+    .top { border-bottom: 1px solid var(--line); }
+
+    .top .wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 1.25rem;
+      align-items: center;
+      padding-top: 0.85rem;
+      padding-bottom: 0.85rem;
+    }
+
+    .brand { margin-right: auto; color: var(--text); font-weight: 800; text-decoration: none; }
+
+    h1 { margin: 2.5rem 0 0.75rem; font-size: 2.2rem; line-height: 1.2; text-wrap: balance; }
+    h2 { margin: 2.5rem 0 0.6rem; color: var(--gold); font-size: 1.4rem; line-height: 1.3; }
+    h3 { margin: 0 0 0.3rem; font-size: 1.08rem; line-height: 1.35; }
+
+    p, li { color: var(--muted); }
+    strong { color: var(--text); }
+    .lead { font-size: 1.12rem; }
+
+    .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.5rem 0; }
+
+    .button {
+      padding: 0.7rem 1.2rem;
+      border: 1px solid var(--gold);
+      border-radius: 999px;
+      background: transparent;
+      color: var(--gold);
+      font: inherit;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .button.main { background: var(--gold); color: var(--bg); }
+
+    figure { margin: 2rem 0 0; }
+    figure img { display: block; width: 100%; height: auto; border-radius: 1rem; }
+    figcaption { margin-top: 0.4rem; color: var(--muted); font-size: 0.9rem; }
+
+    .meetings { margin: 0; padding: 0; list-style: none; }
+
+    .meetings li {
+      margin-top: 0.8rem;
+      padding: 1rem 1.2rem;
+      border: 1px solid var(--line);
+      border-radius: 1rem;
+      background: var(--surface);
+    }
+
+    .meetings p { margin: 0.2rem 0 0; }
+
+    footer { margin-top: 3rem; border-top: 1px solid var(--line); padding: 1.5rem 0 2.5rem; font-size: 0.9rem; }
+    footer a { margin-right: 1rem; }
+
+    @media (max-width: 520px) {
+      h1 { font-size: 1.7rem; hyphens: auto; }
+    }
+
+    @media print {
+      :root { --bg: #fff; --surface: #fff; --line: #bbb; --text: #000; --muted: #222; --gold: #000; --accent: #000; }
+      body { font-size: 10pt; line-height: 1.4; }
+      .no-print, .top, footer { display: none; }
+      h1 { margin-top: 0; font-size: 18pt; }
+      h2 { margin-top: 12pt; font-size: 13pt; break-after: avoid; }
+      .meetings li { margin-top: 5pt; padding: 5pt 8pt; break-inside: avoid; }
+      .print-source { display: block !important; }
+    }
+
+    .print-source { display: none; }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="/">ChessLeo Academy</a>
+      <a href="/#curriculum">Schachschule</a>
+      <a href="/#faq">FAQ</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>Schach-AG in der Grundschule: Stundenplan für 12&nbsp;Treffen</h1>
+    <p class="lead">Vom leeren Brett bis zum kleinen Abschlussturnier: zwölf Treffen zu je 45 Minuten. Coach Vogel erklärt am großen Bild, geübt wird zu zweit am echten Brett. Die Kinder brauchen keine Vorkenntnisse.</p>
+
+    <div class="actions no-print">
+      <button class="button main" type="button" onclick="window.print()">Stundenplan drucken</button>
+      <a class="button" href="https://apps.apple.com/app/apple-store/id6814943166?pt=129481811&amp;ct=schule&amp;mt=8" target="_blank" rel="noopener noreferrer">ChessLeo im App Store</a>
+    </div>
+
+    <h2>Das brauchen Sie</h2>
+    <ul>
+      <li><strong>Ein iPad oder einen Mac</strong> mit ChessLeo Academy, dazu Beamer oder großen Bildschirm mit Ton.</li>
+      <li><strong>Ein Schachspiel für je zwei Kinder</strong> und ein paar Spielsteine oder Münzen.</li>
+      <li><strong>Etwas Vorbereitung:</strong> Sehen Sie sich die Lektionen des Tages vorher einmal an.</li>
+    </ul>
+
+    <h2>So läuft ein Treffen ab</h2>
+    <ul>
+      <li><strong>5 Minuten:</strong> Aufbauen und kurz wiederholen.</li>
+      <li><strong>15 Minuten:</strong> Lektion gemeinsam am großen Bild. Die Kinder sagen die Züge an.</li>
+      <li><strong>20 Minuten:</strong> Üben zu zweit am Brett.</li>
+      <li><strong>5 Minuten:</strong> Was haben wir gelernt? Aufräumen.</li>
+    </ul>
+    <p>Spielen Sie jede Lektion in der App zu Ende. Die 2. und die 3. Klasse öffnen sich erst, wenn die Klasse davor geschafft ist.</p>
+
+    <figure class="no-print">
+      <img src="/assets/screen-school-bishop-de.webp?v=1.7.0" width="1200" height="923" alt="Die Läufer-Lektion mit Coach Vogel in ChessLeo Academy" loading="lazy">
+      <figcaption>Treffen 2: Der Läufer bleibt immer auf seiner Feldfarbe.</figcaption>
+    </figure>
+
+    <h2>1. Klasse: Figuren-Regeln</h2>
+    <ol class="meetings">
+      <li>
+        <h3>Treffen 1: Das Brett</h3>
+        <p><strong>In der App:</strong> „Start hier: Was ist Schach?“ und „Das Schachbrett &amp; Grundregeln“.</p>
+        <p><strong>Am Brett:</strong> Das Brett richtig hinlegen (rechts unten ist weiß) und aufbauen. Danach nennt ein Kind ein Feld wie e4, das andere legt einen Stein darauf.</p>
+      </li>
+      <li>
+        <h3>Treffen 2: Turm und Läufer</h3>
+        <p><strong>In der App:</strong> „Der Turm“ und „Der Läufer“.</p>
+        <p><strong>Am Brett:</strong> Acht Steine verteilen. Mit wie wenigen Zügen sammelt der Turm alle ein? Dann der Läufer, mit Steinen nur auf seiner Feldfarbe.</p>
+      </li>
+      <li>
+        <h3>Treffen 3: Dame und König</h3>
+        <p><strong>In der App:</strong> „Die Dame“ und „Der König“.</p>
+        <p><strong>Am Brett:</strong> Ein Kind gibt dem einzelnen König mit der Dame Schach. Das andere zeigt alle Felder, auf die er fliehen darf.</p>
+      </li>
+      <li>
+        <h3>Treffen 4: Springer und Bauer</h3>
+        <p><strong>In der App:</strong> „Der Springer“ und „Der Bauer“.</p>
+        <p><strong>Am Brett:</strong> Bauern-Krieg, nur mit den 16 Bauern. Wer zuerst die letzte Reihe erreicht oder alle gegnerischen Bauern schlägt, gewinnt. Kann niemand mehr ziehen, ist es unentschieden.</p>
+      </li>
+      <li>
+        <h3>Treffen 5: Die Rochade</h3>
+        <p><strong>In der App:</strong> „Die Rochade“.</p>
+        <p><strong>Am Brett:</strong> Die erste ganze Partie. Jedes Kind versucht, zu rochieren.</p>
+      </li>
+    </ol>
+
+    <h2>2. Klasse: Schlaue Schachtaktiken</h2>
+    <ol class="meetings" start="6">
+      <li>
+        <h3>Treffen 6: Werte und Verteidigung</h3>
+        <p><strong>In der App:</strong> „Der Schach-Taschengeld-Check“ und „Die vier Retter“.</p>
+        <p><strong>Am Brett:</strong> Eine Figur angreifen. Das andere Kind rettet sie: weglaufen, blockieren, schlagen oder decken. Welche Wege gehen hier?</p>
+      </li>
+      <li>
+        <h3>Treffen 7: Gut beginnen</h3>
+        <p><strong>In der App:</strong> „Die 4 Eröffnungs-Regeln“.</p>
+        <p><strong>Am Brett:</strong> Eine Partie beginnen und nach zehn Zügen anhalten. Wer hat das Zentrum besetzt, Springer und Läufer entwickelt und rochiert?</p>
+      </li>
+      <li>
+        <h3>Treffen 8: Die Gabel</h3>
+        <p><strong>In der App:</strong> „Die Springer-Gabel“.</p>
+        <p><strong>Am Brett:</strong> Selbst eine Gabel bauen: König und Turm so hinstellen, dass ein Springer beide zugleich angreift.</p>
+      </li>
+      <li>
+        <h3>Treffen 9: Fesselung und Spieß</h3>
+        <p><strong>In der App:</strong> „Die Fesselung“ und „Der Spieß“.</p>
+        <p><strong>Am Brett:</strong> Einen weißen Turm, davor einen schwarzen Springer und dahinter den schwarzen König auf eine Linie stellen: eine Fesselung. Steht der König vorn und die schwarze Dame dahinter, ist es ein Spieß. Beides nachbauen und erklären.</p>
+      </li>
+    </ol>
+
+    <h2>3. Klasse: Meister-Schachmatt</h2>
+    <ol class="meetings" start="10">
+      <li>
+        <h3>Treffen 10: Die ersten Matts</h3>
+        <p><strong>In der App:</strong> „Das Treppenmatt“ und „Der Kuss des Todes“.</p>
+        <p><strong>Am Brett:</strong> Mit zwei Türmen und König den einzelnen König mattsetzen. Danach Rollen tauschen.</p>
+      </li>
+      <li>
+        <h3>Treffen 11: Eröffnung und Falle</h3>
+        <p><strong>In der App:</strong> „Schäfermatt abwehren“ und „Die Italienische Partie“.</p>
+        <p><strong>Am Brett:</strong> 1. e4 e5 2. Lc4 Sc6 3. Dh5 aufbauen. Was droht? Eine gute Abwehr ist 3. … g6.</p>
+      </li>
+      <li>
+        <h3>Treffen 12: Damen-Matt und Turnier</h3>
+        <p><strong>In der App:</strong> „Das Damen-Matt“.</p>
+        <p><strong>Am Brett:</strong> Kleines Abschlussturnier mit kurzen Partien. Ist die Zeit um, zählen die Figurenwerte: Bauer 1, Springer und Läufer 3, Turm 5, Dame 9.</p>
+      </li>
+    </ol>
+
+    <p>Danach geht es in der App mit „Das Turm-Matt“ und „Matt in 2“ weiter, dann mit den Meister-Mattbildern der 4. Klasse.</p>
+    <p class="print-source">Aus: chessleo.de/schach-ag-grundschule.html · ChessLeo Academy</p>
+
+    <section class="no-print">
+      <h2>Gut zu wissen für Schulen</h2>
+      <ul>
+        <li><strong>Kauf:</strong> Schulen können die App über den Apple School Manager kaufen, eine Lizenz je Gerät. Es gibt kein Abo und keine In-App-Käufe.</li>
+        <li><strong>Geräte:</strong> iPhone ab iOS 17, iPad ab iPadOS 17, Mac ab macOS 14.</li>
+        <li><strong>Spielstand:</strong> Er liegt auf dem Gerät, ohne Profile und ohne Abgleich. Für „Geteiltes iPad“ mit wechselnder Anmeldung ist die App nicht geeignet, dort kann der Fortschritt verloren gehen. Am besten funktioniert ein Gerät für die ganze Gruppe.</li>
+        <li><strong>Daten:</strong> Die Kinder brauchen kein Konto. Es gibt keine Werbung und kein Tracking.</li>
+        <li><strong>Internet:</strong> Lektionen brauchen keins. Die Eröffnungs-Abfrage bei Lichess im Freien Spiel ist ab Werk eingeschaltet. Sie lässt sich in den Einstellungen unter „Lichess.org Verbindung“ ausschalten.</li>
+      </ul>
+
+      <h2 id="kontakt">Fragen aus Schule oder Verein?</h2>
+      <p>Lehrkräfte, AG-Leitungen und Vereine dürfen gern schreiben, auch mit Erfahrungen aus der eigenen Gruppe: <a href="mailto:chessleoacademy@gmail.com?subject=ChessLeo%20Schach-AG">chessleoacademy@gmail.com</a>.</p>
+      <p><small>Ihre E-Mail nutzen wir nur, um zu antworten. Das Postfach liegt bei Google (Gmail). Bitte keine Namen oder Daten von Kindern mitschicken. Mehr dazu in der <a href="/#privacy">Datenschutzerklärung</a>.</small></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <a href="/">Startseite</a>
+      <a href="/#privacy">Datenschutz</a>
+      <a href="/impressum.html">Impressum</a>
+      <a href="/presse.html">Presse</a>
+    </div>
+  </footer>
+</body>
+</html>

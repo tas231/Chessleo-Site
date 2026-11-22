@@ -4,7 +4,7 @@
 index.html is the only page to edit. It holds the German text plus all translations (the i18n
 table in its script). This script writes
 
-  en/index.html, es/index.html, fr/index.html, tr/index.html, zh/index.html
+  en/index.html, es/index.html, fr/index.html, tr/index.html, zh/index.html, zh-hant/index.html
 
 with the text already in that language (search engines see real text, not a JavaScript switch),
 their own title, description, canonical link and Open Graph tags, and it fills the
@@ -25,25 +25,22 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE = "https://chessleo.de"
-LANGS = ["de", "en", "es", "fr", "tr", "zh"]
-HTML_LANG = {"de": "de", "en": "en", "es": "es", "fr": "fr", "tr": "tr", "zh": "zh-Hans"}
-OG_LOCALE = {"de": "de_DE", "en": "en_US", "es": "es_ES", "fr": "fr_FR", "tr": "tr_TR", "zh": "zh_CN"}
-FLAG = {"de": "🇩🇪", "en": "🇬🇧", "es": "🇪🇸", "fr": "🇫🇷", "tr": "🇹🇷", "zh": "🇨🇳"}
+LANGS = ["de", "en", "es", "fr", "tr", "zh", "zh-hant"]
+HTML_LANG = {"de": "de", "en": "en", "es": "es", "fr": "fr", "tr": "tr", "zh": "zh-Hans", "zh-hant": "zh-Hant"}
+OG_LOCALE = {"de": "de_DE", "en": "en_US", "es": "es_ES", "fr": "fr_FR", "tr": "tr_TR", "zh": "zh_CN", "zh-hant": "zh_TW"}
+FLAG = {"de": "🇩🇪", "en": "🇬🇧", "es": "🇪🇸", "fr": "🇫🇷", "tr": "🇹🇷", "zh": "简", "zh-hant": "繁"}
+CODE = {"zh-hant": "ZH"}  # menu code where it is not simply the language in capitals
+MEDIA_LANG = {"zh-hant": "zh"}  # gameplay video and poster: no own recording yet
 TITLE = {
-    "en": "ChessLeo Academy – The Magical Chess School for Kids (iPhone, iPad & Mac)",
-    "es": "ChessLeo Academy – La escuela mágica de ajedrez para niños (iPhone, iPad y Mac)",
-    "fr": "ChessLeo Academy – L’école d’échecs magique pour enfants (iPhone, iPad et Mac)",
-    "tr": "ChessLeo Academy – Çocuklar için sihirli satranç okulu (iPhone, iPad ve Mac)",
-    "zh": "ChessLeo Academy – 儿童魔法国际象棋学院（iPhone、iPad 和 Mac）",
+    "en": "Learn Chess for Kids – ChessLeo, the Ad-Free Chess App",
+    "es": "Ajedrez para niños – ChessLeo, la app sin anuncios",
+    "fr": "Échecs pour enfants – ChessLeo, l’appli sans publicité",
+    "tr": "Çocuklar için satranç – ChessLeo, reklamsız uygulama",
+    "zh": "儿童学国际象棋 – ChessLeo，无广告的学棋 App",
+    "zh-hant": "兒童西洋棋 App – ChessLeo，無廣告學國際象棋",
 }
-OG_TITLE = {
-    "en": "ChessLeo Academy – The Magical Chess School for Kids",
-    "es": "ChessLeo Academy – La escuela mágica de ajedrez para niños",
-    "fr": "ChessLeo Academy – L’école d’échecs magique pour enfants",
-    "tr": "ChessLeo Academy – Çocuklar için sihirli satranç okulu",
-    "zh": "ChessLeo Academy – 儿童魔法国际象棋学院",
-}
-DESCRIPTION_KEY = "hero_subline"  # i18n text used as meta description of the language pages
+OG_TITLE = TITLE
+DESCRIPTION_KEY = "meta_description"  # i18n text used as meta description of the language pages
 APP_STORE = "https://apps.apple.com/app/id6814943166"
 OFFERS = [("4.99", "EUR"), ("3.99", "USD")]
 VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}
@@ -51,6 +48,9 @@ GENERATED_NOTE = "<!-- Generated from /index.html by tools/build_languages.py. E
 
 
 PRESS_URLS = {"de": "https://chessleo.de/presse.html", "en": "https://chessleo.de/en/press.html"}
+
+
+GERMAN_ONLY_URLS = ["https://chessleo.de/schach-ag-grundschule.html"]
 
 
 def page_url(lang):
@@ -187,6 +187,8 @@ def build_page(source, i18n, lang, root_description):
     page = replace_once(page, r'<link rel="canonical" href="[^"]*">', f'<link rel="canonical" href="{page_url(lang)}">',
                         "canonical")
 
+    # Parts that only exist in German, e.g. the link to the school page.
+    page = re.sub(r"[ \t]*<!-- DE-ONLY:BEGIN -->.*?<!-- DE-ONLY:END -->\n", "", page, flags=re.S)
     page, count = translate_body(page, i18n, lang)
 
     # Screenshots and media that exist per language.
@@ -194,7 +196,9 @@ def build_page(source, i18n, lang, root_description):
         tag = match.group(0)
         if ('id="heroMockupImg"' in tag or 'id="diplomaMockupImg"' in tag or "data-screen-base=" in tag or
             'id="gameplayVideo"' in tag or 'id="gameplayVideoSource"' in tag or 'id="gameplayFallbackImg"' in tag):
-            tag = tag.replace("-de.webp", f"-{lang}.webp").replace("-de.mp4", f"-{lang}.mp4")
+            gameplay = 'id="gameplay' in tag
+            suffix = MEDIA_LANG.get(lang, lang) if gameplay else lang
+            tag = tag.replace("-de.webp", f"-{suffix}.webp").replace("-de.mp4", f"-{suffix}.mp4")
         return tag
 
     page = re.sub(r"<(img|video|source)\b[^>]*>", localize_media, page)
@@ -206,7 +210,7 @@ def build_page(source, i18n, lang, root_description):
     # Language menu shows this page's language without waiting for the script.
     page = replace_once(page, r'(id="langCurrentFlag">)[^<]*(<)', lambda m: m.group(1) + FLAG[lang] + m.group(2),
                         "menu flag")
-    page = replace_once(page, r'(id="langCurrentCode">)[^<]*(<)', lambda m: m.group(1) + lang.upper() + m.group(2),
+    page = replace_once(page, r'(id="langCurrentCode">)[^<]*(<)', lambda m: m.group(1) + CODE.get(lang, lang.upper()) + m.group(2),
                         "menu code")
     page = page.replace('class="lang-dropdown-item active" data-lang="de"', 'class="lang-dropdown-item" data-lang="de"')
     page = replace_once(page, r'class="lang-dropdown-item" data-lang="' + lang + '"',
@@ -232,6 +236,9 @@ def sitemap():
             lines.append(f'    <xhtml:link rel="alternate" hreflang="{other}" href="{other_url}"/>')
         lines.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{PRESS_URLS["en"]}"/>')
         lines.append("  </url>")
+    # German only, hand-written.
+    for url in GERMAN_ONLY_URLS:
+        lines += ["  <url>", f"    <loc>{url}</loc>", "  </url>"]
     lines.append("</urlset>")
     return "\n".join(lines) + "\n"
 

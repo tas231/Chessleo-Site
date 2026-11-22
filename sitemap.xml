@@ -8,6 +8,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://chessleo.de/fr/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://chessleo.de/tr/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://chessleo.de/zh/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://chessleo.de/zh-hant/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chessleo.de/en/"/>
   </url>
   <url>
@@ -18,6 +19,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://chessleo.de/fr/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://chessleo.de/tr/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://chessleo.de/zh/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://chessleo.de/zh-hant/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chessleo.de/en/"/>
   </url>
   <url>
@@ -28,6 +30,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://chessleo.de/fr/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://chessleo.de/tr/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://chessleo.de/zh/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://chessleo.de/zh-hant/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chessleo.de/en/"/>
   </url>
   <url>
@@ -38,6 +41,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://chessleo.de/fr/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://chessleo.de/tr/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://chessleo.de/zh/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://chessleo.de/zh-hant/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chessleo.de/en/"/>
   </url>
   <url>
@@ -48,6 +52,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://chessleo.de/fr/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://chessleo.de/tr/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://chessleo.de/zh/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://chessleo.de/zh-hant/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chessleo.de/en/"/>
   </url>
   <url>
@@ -58,6 +63,18 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://chessleo.de/fr/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://chessleo.de/tr/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://chessleo.de/zh/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://chessleo.de/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chessleo.de/en/"/>
+  </url>
+  <url>
+    <loc>https://chessleo.de/zh-hant/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://chessleo.de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chessleo.de/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://chessleo.de/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://chessleo.de/fr/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://chessleo.de/tr/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://chessleo.de/zh/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://chessleo.de/zh-hant/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chessleo.de/en/"/>
   </url>
   <url>
@@ -71,5 +88,8 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://chessleo.de/presse.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://chessleo.de/en/press.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chessleo.de/en/press.html"/>
+  </url>
+  <url>
+    <loc>https://chessleo.de/schach-ag-grundschule.html</loc>
   </url>
 </urlset>

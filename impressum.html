@@ -469,6 +469,7 @@
         localStorage.removeItem('chessleo_lang');
         localStorage.removeItem('chessling_lang');
         chosenLang = localStorage.getItem('chessleo_lang_choice');
+        if (chosenLang === 'zh-hant') chosenLang = 'zh'; // the imprint has one Chinese version
       } catch(e) {}
       if (supportedLangs.includes(chosenLang)) {
         initialLang = chosenLang;

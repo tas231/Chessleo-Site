@@ -20,7 +20,7 @@ In-App Purchases:   None, no hidden fees
 Advertising:        100% ad-free
 Family Sharing:     Fully supports Apple Family Sharing (up to 6 family members)
 Compatibility:      iPadOS 17+, iOS 17+, macOS 14+ (Optimized for Apple Silicon)
-Languages:          English, German, Spanish, French, Turkish, Chinese (fully localized)
+Languages:          English, German, Spanish, French, Turkish, Simplified and Traditional Chinese (7 languages, fully localized)
 
 TARGET AUDIENCE & PEDAGOGICAL CONCEPT
 -------------------------------------
@@ -36,14 +36,15 @@ Graduation:         One personal printable Master Diploma upon passing the maste
 
 MINI-GAMES & PUZZLES
 --------------------
-Mini-Games:         27 Mini-Games & Drills for playful reinforcement:
+Mini-Games:         28 Mini-Games & Drills for playful reinforcement:
                     Tactics Detectives (Fork, Mate, Discovered Attack, Decoy), Rook’s Coin Rush (5 levels),
-                    Square Ninja, Stalemate Trap, Pawn Wars, and Knight’s Course
+                    Square Ninja, Lookout, Stalemate Trap, Pawn Wars, and Knight’s Course
 Tactic Puzzles:     6,300+ tactic puzzles from 500 to 2,500 Elo (including daily puzzles and puzzle tower)
 
 GAME MODES & VISUAL WORLDS
 --------------------------
 Game Modes:         • Play against the computer (4 levels: Leo – Easy, Lina – Medium, Grandpa Theo – Legend, Titan – Super AI)
+                    • ChessLeo Elo: playing-strength number from games against the computer, with a history for parents
                     • Pass & Play (two kids playing together on a single device)
                     • Online games with friends via Apple Game Center (invitation-based)
 Home Screen:        3 selectable designs:

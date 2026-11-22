@@ -18,7 +18,7 @@ Abonnement:      Aucun abonnement, aucun frais récurrent
 Achats intégrés: Aucun achat intégré, aucun coût caché
 Partage familial:Entièrement partageable via le partage familial Apple
 Compatibilité:   iPadOS 17+, iOS 17+, macOS 14+ (Optimisé Apple Silicon)
-Langues:         Français, Allemand, Anglais, Espagnol, Turc, Chinois simplifié
+Langues:         Français, Allemand, Anglais, Espagnol, Turc, Chinois simplifié et traditionnel (7 langues)
 
 PUBLIC VISÉ & PÉDAGOGIE
 -----------------------
@@ -28,7 +28,7 @@ Programme:       5 classes structurées (Prologue + Niveaux 1 à 5)
                  Du prologue « C’est quoi, les échecs ? » (règles et déplacements) aux tactiques (fourchette,
                  clouage, enfilade) et 7 mats de maîtres avec examen final.
 Diplôme:         Diplôme de maître personnel imprimable après réussite de l’examen.
-Mini-jeux:       27 mini-jeux d’entraînement & plus de 6 300 énigmes tactiques :
+Mini-jeux:       28 mini-jeux d’entraînement & plus de 6 300 énigmes tactiques :
                  Détectives Tactiques, Ruée vers l’or de la Tour, Ninja de l’Échiquier,
                  Piège du Pat, Guerre des Pions et Parcours du Cavalier.
 

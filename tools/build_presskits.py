@@ -30,7 +30,7 @@ SITE = Path(__file__).resolve().parent.parent
 ASSETS = SITE / "assets"
 PRESSKIT = Path("/Users/tobias/Documents/MacDev/ChessLeo/Pressekit")
 DATE = (2026, 11, 12, 0, 0, 0)
-STAND = "12.11.2026"
+STAND = "22.11.2026"
 
 # In-game screenshots that must not appear before the matching release.
 NOT_YET_RELEASED = {"13_Sticker_Album_Kostuemfest.png"}  # sticker album ships with 1.0.5

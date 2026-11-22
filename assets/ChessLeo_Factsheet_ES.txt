@@ -18,7 +18,7 @@ Suscripción:     Sin suscripciones, sin costes periódicos
 Compras in-app:  Sin compras dentro de la app, sin costes ocultos
 En familia:      Totalmente compatible con «En familia» de Apple
 Compatibilidad:  iPadOS 17+, iOS 17+, macOS 14+ (Optimizado para Apple Silicon)
-Idiomas:         Español, Alemán, Inglés, Francés, Turco, Chino simplificado
+Idiomas:         Español, Alemán, Inglés, Francés, Turco, Chino simplificado y tradicional (7 idiomas)
 
 DESTINATARIOS Y ENFOQUE PEDAGÓGICO
 ----------------------------------
@@ -28,7 +28,7 @@ Plan de estudio: 5 cursos estructurados (Prólogo + Cursos 1 al 5)
                  Desde el prólogo «¿Qué es el ajedrez?» hasta horquillas, clavadas, enfiladas y
                  7 patrones de mate maestro con examen final.
 Diploma:         Diploma personal imprimible de maestro al superar el examen.
-Minijuegos:      27 dinámicos minijuegos y más de 6.300 puzles tácticos:
+Minijuegos:      28 dinámicos minijuegos y más de 6.300 puzles tácticos:
                  Detectives Tácticos, Fiebre de Oro de la Torre, Ninja del Tablero,
                  Trampa del Ahogado, Guerra de Peones y Circuito del Caballo.
 
