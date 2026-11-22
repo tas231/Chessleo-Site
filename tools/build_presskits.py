@@ -29,6 +29,9 @@ from PIL import Image
 SITE = Path(__file__).resolve().parent.parent
 ASSETS = SITE / "assets"
 PRESSKIT = Path("/Users/tobias/Documents/MacDev/ChessLeo/Pressekit")
+# BSD-3-Clause notice for the "Classic" piece set (Cburnett, Wikimedia Commons) seen on some screenshots; every kit
+# ships it as LICENSE_Chess_Pieces.txt (licence condition for redistribution).
+PIECE_LICENSE = SITE / "legal" / "LICENSE-cburnett-chess-pieces.txt"
 DATE = (2026, 11, 12, 0, 0, 0)
 STAND = "22.11.2026"
 
@@ -102,7 +105,9 @@ Einzelne Bilder in voller Auflösung gibt es auch auf https://chessleo.de/presse
 
 NUTZUNG
 Alle Bilder und Texte dürfen für die redaktionelle Berichterstattung über
-ChessLeo Academy honorarfrei verwendet werden.
+ChessLeo Academy honorarfrei verwendet werden. Auf einigen Screenshots ist das
+Figuren-Set „Klassisch“ von Cburnett und Mitwirkenden (Wikimedia Commons) zu sehen;
+dafür gilt zusätzlich die BSD-3-Clause-Lizenz in LICENSE_Chess_Pieces.txt.
 
 KONTAKT
 presse@chessleo.de · https://chessleo.de/presse.html
@@ -120,7 +125,9 @@ FOLDERS
 {diploma}
 USAGE
 All images and texts may be used free of charge for editorial coverage of
-ChessLeo Academy.
+ChessLeo Academy. Some screenshots show the “Classic” piece set by Cburnett and
+contributors (Wikimedia Commons), which is additionally subject to the BSD 3-Clause
+License in LICENSE_Chess_Pieces.txt.
 
 CONTACT
 presse@chessleo.de · https://chessleo.de/en/press.html
@@ -152,6 +159,7 @@ def kit_entries(lang):
     story = ("Die_wahre_Entstehungsgeschichte_Gruenderstory.txt" if lang == "de"
              else "The_True_Origin_Story_Founder_Story.txt")
     entries.append((f"{folders[0]}/{story}", (PRESSKIT / "00_Factsheet_Info" / story).read_bytes()))
+    entries.append((f"{folders[0]}/LICENSE_Chess_Pieces.txt", PIECE_LICENSE.read_bytes()))
     entries += [(f"{folders[1]}/{name}", data) for name, data in shots]
     for folder, target in [("02_Charaktere_Artworks", folders[2]), ("03_Logos_Icons", folders[3])]:
         for f in sorted((PRESSKIT / folder).iterdir()):

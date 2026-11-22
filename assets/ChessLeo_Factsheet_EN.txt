@@ -84,5 +84,7 @@ Press Room:         https://chessleo.de/en/press.html
 USAGE RIGHTS
 ------------
 All screenshots, character illustrations, logos, and graphics included in this press kit
-are cleared for royalty-free editorial use in publications covering ChessLeo Academy.
+are cleared for royalty-free editorial use in publications covering ChessLeo Academy. Some screenshots show the “Classic” piece set by
+Cburnett and contributors (Wikimedia Commons), which is additionally subject to the
+BSD 3-Clause License (LICENSE_Chess_Pieces.txt, https://chessleo.de/impressum.html#figuren).
 ============================================================

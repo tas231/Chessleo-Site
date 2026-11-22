@@ -84,5 +84,7 @@ Pressebereich:      https://chessleo.de/presse.html
 NUTZUNGSRECHTE
 --------------
 Alle in diesem Presse-Kit enthaltenen Screenshots, Charakter-Artworks, Logos und Grafiken
-sind für die redaktionelle Berichterstattung über ChessLeo Academy honorarfrei freigegeben.
+sind für die redaktionelle Berichterstattung über ChessLeo Academy honorarfrei freigegeben. Auf einigen Screenshots ist das Figuren-Set „Klassisch“ von
+Cburnett und Mitwirkenden (Wikimedia Commons) zu sehen; dafür gilt zusätzlich die
+BSD-3-Clause-Lizenz (LICENSE_Chess_Pieces.txt, https://chessleo.de/impressum.html#figuren).
 ============================================================
