@@ -8,12 +8,14 @@
       location.replace('https://chessleo.de' + location.pathname + location.search + location.hash);
     }
   </script>
+  <!-- Unlisted until the user has checked it (2026-11-23): noindex, no link from other pages, not in the sitemap.
+       To publish: robots back to "index, follow", sitemap entry in tools/build_languages.py, footer and FAQ links. -->
   <!-- German only, hand-written. Lesson and game names must match the app (AcademyHomeView.swift, MiniGamesHubView.swift),
        and the order matters: grade 2 opens only after all eight lessons of grade 1. Every position and answer was checked
        with python-chess and Stockfish on 2026-11-22: check again after changing a task or a board picture. -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Schach-AG in der Grundschule: Grundkurs in 12 Treffen – ChessLeo</title>
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="noindex, follow">
   <meta name="description" content="Material für die Schach-AG in der Grundschule: 12 Treffen zu je 45 Minuten mit Aufgaben, Lösungen, Spielen und Urkunde zum Ausdrucken.">
   <link rel="canonical" href="https://chessleo.de/schach-ag-grundschule.html">
   <meta name="apple-itunes-app" content="app-id=6814943166, affiliate-data=ct=schule&amp;pt=129481811">

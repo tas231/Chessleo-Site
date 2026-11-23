@@ -50,7 +50,9 @@ GENERATED_NOTE = "<!-- Generated from /index.html by tools/build_languages.py. E
 PRESS_URLS = {"de": "https://chessleo.de/presse.html", "en": "https://chessleo.de/en/press.html"}
 
 
-GERMAN_ONLY_URLS = ["https://chessleo.de/schach-ag-grundschule.html"]
+# The school page /schach-ag-grundschule.html is online but unlisted (no link, no sitemap entry, noindex) until the
+# user has checked it (decision 2026-11-23). Add it here again when it goes public.
+GERMAN_ONLY_URLS = []
 
 
 def page_url(lang):
