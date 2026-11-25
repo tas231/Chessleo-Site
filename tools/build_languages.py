@@ -30,7 +30,7 @@ HTML_LANG = {"de": "de", "en": "en", "es": "es", "fr": "fr", "tr": "tr", "zh": "
 OG_LOCALE = {"de": "de_DE", "en": "en_US", "es": "es_ES", "fr": "fr_FR", "tr": "tr_TR", "zh": "zh_CN", "zh-hant": "zh_TW"}
 FLAG = {"de": "🇩🇪", "en": "🇬🇧", "es": "🇪🇸", "fr": "🇫🇷", "tr": "🇹🇷", "zh": "简", "zh-hant": "繁"}
 CODE = {"zh-hant": "ZH"}  # menu code where it is not simply the language in capitals
-MEDIA_LANG = {"zh-hant": "zh"}  # gameplay video and poster: no own recording yet
+MEDIA_LANG = {}  # gameplay video and poster per language (zh-hant has its own since 2026-11-25)
 TITLE = {
     "en": "Learn Chess for Kids – ChessLeo, the Ad-Free Chess App",
     "es": "Ajedrez para niños – ChessLeo, la app sin anuncios",

@@ -2133,9 +2133,9 @@
         <!-- SPLIT SHOWCASE: Freies Spiel / Gameplay Video -->
         <div class="showcase-split">
           <div class="showcase-img-wrap" style="position: relative;">
-            <video id="gameplayVideo" autoplay loop muted playsinline poster="/assets/screen-freeplay-zh.webp?v=20261112" style="width: 100%; border-radius: 1.5rem; box-shadow: 0 20px 45px rgba(0,0,0,0.65); border: 2px solid var(--card-border); display: block;">
-              <source id="gameplayVideoSource" src="/assets/gameplay-preview-zh.mp4?v=20261112" type="video/mp4">
-              <img id="gameplayFallbackImg" src="/assets/screen-freeplay-zh.webp?v=20261112" alt="Schachpartie gegen Leo mit Coach Vogel" loading="lazy">
+            <video id="gameplayVideo" autoplay loop muted playsinline poster="/assets/screen-freeplay-zh-hant.webp?v=20261112" style="width: 100%; border-radius: 1.5rem; box-shadow: 0 20px 45px rgba(0,0,0,0.65); border: 2px solid var(--card-border); display: block;">
+              <source id="gameplayVideoSource" src="/assets/gameplay-preview-zh-hant.mp4?v=20261112" type="video/mp4">
+              <img id="gameplayFallbackImg" src="/assets/screen-freeplay-zh-hant.webp?v=20261112" alt="Schachpartie gegen Leo mit Coach Vogel" loading="lazy">
             </video>
             <div class="screen-badge" data-i18n="screen_badge_freeplay" style="position: absolute; bottom: 1.25rem; left: 1.25rem; background: rgba(15, 23, 42, 0.88); backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.18); padding: 0.45rem 0.95rem; border-radius: 999px; font-size: 0.88rem; color: #f8fafc; font-weight: 600; box-shadow: 0 6px 16px rgba(0,0,0,0.5); pointer-events: none;">♟️ 與小六對弈下棋</div>
           </div>
@@ -2589,8 +2589,7 @@
         const gameplayFallbackImg = document.getElementById('gameplayFallbackImg');
         // Keep the ?v= cache buster from the HTML, so a re-recorded video reaches every browser.
         const mediaVersion = gameplayVideoSource ? ((gameplayVideoSource.getAttribute('src').match(/\?v=[^"&]*/) || [''])[0]) : '';
-        // No Traditional Chinese recording yet: that page shows the Simplified one.
-        const mediaLang = lang === 'zh-hant' ? 'zh' : lang;
+        const mediaLang = lang;
         if (gameplayVideo && gameplayVideoSource) {
           gameplayVideoSource.src = '/assets/gameplay-preview-' + mediaLang + '.mp4' + mediaVersion;
           gameplayVideo.poster = '/assets/screen-freeplay-' + mediaLang + '.webp' + mediaVersion;

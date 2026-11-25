@@ -2589,8 +2589,7 @@
         const gameplayFallbackImg = document.getElementById('gameplayFallbackImg');
         // Keep the ?v= cache buster from the HTML, so a re-recorded video reaches every browser.
         const mediaVersion = gameplayVideoSource ? ((gameplayVideoSource.getAttribute('src').match(/\?v=[^"&]*/) || [''])[0]) : '';
-        // No Traditional Chinese recording yet: that page shows the Simplified one.
-        const mediaLang = lang === 'zh-hant' ? 'zh' : lang;
+        const mediaLang = lang;
         if (gameplayVideo && gameplayVideoSource) {
           gameplayVideoSource.src = '/assets/gameplay-preview-' + mediaLang + '.mp4' + mediaVersion;
           gameplayVideo.poster = '/assets/screen-freeplay-' + mediaLang + '.webp' + mediaVersion;

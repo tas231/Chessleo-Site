@@ -319,6 +319,15 @@
       line-height: 1;
     }
 
+    /* Chinese kits: the script (简 / 繁) instead of a flag, as in the language menu */
+    .kit-flag.kit-script {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #f8fafc;
+      width: 1.8rem;
+      text-align: center;
+    }
+
     .kit-title {
       font-size: 1.05rem;
       font-weight: 700;
@@ -1072,7 +1081,7 @@
 
       <!-- INTERNATIONAL KITS -->
       <section id="kits" style="scroll-margin-top: 5rem; margin-bottom: 3.5rem;">
-        <h2 class="section-title">🌍 Press Kits in 6 Languages</h2>
+        <h2 class="section-title">🌍 Press Kits in 7 Languages</h2>
         <p class="section-sub">Press kits with screenshots in each language, factsheet, artworks and logos:</p>
 
         <div class="kits-grid">
@@ -1174,21 +1183,40 @@
             </div>
           </div>
 
-          <!-- CHINESE -->
+          <!-- CHINESE (SIMPLIFIED) -->
           <div class="kit-card">
             <div class="kit-card-head">
-              <div class="kit-flag">🇨🇳</div>
+              <div class="kit-flag kit-script" lang="zh-Hans">简</div>
               <div>
-                <div class="kit-title">中文 (CN / SG)</div>
-                <div class="kit-meta">小鸟教练 · approx. 18 MB ZIP</div>
+                <div class="kit-title" lang="zh-Hans">简体中文 (CN / SG)</div>
+                <div class="kit-meta"><span lang="zh-Hans">小鸟教练</span> · approx. 18 MB ZIP</div>
               </div>
             </div>
-            <div class="kit-actions">
+            <div class="kit-actions" lang="zh-Hans">
               <a href="/assets/ChessLeo_PressKit_ZH.zip" download="ChessLeo_PressKit_ZH.zip" class="btn-kit-download">
                 ⬇️ 下载新闻资料包
               </a>
               <a href="/assets/ChessLeo_Factsheet_ZH.txt" target="_blank" class="btn-kit-txt">
                 📄 资料简报 (TXT)
+              </a>
+            </div>
+          </div>
+
+          <!-- CHINESE (TRADITIONAL) -->
+          <div class="kit-card">
+            <div class="kit-card-head">
+              <div class="kit-flag kit-script" lang="zh-Hant">繁</div>
+              <div>
+                <div class="kit-title" lang="zh-Hant">繁體中文 (TW / HK / MO)</div>
+                <div class="kit-meta"><span lang="zh-Hant">小鳥教練</span> · approx. 18 MB ZIP</div>
+              </div>
+            </div>
+            <div class="kit-actions" lang="zh-Hant">
+              <a href="/assets/ChessLeo_PressKit_ZH-Hant.zip" download="ChessLeo_PressKit_ZH-Hant.zip" class="btn-kit-download">
+                ⬇️ 下載媒體資料包
+              </a>
+              <a href="/assets/ChessLeo_Factsheet_ZH-Hant.txt" target="_blank" class="btn-kit-txt">
+                📄 產品簡介 (TXT)
               </a>
             </div>
           </div>
