@@ -1,4 +1,4 @@
-Classic chess pieces by Cburnett (2006) and contributors
+﻿Classic chess pieces by Cburnett (2006) and contributors
 Source: https://commons.wikimedia.org/wiki/Category:SVG_chess_pieces
 Files: Chess_{k,q,r,b,n,p}{l,d}t45.svg, converted to PNG
 

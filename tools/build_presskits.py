@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Builds the six press kits in assets/ (one ZIP per language).
+"""Builds the seven press kits in assets/ (one ZIP per language, Chinese in simplified and traditional script).
 
 Each kit holds the factsheet of its language, the founder story, screenshots of the app in that
 language only, the character artworks, logos, key visuals and (German, English) the printable
@@ -10,6 +10,10 @@ Sources:
   - this repository's assets/ (factsheets ChessLeo_Factsheet_*.txt, localized website screenshots)
   - the app repository's Pressekit/ folder (German in-game screenshots, artworks, logos, banner,
     diplomas, founder stories, free-play frames from the gameplay videos)
+
+The factsheets and the licence on the website start with a UTF-8 byte order mark: the server sends .txt as
+"text/plain" without a charset, and browsers then read UTF-8 as Windows-1252 ("UnterstÃ¼tzt"). The kits get the text
+without the mark (text_bytes), as before.
 
 The ZIPs are reproducible: fixed file dates and the same JPEG settings, so running the script
 again without changed sources writes byte-identical files and git sees no change. Every new kit
@@ -34,6 +38,8 @@ PRESSKIT = Path("/Users/tobias/Documents/MacDev/ChessLeo/Pressekit")
 PIECE_LICENSE = SITE / "legal" / "LICENSE-cburnett-chess-pieces.txt"
 DATE = (2026, 11, 12, 0, 0, 0)
 STAND = "22.11.2026"
+# A kit added later carries its own date; changing STAND would rebuild every kit (and add its size to git again).
+STAND_BY_LANG = {"zh-hant": "25.11.2026"}
 
 # In-game screenshots that must not appear before the matching release.
 NOT_YET_RELEASED = {"13_Sticker_Album_Kostuemfest.png"}  # sticker album ships with 1.0.5
@@ -45,9 +51,10 @@ KITS = {
     "es": ("ChessLeo_KitPrensa_ES.zip", "ChessLeo_Factsheet_ES.txt"),
     "tr": ("ChessLeo_BasinKiti_TR.zip", "ChessLeo_Factsheet_TR.txt"),
     "zh": ("ChessLeo_PressKit_ZH.zip", "ChessLeo_Factsheet_ZH.txt"),
+    "zh-hant": ("ChessLeo_PressKit_ZH-Hant.zip", "ChessLeo_Factsheet_ZH-Hant.txt"),
 }
 LANGUAGE_NAME = {"de": "German", "en": "English", "fr": "French", "es": "Spanish", "tr": "Turkish",
-                 "zh": "Simplified Chinese"}
+                 "zh": "Simplified Chinese", "zh-hant": "Traditional Chinese"}
 
 # Localized website screenshots: (asset base, file name in the kit). German kit uses the German
 # in-game set instead and adds only the lessons and the Classic design from this list.
@@ -72,6 +79,11 @@ FOLDERS = {
     "de": ["00_Info", "01_Screenshots_iPad", "02_Charaktere", "03_Logos", "04_Key_Visuals", "05_Meister_Diplom"],
     "other": ["00_Info", "01_Screenshots", "02_Characters", "03_Logos", "04_Key_Visuals", "05_Master_Diploma"],
 }
+
+
+def text_bytes(path):
+    """A website text file without its UTF-8 byte order mark (see the module docstring)."""
+    return path.read_bytes().removeprefix(b"\xef\xbb\xbf")
 
 
 def jpeg_bytes(path):
@@ -114,7 +126,7 @@ presse@chessleo.de · https://chessleo.de/presse.html
 """
     diploma = (f"{folders[5]}  Printable Master Diploma\n" if lang == "en" else "")
     return f"""CHESSLEO ACADEMY – PRESS KIT ({LANGUAGE_NAME[lang].upper()})
-As of {STAND}
+As of {STAND_BY_LANG.get(lang, STAND)}
 
 FOLDERS
 {folders[0]}          Factsheet, founder story, this file
@@ -155,11 +167,11 @@ def kit_entries(lang):
 
     entries.append((f"{folders[0]}/{'LIESMICH' if lang == 'de' else 'README'}.txt",
                     readme(lang, folders, len(shots)).encode("utf-8")))
-    entries.append((f"{folders[0]}/{factsheet.replace('Presse', 'DE')}", (ASSETS / factsheet).read_bytes()))
+    entries.append((f"{folders[0]}/{factsheet.replace('Presse', 'DE')}", text_bytes(ASSETS / factsheet)))
     story = ("Die_wahre_Entstehungsgeschichte_Gruenderstory.txt" if lang == "de"
              else "The_True_Origin_Story_Founder_Story.txt")
     entries.append((f"{folders[0]}/{story}", (PRESSKIT / "00_Factsheet_Info" / story).read_bytes()))
-    entries.append((f"{folders[0]}/LICENSE_Chess_Pieces.txt", PIECE_LICENSE.read_bytes()))
+    entries.append((f"{folders[0]}/LICENSE_Chess_Pieces.txt", text_bytes(PIECE_LICENSE)))
     entries += [(f"{folders[1]}/{name}", data) for name, data in shots]
     for folder, target in [("02_Charaktere_Artworks", folders[2]), ("03_Logos_Icons", folders[3])]:
         for f in sorted((PRESSKIT / folder).iterdir()):
