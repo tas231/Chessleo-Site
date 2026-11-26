@@ -38,11 +38,12 @@ PRESSKIT = Path("/Users/tobias/Documents/MacDev/ChessLeo/Pressekit")
 PIECE_LICENSE = SITE / "legal" / "LICENSE-cburnett-chess-pieces.txt"
 DATE = (2026, 11, 12, 0, 0, 0)
 STAND = "22.11.2026"
-# A kit added later carries its own date; changing STAND would rebuild every kit (and add its size to git again).
-STAND_BY_LANG = {"zh-hant": "25.11.2026"}
+# A kit added or rebuilt later carries its own date; changing STAND would rebuild every kit (and add its size to git
+# again). de: sticker album screenshot back in the kit (2026-11-26).
+STAND_BY_LANG = {"zh-hant": "25.11.2026", "de": "26.11.2026"}
 
-# In-game screenshots that must not appear before the matching release.
-NOT_YET_RELEASED = {"13_Sticker_Album_Kostuemfest.png"}  # sticker album ships with 1.0.5
+# In-game screenshots that must not appear before the matching release (empty: the sticker album is live since 1.0.5).
+NOT_YET_RELEASED: set[str] = set()
 
 KITS = {
     "de": ("ChessLeo_Pressekit.zip", "ChessLeo_Factsheet_Presse.txt"),
@@ -103,7 +104,7 @@ def jpeg_bytes(path):
 def readme(lang, folders, screenshot_count):
     if lang == "de":
         return f"""CHESSLEO ACADEMY – PRESSE-KIT (DEUTSCH)
-Stand: {STAND}
+Stand: {STAND_BY_LANG.get(lang, STAND)}
 
 ORDNER
 {folders[0]}            Factsheet, Entstehungsgeschichte, diese Datei
